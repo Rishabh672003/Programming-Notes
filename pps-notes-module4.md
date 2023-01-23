@@ -56,7 +56,7 @@
     void add()
     {
     int a=10,b=20,c;
-    printf(“Sum=%d”,a+b)
+    printf("Sum=%d",a+b)
     }
     ```
     - independent program module
@@ -110,27 +110,53 @@
 
     ## Program for Armstrong number using function between ranges
 
-    ````c
+    ```c
     #include <stdio.h>
-    void armstrong(int n);
+
+    int isarmstrong(int num);
+    void printarmstrong(int start, int end);
+
     int main() {
-      char c;
-      int n;
-      for (n = 100; n <= 999; n++)
-        armstrong(n);
+        int start, end;
+
+        printf("Enter lower limit to print armstrong numbers: ");
+        scanf("%d", &start);
+        printf("Enter the upper limit to print armstrong: ");
+        scanf("%d", &end);
+        printf("All armstrong numbers between %d to %d are: \n", start, end);
+        printarmstrong(start, end);
+        return 0;
     }
-    void armstrong(int n) {
-      int sum = 0, rem, temp;
-      temp = n;
-      while (n != 0) {
-        rem = n % 10;
-        sum += rem * rem * rem;
-        n /= 10;
-      }
-      if (sum == temp)
-        printf("\n%d.", n);
+
+    int isarmstrong(int num) {
+        int temp, lastdigit, sum;
+        temp = num;
+        sum = 0;
+
+        while (temp != 0) {
+            lastdigit = temp % 10;
+            sum += lastdigit * lastdigit * lastdigit;
+            temp /= 10;
+        }
+
+        if (num == sum) {
+            return 1;
+        } else {
+            return 0;
+        }
+
+        return 0;
     }
-    ````
+
+    void printarmstrong(int start, int end) {
+        while (start <= end) {
+            if (isarmstrong(start)) {
+                printf("%d, ", start);
+            }
+            start++;
+        }
+    }
+    ```
 
   - #### Recursion
 
@@ -172,9 +198,9 @@
         int main() {
           int k, n;
           int i = 0, j = 1, f;
-          printf("Enter the range of the Fibonacci series: ");
+          printf("enter the range of the fibonacci series: ");
           scanf("%d", &n);
-          printf("Fibonacci Series: ");
+          printf("fibonacci series: ");
           printf("%d %d ", 0, 1);
           fibonacci(n);
         }
