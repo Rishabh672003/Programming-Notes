@@ -19,6 +19,11 @@
     - Ctype.h
     - math.h
     - stdlib.h
+  - 4 types of function 
+    - 1. without arguments and without return 
+    - 2. with arguments and without return 
+    - 3. without arguments and with return
+    - 4. with arguments and with return
 
 - #### Call by value and Call by reference
 
@@ -218,3 +223,21 @@
 
   - ### Differences between recursion and iteration
     ![image](https://user-images.githubusercontent.com/53911515/214092152-39384ba3-1fe4-4a98-9da8-f0f494407c7e.png)
+
+- ### Storage clases 
+  - automatic
+    - default storage class if no class is defined 
+    - are only local to there block and destroyed when exited
+  - static
+    - local scope 
+    - acts like an auto class
+    - lifetime is till when program exits until then stored in memory
+  - external
+    - assumes that the variable was declared somewhere else so only access
+      the data and doesnt declares them 
+    - there scope is global and lifetime is till program exits
+  - register
+    - are very similar to automatic class 
+    - are stored in CPU registers rather than memory 
+    - useful when needed to access a variable again and again
+    - only for local scope
