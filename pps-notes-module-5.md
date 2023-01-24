@@ -63,7 +63,7 @@
     ```c
     for(i=0;i<row;i++){
       for(j=0;j<col;j++){
-        scanf(“%d”,&A[i][j]);
+        scanf("%d",&A[i][j]);
       }
     }
     ```
@@ -72,9 +72,9 @@
   ```c
   for(i=0;i<row;i++){
     for(j=0;j<col;j++){
-      printf(“%d\t”,A[i][j]);
+      printf("%d\t",A[i][j]);
     }
-    printf(“\n”);
+    printf("\n");
   }
   ```
 
