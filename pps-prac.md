@@ -1,0 +1,255 @@
+# Code for PPS practical
+
+## **This only contains code that was done in PPS practical and no others**
+## And only those which i though were somewhat difficult i haven't included the very easy one which anyone can do
+
+## Prac 2
+
+### to swap two vars without a temp var
+
+```c
+#include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main() {
+    int a, b;
+    scanf("%i%i", &a, &b);
+    a = a + b;
+    b = a - b;
+    a = a - b;
+    printf("%i %i", a, b);
+    return 0;
+}
+```
+
+## Prac 3
+
+### To find roots of the quadratic equation
+
+**execute with `-lm` flag on linux**
+
+```c
+#include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main() {
+    int a, b, c, d;
+    double root1, root2;
+    printf("this program will find the roots of the ax^2+bx+c=0");
+    printf("enter a, b and c\n");
+    scanf("%i%i%i", &a, &b, &c);
+    d = b * b - 4 * a * c;
+
+    if (d < 0) {
+        double e = -(b) / (double)(2 * a);
+        double f = sqrt(-d) / 2 * a;
+        printf("first root = %.2lf + i%.2lf\n", e, f);
+        printf("second root = %.2lf - i%.2lf\n", e, f);
+    }
+
+    else {
+        root1 = (-b + sqrt(d)) / (2 * a);
+        root2 = (-b + sqrt(d)) / (2 * a);
+        printf("first root= %.2lf\n", root1);
+        printf("second root= %.2lf\n", root2);
+    }
+    return 0;
+}
+```
+
+### Whether input is number or uppercase or lowercase
+
+```c
+#include <ctype.h>
+#include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main() {
+    char a;
+    scanf("%c", &a);
+    if (islower(a)) {
+        printf("lowercase character");
+    } else if (isupper(a)) {
+        printf("uppercase character");
+    } else if (isdigit(a)) {
+        printf("number");
+    } else {
+        printf("special");
+    }
+    return 0;
+}
+```
+
+## Prac 4
+
+### prob 1
+
+### To find the sum of 1/1! + 1/2! + 1/3! + .... + 1/n!
+
+```c
+#include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main() {
+    int i, fact, j;
+    int n;
+    float sum;
+    printf("Enter the value of N :");
+    scanf("%d", &n);
+    sum = 0.0f;
+    for (i = 1; i <= n; i++) {
+        fact = 1;
+        for (j = 1; j <= i; j++) {
+            fact = fact * j;
+        }
+        sum = sum + ((float)1 / (float)fact);
+    }
+    printf("sum of series is : %f\n", sum);
+    return 0;
+}
+```
+
+### prob 2
+
+![image](https://user-images.githubusercontent.com/53911515/215794827-ea48fdf5-85e7-450e-955c-c552980be5d2.png)
+
+```c
+#include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main() {
+    int n, r, c, s, d;
+    char ch;
+
+    printf("Enter the number of rows: ");
+    scanf("%d", &n);
+
+    for (r = 1; r <= n; r++) {
+        for (s = 1; s <= n; s++) {
+            printf("  ");
+        }
+        for (c = 1; c <= r; c++) {
+            printf(" %d", c);
+        }
+        ch = 'A';
+        for (d = 1; d < r; d++) {
+            printf(" %c", ch);
+            ch++;
+        }
+        printf("\n");
+    }
+    return 0;
+}
+```
+
+## Prac 5
+
+- ### expt 1 - armstrong number
+
+```c
+#include <stdio.h>
+
+int isarmstrong(int num);
+void printarmstrong(int start, int end);
+
+int main() {
+    int start, end;
+
+    printf("Enter lower limit to print armstrong numbers: ");
+    scanf("%d", &start);
+    printf("Enter the upper limit to print armstrong: ");
+    scanf("%d", &end);
+    printf("All armstrong numbers between %d to %d are: \n", start, end);
+    printarmstrong(start, end);
+    return 0;
+}
+
+int isarmstrong(int num) {
+    int temp, lastdigit, sum;
+    temp = num;
+    sum = 0;
+
+    while (temp != 0) {
+        lastdigit = temp % 10;
+        sum += lastdigit * lastdigit * lastdigit;
+        temp /= 10;
+    }
+
+    if (num == sum) {
+        return 1;
+    } else {
+        return 0;
+    }
+
+    return 0;
+}
+
+void printarmstrong(int start, int end) {
+    while (start <= end) {
+        if (isarmstrong(start)) {
+            printf("%d, ", start);
+        }
+        start++;
+    }
+}
+```
+
+- ### expt 2 is prime?
+
+```c
+#include<stdio.h>
+void prime(int n);
+void main()
+{
+  char c;
+  int n;
+  printf("Enter a positive integer: ");
+  scanf("%d",&n);
+  prime(n);
+}
+
+void prime(int n){
+  int i,count=0;
+  for(i=1; i<=n; i++) {
+    if(n%i==0)
+    count++;
+  }
+  if(count==2)
+    printf("\n%d is a prime number.", n);
+  else
+    printf("\n%d is not a prime number.", n);
+}
+```
+
+- ### expt 3 factorial
+
+```c
+#include <stdio.h>
+
+int factorial(int);
+int main() {
+int n, f;
+printf("Enter the no");
+scanf("%d", &n);
+f = factorial(n);
+printf("\n Factorial of %d = %d", n, f);
+}
+int factorial(int x) {
+if (x == 1 || x == 0)
+  return 1;
+else
+  return x * factorial(x - 1);
+}
+```
+## prac 6 
+## if you get this one you are pretty fucked
