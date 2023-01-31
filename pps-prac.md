@@ -1,8 +1,10 @@
 # Code for PPS practical
 
 ## **This only contains code that was done in PPS practical and no others**
+
 ## And only those which i though were somewhat difficult i haven't included the very easy one which anyone can do
-## I dont guarantee that only these code will come in practical any other can also come 
+
+## I dont guarantee that only these code will come in practical any other can also come
 
 ## Prac 2
 
@@ -118,34 +120,28 @@ int main() {
 }
 ```
 
-### prob 2
+### Prob 2
 
 ![image](https://user-images.githubusercontent.com/53911515/215794827-ea48fdf5-85e7-450e-955c-c552980be5d2.png)
 
 ```c
-#include <math.h>
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 
 int main() {
-    int n, r, c, s, d;
-    char ch;
-
-    printf("Enter the number of rows: ");
-    scanf("%d", &n);
-
-    for (r = 1; r <= n; r++) {
-        for (s = 1; s <= n; s++) {
+    for (int i = 1; i <= 4; i++) {
+        // inner loop to print spaces
+        for (int j = 4; j >= i; j--) {
             printf("  ");
         }
-        for (c = 1; c <= r; c++) {
-            printf(" %d", c);
+        // inner loop to print numbers
+        for (int k = 1; k <= i; k++) {
+            printf("%d ", k);
         }
-        ch = 'A';
-        for (d = 1; d < r; d++) {
-            printf(" %c", ch);
-            ch++;
+        // inner loop to print alphabets
+        int m = 65;
+        for (int l = 2; l < i; l++) {
+            printf("%c ", (char)m);
+            m++;
         }
         printf("\n");
     }
@@ -177,7 +173,7 @@ int main() {
 
 int isarmstrong(int num) {
     int temp, lastdigit, sum;
-    temp = num;
+    temp = sum;
     sum = 0;
 
     while (temp != 0) {
@@ -252,5 +248,54 @@ else
   return x * factorial(x - 1);
 }
 ```
-## prac 6 
+
+## prac 6
+
 ## if you get this one you are pretty fucked
+
+- ### expt 1 deleting elemts from array
+
+```c
+#include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main() {
+    int a[1000], pos, c, n;
+    char ch = 'y';
+    printf("Enter number of elements in the array\n");
+    scanf("%d", &n);
+    printf("Enter %d elements\n", n);
+    for (c = 0; c < n; c++) {
+        scanf("%d", &a[c]);
+    }
+    do {
+        if (ch == 'y') {
+            printf("Enter the location you wish to delete element\n");
+        }
+        scanf("%d", &pos);
+        if (pos > n + 1) {
+            printf("deletion not possible\n");
+        } else {
+            for (c = pos - 1; c < n - 1; c++) {
+                a[c] = a[c + 1];
+            }
+            n = n - 1;
+            if (n > 0) {
+                printf("resultant array: \n");
+                for (c = 0; c < n; c++) {
+                    printf("%d\n", a[c]);
+                }
+            } else {
+                printf("Array is empty\n");
+                exit(0);
+            }
+        }
+        printf("Continue??\n");
+        char flushall();
+        scanf("%c", &ch);
+    } while (ch == 'y' && n != 0);
+    return 0;
+}
+```
