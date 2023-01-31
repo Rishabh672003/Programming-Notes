@@ -2,6 +2,7 @@
 
 ## **This only contains code that was done in PPS practical and no others**
 ## And only those which i though were somewhat difficult i haven't included the very easy one which anyone can do
+## I dont guarantee that only these code will come in practical any other can also come 
 
 ## Prac 2
 
