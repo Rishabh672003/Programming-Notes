@@ -299,3 +299,56 @@ int main() {
     return 0;
 }
 ```
+
+### expt 3 ascending or descending order
+
+```c
+#include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main() {
+    int a, n, number[30];
+    char ch;
+    printf("Enter the value of N \n");
+    scanf("%i", &n);
+    printf("Enter the numbers\n");
+    for (int i; i < n; i++) {
+        scanf("%d", &number[i]);
+    }
+    printf("assecending or descending order 'a' or 'd'\n");
+    scanf("%c", &ch);
+    if (ch == 'a') {
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j < n; j++) {
+                if (number[i] > number[j]) {
+                    a = number[i];
+                    number[i] = number[j];
+                    number[j] = a;
+                }
+            }
+        }
+        printf("the numbers arranged in assecending order is: \n");
+        for (int i = 0; i < n; i++) {
+            printf("%d\n", number[i]);
+        }
+    }
+    if (ch == 'd') {
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j < n; j++) {
+                if (number[i] < number[j]) {
+                    a = number[i];
+                    number[i] = number[j];
+                    number[j] = a;
+                }
+            }
+        }
+        printf("the numbers arranged in descending order is: \n");
+        for (int i = 0; i < n; i++) {
+            printf("%d\n", number[i]);
+        }
+    }
+    return 0;
+}
+```
