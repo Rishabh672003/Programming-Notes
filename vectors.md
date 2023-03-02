@@ -6,7 +6,7 @@ In C++, a vector is a dynamic array that can resize itself during runtime. It is
 #include <vector>
 ```
 
-here's how to initialize a vector:
+Here's how to initialize a vector:
 
 ```cpp
 vector<int> v;
@@ -65,5 +65,7 @@ auto it = min_element(vector.begin(), vector.end()); // finds the minimum elemen
 auto it = max_element(vector.begin(), vector.end()); // finds the maximum element in the vector
 sum(vector.begin(), vector.end()); // returns the sum of all elements in the vector
 swap(vector[0], vector[1]); // swaps the first two elements of the vector
+
+binary_search(vector.begin(), vector.end(), 1); // returns true if 1 is in the vector, false otherwise
 
 ```
