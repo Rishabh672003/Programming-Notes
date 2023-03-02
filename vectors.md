@@ -13,10 +13,11 @@ vector<int> v;
 ```
 
 Initialize Vector with size.
+
 ```cpp
 vector<int> v1(5); // Vector with size 5. By Default all elements are assigned as 0.
 vector<int> v2(5, 1) // Vector with size 5, and all elements are assigned as 1.
-```    
+```
 
 to insert and remove values from the vector:
 
@@ -31,7 +32,8 @@ You can also access elements in the vector using the square bracket notation, ju
 cout << vector[1];
 ```
 
-Adding elements in vector with ```for``` loop.
+Adding elements in vector with `for` loop.
+
 ```cpp
 vector<int> a(5);
 for (int i : a) // for i belongs to vector a.
@@ -39,7 +41,7 @@ for (int i : a) // for i belongs to vector a.
     cin >> i;
 }
 ```
-    
+
 You can output all the elements of the vector using the `for` loop:
 
 ```cpp
@@ -82,7 +84,7 @@ vector.data() + i; // returns a pointer to the i'th element of the vector
 vector.begin(); // returns a pointer to the first element of the vector
 vector.end(); // gives you a pointer to the end of the vector
 sort(vector.begin(), vector.end()); // sorts the vector in ascending order comes from STL
-sort(vector.begin(), vector.end(), greater<int>()); sorts the vector in descending order comes from STL
+sort(vector.begin(), vector.end(), greater<int>()); // sorts the vector in descending order comes from STL
 ```
 
 These are some functions in the algorithm library in c++ very useful for manipulating vectors:
@@ -99,5 +101,4 @@ sum(vector.begin(), vector.end()); // returns the sum of all elements in the vec
 swap(vector[0], vector[1]); // swaps the first two elements of the vector
 
 binary_search(vector.begin(), vector.end(), 1); // returns true if 1 is in the vector, false otherwise
-
 ```
