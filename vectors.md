@@ -3,13 +3,13 @@
 In C++, a vector is a dynamic array that can resize itself during runtime. It is defined in the <vector> header file.
 
 ```cpp
-#include <vectorector>
+#include <vector>
 ```
 
 here's how to initialize a vector:
 
 ```cpp
-vectorector<int> v;
+vector<int> v;
 ```
 
 to insert values into the vector:
@@ -50,5 +50,15 @@ for (auto i = 0; i < vector.size(); i++)
 {
     cout << vector[i] << endl;
 }
+```
+list out the function in the algorithm header file:
+
+```cpp
+sort(vector.begin(), vector.end()); // sorts the vector in ascending order comes from STL
+reverse(vector.begin(), vector.end()); // reverses the vector
+
+auto it = find(vector.begin(), vector.end(), 1); // finds the element 1 in the vector
 
 ```
+
+
