@@ -24,6 +24,15 @@ You can also access elements in the vector using the square bracket notation, ju
 cout << vector[1]
 ```
 
+You can output all the elements of the vector using the `for` loop:
+
+```cpp
+for (auto i = 0; i < vector.size(); i++)
+{
+    cout << vector[i] << endl;
+}
+```
+
 Useful vector functions:
 
 ```cpp
@@ -43,22 +52,18 @@ vector.end(); // gives you a pointer to the end of the vector
 sort(vector.begin(), vector.end()); // sorts the vector in ascending order comes from STL
 ```
 
-You can output all the elements of the vector using the `for` loop:
+These are some functions in the algorithm library in c++ very useful for manipulating vectors:
 
 ```cpp
-for (auto i = 0; i < vector.size(); i++)
-{
-    cout << vector[i] << endl;
-}
-```
-list out the function in the algorithm header file:
 
-```cpp
+#include <algorithm> // you need this to use the algorithm library
+
 sort(vector.begin(), vector.end()); // sorts the vector in ascending order comes from STL
 reverse(vector.begin(), vector.end()); // reverses the vector
-
 auto it = find(vector.begin(), vector.end(), 1); // finds the element 1 in the vector
+auto it = min_element(vector.begin(), vector.end()); // finds the minimum element in the vector
+auto it = max_element(vector.begin(), vector.end()); // finds the maximum element in the vector
+sum(vector.begin(), vector.end()); // returns the sum of all elements in the vector
+swap(vector[0], vector[1]); // swaps the first two elements of the vector
 
 ```
-
-
