@@ -12,24 +12,56 @@ Here's how to initialize a vector:
 vector<int> v;
 ```
 
-to insert values into the vector:
+Initialize Vector with size.
+```cpp
+vector<int> v1(5); // Vector with size 5. By Default all elements are assigned as 0.
+vector<int> v2(5, 1) // Vector with size 5, and all elements are assigned as 1.
+```    
+
+to insert and remove values from the vector:
 
 ```cpp
-vector.push_back(1);
+vector.push_back(1); // Insert Values from behind.
+vector.pop_back(); // Removes an element from end.
 ```
 
 You can also access elements in the vector using the square bracket notation, just like with arrays:
 
 ```cpp
-cout << vector[1]
+cout << vector[1];
 ```
 
+Adding elements in vector with ```for``` loop.
+```cpp
+vector<int> a(5);
+for (int i : a) // for i belongs to vector a.
+{
+    cin >> i;
+}
+```
+    
 You can output all the elements of the vector using the `for` loop:
 
 ```cpp
 for (auto i = 0; i < vector.size(); i++)
 {
-    cout << vector[i] << endl;
+    cout << vector[i] << " ";
+}
+/*
+The keyword auto is used to declare a variable i without specifying its type explicitly.
+Instead, the type of i is automatically deduced by the compiler based on the type of the container.
+*/
+```
+
+```cpp
+vector<int> b(a); // Copying vector a to another vector b.
+```
+
+Vector in a function.
+
+```cpp
+returnType functionName(vector<int>& vectorName, int size) {
+    returnValue;
 }
 ```
 
@@ -37,7 +69,7 @@ Useful vector functions:
 
 ```cpp
 vector.size(); // gives you the size of the vector
-vector.capacity(); // gives you the capacity of the vector
+vector.capacity(); // gives you the capacity of the vector i.e; the memory allocated to it.
 vector.empty(); // empties the vector
 vector.resize(n); // resizes the vector to n elements
 vector.reserve(n); // reserves the capacity of the vector to n elements
@@ -50,6 +82,7 @@ vector.data() + i; // returns a pointer to the i'th element of the vector
 vector.begin(); // returns a pointer to the first element of the vector
 vector.end(); // gives you a pointer to the end of the vector
 sort(vector.begin(), vector.end()); // sorts the vector in ascending order comes from STL
+sort(vector.begin(), vector.end(), greater<int>()); sorts the vector in descending order comes from STL
 ```
 
 These are some functions in the algorithm library in c++ very useful for manipulating vectors:
@@ -58,7 +91,6 @@ These are some functions in the algorithm library in c++ very useful for manipul
 
 #include <algorithm> // you need this to use the algorithm library
 
-sort(vector.begin(), vector.end()); // sorts the vector in ascending order comes from STL
 reverse(vector.begin(), vector.end()); // reverses the vector
 auto it = find(vector.begin(), vector.end(), 1); // finds the element 1 in the vector
 auto it = min_element(vector.begin(), vector.end()); // finds the minimum element in the vector
