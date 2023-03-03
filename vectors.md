@@ -19,7 +19,7 @@ vector<int> v1(5); // Vector with size 5. By Default all elements are assigned a
 vector<int> v2(5, 1) // Vector with size 5, and all elements are assigned as 1.
 ```
 
-to insert and remove values from the vector:
+To insert and remove values from the vector:
 
 ```cpp
 vector.push_back(1); // Insert Values from behind.
