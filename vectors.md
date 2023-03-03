@@ -74,6 +74,7 @@ vector.size(); // gives you the size of the vector
 vector.capacity(); // gives you the capacity of the vector i.e; the memory allocated to it.
 vector.empty(); // empties the vector
 vector.resize(n); // resizes the vector to n elements
+vector.shrink_to_fit(); // releases unused memory and set the capacity to match the current size.
 vector.reserve(n); // reserves the capacity of the vector to n elements
 vector.swap(v2); // swaps the contents of the vector v and v2
 vector.clear(); // clears the vector
