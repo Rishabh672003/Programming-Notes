@@ -29,9 +29,11 @@ int y = arr[1]; // access the second element of the array
 int z = arr[2]; // access the third element of the
 
 ```
+
 ##### Note that in C++, arrays do not perform bounds checking, so it is possible to access elements outside the bounds of the array. This can lead to undefined behavior, so it's important to be careful when working with arrays to ensure that you stay within the bounds of the array.
 
 ### Size of Array
+
 ```cpp
 int arr[2] = {2,7};
 int arrSize = sizeof(arr)/sizeof(int); // That is 8 / 4 = 2.
@@ -39,6 +41,7 @@ cout<<" Size of array is " << arrSize <<endl;
 ```
 
 ### Array & Functions.
+
 ```cpp
 void printArray(int arr[], int size) {
   cout<< " printing the array " << endl;
@@ -47,11 +50,13 @@ void printArray(int arr[], int size) {
   }
 }
 ```
-### 
 
+###
 
-### Array Algorithms: 
+### Array Algorithms:
+
 1. Linear Search.
+
 ```cpp
 
 #include <bits/stdc++.h>
@@ -89,6 +94,7 @@ int main()
 ```
 
 2. Binary search.
+
 ```cpp
 #include<iostream>
 using namespace std;
@@ -116,12 +122,12 @@ int binarySearch(int arr[], int size, int key) {
 
         mid = start + (end-start)/2;
     }
-    
+
     return -1;
 }
 
 
-int main() { 
+int main() {
 
     int even[6] = {2,4,6,8,12,18};
     int odd[5] = {3, 8, 11, 14, 16};
@@ -146,7 +152,7 @@ int findPeak(int arr[], int n) {
     while(s<e) {
         //cout<<" s " << s <<" e " << e << endl;
         if(arr[mid] < arr[mid+1]){
-            s = mid+1; 
+            s = mid+1;
         }
         else{
             e = mid;
@@ -158,6 +164,7 @@ int findPeak(int arr[], int n) {
 ```
 
 3. Reverse an Array.
+
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;
@@ -193,12 +200,13 @@ int main()
     printArr(even, 6);
     cout << endl;
     printArr(odd, 5);
-    
+
     return 0;
 }
 ```
 
 3. Find Duplicate Element.
+
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;
@@ -235,6 +243,7 @@ int main()
 ```
 
 4. Sort 0 1
+
 ```cpp
 // 0 0 1 1 2 2...
 
@@ -285,6 +294,7 @@ int main()
 ```
 
 5. Array Min/Max
+
 ```cpp
 #include<iostream>
 using namespace std;
@@ -292,11 +302,11 @@ using namespace std;
 int getMin(int num[], int n) {
 
     int mini = INT_MAX;
-    
+
     for(int i = 0; i<n; i++) {
-        
+
         mini = min( mini, num[i]);
-        
+
         //if(num[i] < min){
         //    min = num[i];
         //}
@@ -309,7 +319,7 @@ int getMin(int num[], int n) {
 int getMax(int num[], int n) {
 
     int maxi = INT_MIN;
-    
+
     for(int i = 0; i<n; i++) {
 
         maxi = max(maxi, num[i]);
@@ -341,7 +351,9 @@ int main() {
     return 0;
 }
 ```
+
 6. Swap Alternate.
+
 ```cpp
 #include<iostream>
 using namespace std;
