@@ -1,10 +1,10 @@
 # Arrays
 
-### basic definition
+### Basic definition
 
 In C++, an array is a collection of elements of the same type that are stored sequentially in memory. Each element in an array can be accessed using an index value, which starts at 0 for the first element and increments by 1 for each subsequent element.
 
-### initializing an array
+### Initializing an array
 
 First you define the type of each element in the array, and then you initialize the array with its name and number of elements in the array
 
