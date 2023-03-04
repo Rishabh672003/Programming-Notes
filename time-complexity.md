@@ -1,3 +1,5 @@
+# Time Complexity with the big O notation
+
 Time complexity refers to the amount of time it takes for an algorithm to execute as a function of the size of its input.
 In other words, it is a measure of the amount of time it takes an algorithm to solve a problem as the size of the problem increases.
 
