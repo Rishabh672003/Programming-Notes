@@ -18,7 +18,7 @@
 
 - #### Array declaration
   - To declare an array in C, a programmer specifies the type of
-    the elements and the number of elements required by an
+    the elements, and the number of elements required by an
     array as follows:
     ```c
     data_type array_name[array_size];
@@ -32,7 +32,7 @@
 - #### Array initialization
 
   - `int a[5] = {100, 200, 300, 400, 500}`
-  - The number of values between braces {} can not be larger than the number
+  - The number of values between braces {} cannot be larger than the number
     of elements that we declare for the array between square brackets [ ].
 
 - #### Accessing Array elements
@@ -54,7 +54,7 @@
     ```
 - #### 2d Array
 
-  - `int A[3][3]` will make an array of 3 X 3 that is a matrix of 3x3
+  - `int A[3][3]` will make an array of 3 x 3 that is a matrix of 3x3
   - It will look like this
   - ![image](https://user-images.githubusercontent.com/53911515/214111673-32d2c764-ea91-437a-b1b5-66bf039ee02b.png)
     - 2D array declaration
