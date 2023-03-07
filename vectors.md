@@ -84,6 +84,7 @@ vector.data(); // returns a pointer to the vector's elements
 vector.data() + i; // returns a pointer to the i'th element of the vector
 vector.begin(); // returns a pointer to the first element of the vector
 vector.end(); // gives you a pointer to the end of the vector
+back_inserter(vector); // returns an iterator to the last element 
 sort(vector.begin(), vector.end()); // sorts the vector in ascending order comes from STL
 sort(vector.begin(), vector.end(), greater<int>()); // sorts the vector in descending order comes from STL
 ```
@@ -100,6 +101,7 @@ auto it = min_element(vector.begin(), vector.end()); // finds the minimum elemen
 auto it = max_element(vector.begin(), vector.end()); // finds the maximum element in the vector
 sum(vector.begin(), vector.end()); // returns the sum of all elements in the vector
 swap(vector[0], vector[1]); // swaps the first two elements of the vector
-
+unique(vector.begin(), vector.end()); // removes all the duplicates from the vect
 binary_search(vector.begin(), vector.end(), 1); // returns true if 1 is in the vector, false otherwise
+erase(vector.begin(), vector.end()); // erases all the elements from the)
 ```
