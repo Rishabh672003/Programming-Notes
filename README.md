@@ -2,6 +2,7 @@
 
 Programming notes written by [Rishabh672003](https://github.com/Rishabh672003) and [amitsuthar69](https://github.com/amitsuthar69)
 
-#### A taste of whats in here
+What we are now working on basic Computer Science concepts like different Data Structures, Algorithms and Object oriented programming in C++.
 
-![Time-complexity](https://user-images.githubusercontent.com/53911515/227717627-0e7671ac-1dc7-4863-8832-6fed71ef3e23.png)
+If you want to contribute to the repository don't be afraid to open a PR
+if its good, We will most definitely merge it. Thanks for your Time.
