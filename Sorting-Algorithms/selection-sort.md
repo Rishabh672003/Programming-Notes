@@ -12,6 +12,7 @@
 4. Swap the minimum value with the first element of the list.
 5. Repeat steps 1-4 for the remaining unsorted sub-list.
 
+
 ### Implementation in C++
 
 ```cpp
@@ -49,6 +50,8 @@ int main() {
 
 After each step the algorithm finds the least element of the unsorted sub-list and places it at the beginning of the sorted sub-list.
 
+<center>
+
 | unsorted list          | sorted list            |
 | ---------------------- | ---------------------- |
 | 8, 3, 2, 7, 4, 6, 5, 1 |                        |
@@ -60,6 +63,8 @@ After each step the algorithm finds the least element of the unsorted sub-list a
 | 1, 2, 3, 4, 5, 6, 7, 8 | 1, 2, 3, 4, 5, 6       |
 | 1, 2, 3, 4, 5, 6, 7, 8 | 1, 2, 3, 4, 5, 6, 7    |
 | 1, 2, 3, 4, 5, 6, 7, 8 | 1, 2, 3, 4, 5, 6, 7, 8 |
+
+</center>
 
 ### Time and Space Complexity
 
