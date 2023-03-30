@@ -49,6 +49,8 @@ int main() {
 
 **How will the above code will actually work**
 
+After each step the algorithm finds the least element of the unsorted sub-list and places it at the beginning of the sorted sub-list.
+
 | unsorted list          | sorted list            |
 | ---------------------- | ---------------------- |
 | 8, 3, 2, 7, 4, 6, 5, 1 |                        |
