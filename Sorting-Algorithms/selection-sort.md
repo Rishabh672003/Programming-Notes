@@ -4,8 +4,6 @@
 
 **Selection sort is a simple sorting algorithm that works by repeatedly finding the minimum element from an unsorted list and placing it at the beginning of the list. The algorithm maintains two sub-lists: a sorted sub-list that is built up from left to right at the front of the list, and an unsorted sub-list that contains the remaining elements to be sorted.**
 
-<!-- # Example 1: Sorting a list of numbers -->
-
 ### Working
 
 1. Set the first element of the list as the minimum value.
