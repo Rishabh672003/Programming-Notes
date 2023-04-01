@@ -1,4 +1,8 @@
+<center>
+
 # Selection Sort
+
+</center>
 
 ### Definition
 
@@ -11,7 +15,6 @@
 3. Repeat step 2 for every element in the list, until the end of the list is reached.
 4. Swap the minimum value with the first element of the list.
 5. Repeat steps 1-4 for the remaining unsorted sub-list.
-
 
 ### Implementation in C++
 
