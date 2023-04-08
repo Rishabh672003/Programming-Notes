@@ -24,7 +24,6 @@ int main() {
 
     // then we put the data in the nodes
     head->data = 1;
-    // then we create a current node and point it to the head node
     head->next = second;
 
     second->data = 2;
@@ -33,6 +32,7 @@ int main() {
     third->data = 3;
     third->next = NULL;
 
+    // then we create a current node and point it to the head node
     Node *current = head;
 
     // then we print the data of the current node and then we point the current
