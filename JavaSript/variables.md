@@ -21,11 +21,28 @@ var x = 5;
 var y = 6;
 var z = x + y;
 ```
+- Variables defined with let can not be redeclared.
+
 # let 
 ```js
 let price1 = 5;
 let price2 = 6;
 let total = price1 + price2;
+```
+- Variables defined with let can not be redeclared.
+
+**Redeclaring Let Variable:**
+```js
+let x = 10;
+// Here x is 10
+
+{
+let x = 2;
+// Here x is 2
+}
+
+// Here x is 10
+// Redeclaring a variable inside a block will not redeclare the variable outside the block:
 ```
 # const
 ```js
@@ -34,6 +51,40 @@ const y = 6;
 let z = x + y;
 // These are constant values and cannot be changed. Hwoever 'c' cnanged be changed as it is 'let'.
 ```
+**JavaScript const variables must be assigned a value when they are declared:**
+- Correct
+```js
+const PI = 3.14159265359;
+```
+- Incorrect
+```js
+const PI;
+PI = 3.14159265359;
+```
+**The keyword const is a little misleading.**
+
+It does not define a constant value. It defines a constant reference to a value.
+
+**Because of this you can NOT:**
+- Reassign a constant value
+- Reassign a constant array
+- Reassign a constant object
+
+**But you CAN:**
+- Change the elements of constant array
+- Change the properties of constant object
+
+```js
+// You can create a constant array:
+const cars = ["Saab", "Volvo", "BMW"];
+
+// You can change an element:
+cars[0] = "Toyota";
+
+// You can add an element:
+cars.push("Audi");
+```
+
 ---
 # When to Use var, let, or const?
 1. Always declare variables
