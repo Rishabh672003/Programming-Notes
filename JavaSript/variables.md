@@ -21,7 +21,7 @@ var x = 5;
 var y = 6;
 var z = x + y;
 ```
-- Variables defined with let can not be redeclared.
+- Variables defined with var can be redeclared.
 
 # let 
 ```js
