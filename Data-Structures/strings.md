@@ -27,11 +27,13 @@ string str3 = str1 + " " + str2;  // concatenates two strings
 ```cpp
 
 cout << str1 << endl;  // prints the string to the console
-cin >> str;            // reads a string from input. 'cin' stops consideering an input as string whenever it gets a space " ". 
+cin >> str;            // reads a string from input. 'cin' stops consideering an input as string whenever it gets a space " ".
 getline(cin, str);     // reads a line of text (string) from input and Overcome 'cin'.
 
 ```
+
 - ### Length of a String.
+
 ```cpp
 string str = "Hello, world!";
 int length = str.length(); // or str.size();
@@ -39,6 +41,7 @@ cout << "Length of string: " << length << endl;
 ```
 
 - ### Reverse a String.
+
 ```cpp
 string myString = "Hello, world!";
 reverse(myString.begin(), myString.end());
@@ -53,7 +56,9 @@ void reverseString(vector<char>& s) {
     }
 }
 ```
+
 - ### Rotate A String.
+
 ```cpp
 string myString = "Hello, world!";
 rotate(myString.begin(), myString.begin() + 7, myString.end());
@@ -63,10 +68,10 @@ cout << "Rotated string: " << myString << endl;
 
 This code will output: Rotated string: world!Hello,
 
-The rotate() function takes three arguments: 
+The rotate() function takes three arguments:
 The first one is the beginning of the range to be rotated,
 The second one is the new beginning of the range after the rotation, and
-The third one is the end of the range to be rotated. 
+The third one is the end of the range to be rotated.
 In this case, we are rotating the string by 7 positions to the right,
 so we pass myString.begin() + 7 as the second argument to rotate().
 This means that the characters from index 0 to index 6 will be moved to the end of the string,
@@ -74,6 +79,7 @@ while the characters from index 7 to the end of the string will be moved to the 
 
 */
 ```
+
 - ### String manipulation
 
 ```cpp
@@ -84,7 +90,9 @@ str.replace(0, 5, "Hi");  // replaces the first 5 characters with "Hi"
 str.erase(0, 3);          // erases the first 3 characters of the string
 
 ```
+
 - ### String Case Change.
+
 ```cpp
 
 string str;
@@ -97,7 +105,7 @@ for (char &c : str){
 }
 
 cout << str << endl; // prints lower case output.
-  
+
 /* How Case Conversion works:
 
 1. Uppercase --> Lowercase
@@ -117,8 +125,9 @@ then, 'ch' - '0' = number
 i.e; '1' - '0' = 1.
 */
 ```
-  
+
 - ### Check Palindrome [For a Single Word].
+
 ```cpp
 bool isPalindrome(string s)
 {
@@ -134,10 +143,11 @@ bool isPalindrome(string s)
     }
 
     return true;
-}  
+}
 ```
 
 - ### Check Palindrome [for a sentence inculding spaces & special characters]
+
 ```cpp
 /*
 A phrase is a palindrome if, after converting all uppercase letters into lowercase letters

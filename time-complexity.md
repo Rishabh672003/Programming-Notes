@@ -83,9 +83,11 @@ for (int i = 0; i < n; i++) {
 12. Concatenation: O(m+n) (where m and n are the lengths of the strings being concatenated)
 13. Comparison: O(min(m,n)) (where m and n are the lengths of the strings being compared)
 ```
---------------------------------------------------------------------------
-![Time-complexity](https://user-images.githubusercontent.com/53911515/227717627-0e7671ac-1dc7-4863-8832-6fed71ef3e23.png)
---------------------------------------------------------------------------
+
+---
+
+## ![Time-complexity](https://user-images.githubusercontent.com/53911515/227717627-0e7671ac-1dc7-4863-8832-6fed71ef3e23.png)
+
 These time complexities are for worst-case scenarios and may vary depending on the specific implementation of the function and the input data.
 
 TLE (Time Limit Exceeded): It is a common error that occurs when the execution time of a program exceeds the time limit set by the compiler.

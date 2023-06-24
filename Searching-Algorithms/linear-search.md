@@ -1,7 +1,9 @@
 # Linear Search
-*Searching Elements in Contigious Linear Data Structure.*
 
-__Time Complexity:__
+_Searching Elements in Contigious Linear Data Structure._
+
+**Time Complexity:**
+
 1. Best Case: O(1) --> Element found at 1st comparison.
 2. Average / Worst Case: O(n) --> for n comparisons. (where n is the size of array)
 

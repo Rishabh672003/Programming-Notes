@@ -10,4 +10,4 @@ behavior: open(), close(), deposit()
 The class specifies that each object should have the defined attributes and behavior. However, it doesn't specify what the actual data is; it only provides a definition.
 
 Once we've written the class, we can move on to create objects that are based on that class.
-Each object is called an instance of a class. The process of creating objects is called instantiation. 
+Each object is called an instance of a class. The process of creating objects is called instantiation.

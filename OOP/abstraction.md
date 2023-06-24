@@ -2,7 +2,7 @@
 
 Data abstraction is the concept of providing only essential information to the outside world. It's a process of representing essential features without including implementation details.
 
-A good real-world example is a book: When you hear the term book, you don't know the exact specifics, i.e.: the page count, the color, the size, but you understand the idea of a book - the abstraction of the book. 
+A good real-world example is a book: When you hear the term book, you don't know the exact specifics, i.e.: the page count, the color, the size, but you understand the idea of a book - the abstraction of the book.
 
 Abstraction means, that we can have an idea, or a concept that is completely separate from any specific instance.
 It is one of the fundamental building blocks of object oriented programming.

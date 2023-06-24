@@ -116,7 +116,7 @@
   - Strings can be declared like one-dimensional arrays.
     `data_type string_name[size]`
   - examples
-   ```c
+  ```c
   char str[5];
   char name[10];
-   ```
+  ```

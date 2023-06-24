@@ -84,7 +84,7 @@ vector.data(); // returns a pointer to the vector's elements
 vector.data() + i; // returns a pointer to the i'th element of the vector
 vector.begin(); // returns a pointer to the first element of the vector
 vector.end(); // gives you a pointer to the end of the vector
-back_inserter(vector); // returns an iterator to the last element 
+back_inserter(vector); // returns an iterator to the last element
 sort(vector.begin(), vector.end()); // sorts the vector in ascending order comes from STL
 sort(vector.begin(), vector.end(), greater<int>()); // sorts the vector in descending order comes from STL
 ```

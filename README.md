@@ -5,4 +5,4 @@ Programming notes written by [Rishabh672003](https://github.com/Rishabh672003) a
 What we are now working on basic Computer Science concepts like different Data Structures, Algorithms and Object oriented programming in C++.
 
 If you want to contribute to the repository don't be afraid to open a PR
-if its good, We will most definitely merge it. Thanks for your Time.
+if its good, We will most definitely merge it. Thanks for your time.
