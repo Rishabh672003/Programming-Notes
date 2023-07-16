@@ -37,32 +37,35 @@ this .then() is passed to next .then(); and so on...
 //     console.log("Promise P resolved immediately.")
 // })
 
-
 function f1() {
     return new Promise((resolve, reject) => {
-        console.log("Not yet Resolved.");
+        console.log('Not yet Resolved.')
         setTimeout(() => {
-            resolve(1);
-        }, 4000);
+            resolve(1)
+        }, 4000)
     })
 }
 
-f1().then(() => {
-    console.log("Congo we're resolved now.");
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve("Resolved chained promise")
-        }, 2000);
+f1()
+    .then(() => {
+        console.log("Congo we're resolved now.")
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve('Resolved chained promise')
+            }, 2000)
+        })
     })
-}).then(() => {
-    console.log("Promise Chained")
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve("Resolved Again");
-        }, 4000);
+    .then(() => {
+        console.log('Promise Chained')
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve('Resolved Again')
+            }, 4000)
+        })
     })
-}).then(() => { console.log("Promise Chained Again.") });
-
+    .then(() => {
+        console.log('Promise Chained Again.')
+    })
 
 // LoadScript function using Promises.
 
