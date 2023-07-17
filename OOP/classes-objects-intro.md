@@ -63,3 +63,50 @@ int main() {
   return 0;
 }
 ```
+
+### Example in python
+
+```py
+class Person:
+    """
+    The self keyword in Python is a reference to the current instance of the class.
+    It is used to access the attributes and methods of the class from within an instance method.
+    self is just a convention and not a reserved word
+    """
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def say_hello(self):
+        print("Hello, my name is {} and I am {} years old.".format(self.name, self.age))
+
+
+person = Person("Bard", 100)
+person.say_hello()
+
+```
+
+### Example in java
+
+```java
+class Person {
+    private String name;
+    private int age;
+
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public void sayHello() {
+        System.out.println("Hello, my name is " + this.name + " and I am " + this.age + " years old.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Person person = new Person("Bard", 100);
+        person.sayHello();
+    }
+}
+```
