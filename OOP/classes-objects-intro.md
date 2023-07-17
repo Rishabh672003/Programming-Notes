@@ -1,6 +1,7 @@
 # Classes and objects
 
-In C++, a class is a user-defined data type that encapsulates data and methods (functions) that operate on that data. Classes are used to define objects, which are instances of the class. 
+In C++, a class is a user-defined data type that encapsulates data and methods (functions) that operate on that data. Classes are used to define objects, which are instances of the class.
+
 Note: This is not a case in purely OOP languages like Python or Java where Class and objects are the core of the language itself and not specifically a separate data type.
 
 For example, if we are creating a banking program, we can give our class the following characteristics:
