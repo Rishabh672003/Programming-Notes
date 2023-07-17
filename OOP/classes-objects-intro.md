@@ -1,6 +1,7 @@
 # Classes and objects
 
-In C++, a class is a user-defined data type that encapsulates data and methods (functions) that operate on that data. Classes are used to define objects, which are instances of the class.
+In C++, a class is a user-defined data type that encapsulates data and methods (functions) that operate on that data. Classes are used to define objects, which are instances of the class. 
+Note: This is not a case in purely OOP languages like Python or Java where Class and objects are the core of the language itself and not specifically a separate data type.
 
 For example, if we are creating a banking program, we can give our class the following characteristics:
 name: BankAccount
@@ -12,7 +13,7 @@ The class specifies that each object should have the defined attributes and beha
 Once we've written the class, we can move on to create objects that are based on that class.
 Each object is called an instance of a class. The process of creating objects is called instantiation.
 
-## An example of classes, methods and objects in C++
+### An example of classes, methods and objects in C++
 
 ```cpp
 #include <iostream>
@@ -64,7 +65,14 @@ int main() {
 }
 ```
 
-### Example in python
+## Differences of C++ from Java/Python
+
+In C++ Its similar to how things work in purely OOP languages like Python/Java only difference is in them everything is an object like whenever they get a variable assignment the instantiate the variable as an object of a class corresponding to type of data they are assigned.
+
+Other difference are as follows -
+![image](https://github.com/Rishabh672003/Programming-Notes/assets/53911515/496fa56d-fb29-442e-ae96-7fbab4a8f62a)
+
+### Code example in python
 
 ```py
 class Person:
@@ -86,7 +94,7 @@ person.say_hello()
 
 ```
 
-### Example in java
+### Code example in java
 
 ```java
 class Person {
