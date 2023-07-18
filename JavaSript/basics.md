@@ -14,7 +14,7 @@
 
 ```html
 <script>
-  console.log("Hello");
+  console.log('Hello')
 </script>
 // Script tag can be added in
 <head>
