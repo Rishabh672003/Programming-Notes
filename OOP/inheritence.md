@@ -78,7 +78,9 @@ class Dog extends Animal {
   String breed;
 
   public Dog(String name, int age, String species, String breed) {
-    super(name, age, species);
+    this.name = name;
+    this.age = age;
+    this.species = species;
     this.breed = breed;
   }
 }
@@ -98,27 +100,27 @@ public class Main {
 ## Example code in python
 
 ```py
-
 class Animal:
-  def __init__(self, name, age, species):
-    self.name = name
-    self.age = age
-    self.species = species
+    def __init__(self, name, age, species):
+        self.name = name
+        self.age = age
+        self.species = species
 
-  def bark(self):
-    print("Woof!")
+    def bark(self):
+        print("Woof!")
+
 
 class Dog(Animal):
-  def __init__(self, name, age, species, breed):
-    super().__init__(name, age, species)
-    self.breed = breed
+    def __init__(self, name, age, species, breed):
+        super().__init__(name, age, species)
+        self.breed = breed
+
 
 if __name__ == "__main__":
-  dog = Dog("Spot", 5, "Canine", "Golden Retriever")
-  print(dog.name) # Spot
-  print(dog.age) # 5
-  print(dog.species) # Canine
-  print(dog.breed) # Golden Retriever
-  dog.bark() # Woof!
+    dog = Dog("Spot", 5, "Canine", "Golden Retriever")
+    print(dog.name)  # Spot
+    print(dog.age)  # 5
+    print(dog.species)  # Canine
+    print(dog.breed)  # Golden Retriever
+    dog.bark()  # Woof!
 ```
-
