@@ -3,8 +3,8 @@
 Inheritance is a fundamental concept in object-oriented programming (OOP) that
 allows you to create new classes based on existing ones. With inheritance, you
 can define a new class (called the "subclass" or "derived class") that inherits
-properties and behaviors from an existing class (called the "superclass" or "base
-class").
+properties and behaviors from an existing class (called the "superclass" or
+"base class").
 
 For example, let's say we have a class called Animal. The Animal class has the
 properties name, age, and species. The Animal class also has the methods eat(),
@@ -19,33 +19,6 @@ methods of the Animal class, plus the properties and methods of the Dog class.
 
 Inheritance is a powerful tool that can be used to improve the readability,
 maintainability, and reusability of code.
-
-## Example code in python
-
-```py
-
-class Animal:
-  def __init__(self, name, age, species):
-    self.name = name
-    self.age = age
-    self.species = species
-
-  def bark(self):
-    print("Woof!")
-
-class Dog(Animal):
-  def __init__(self, name, age, species, breed):
-    super().__init__(name, age, species)
-    self.breed = breed
-
-if __name__ == "__main__":
-  dog = Dog("Spot", 5, "Canine", "Golden Retriever")
-  print(dog.name) # Spot
-  print(dog.age) # 5
-  print(dog.species) # Canine
-  print(dog.breed) # Golden Retriever
-  dog.bark() # Woof!
-```
 
 ## Example code in C++
 
@@ -120,5 +93,32 @@ public class Main {
     dog.bark(); // Woof!
   }
 }
-
 ```
+
+## Example code in python
+
+```py
+
+class Animal:
+  def __init__(self, name, age, species):
+    self.name = name
+    self.age = age
+    self.species = species
+
+  def bark(self):
+    print("Woof!")
+
+class Dog(Animal):
+  def __init__(self, name, age, species, breed):
+    super().__init__(name, age, species)
+    self.breed = breed
+
+if __name__ == "__main__":
+  dog = Dog("Spot", 5, "Canine", "Golden Retriever")
+  print(dog.name) # Spot
+  print(dog.age) # 5
+  print(dog.species) # Canine
+  print(dog.breed) # Golden Retriever
+  dog.bark() # Woof!
+```
+
