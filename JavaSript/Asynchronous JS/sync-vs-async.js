@@ -2,14 +2,14 @@
 // Asynchronous Code : Code that runs in parallel with other code.
 
 // sync codee :-
-console.log('START')
+console.log("START");
 function f1() {
-    console.log("We're in an other function.")
-    console.log('Doing some stuff.')
+  console.log("We're in an other function.");
+  console.log("Doing some stuff.");
 }
-f1()
-console.log('END')
-console.log('\n')
+f1();
+console.log("END");
+console.log("\n");
 // Code executes line by line (top-down)
 /*
 output:
@@ -20,11 +20,11 @@ END
 */
 
 // Async code :-
-console.log('START')
+console.log("START");
 setTimeout(() => {
-    console.log("We're in Timeout")
-}, 3000)
-console.log('END')
+  console.log("We're in Timeout");
+}, 3000);
+console.log("END");
 /*
 output:
 START

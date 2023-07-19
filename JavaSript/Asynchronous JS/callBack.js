@@ -1,16 +1,16 @@
-console.log('Start')
+console.log("Start");
 
 function loginUser(email, password) {
-    setTimeout(() => {
-        // console.log("Now we have the data!"); // to check what's going on.
-        return { userEmail: email }
-    }, 5000)
+  setTimeout(() => {
+    // console.log("Now we have the data!"); // to check what's going on.
+    return { userEmail: email };
+  }, 5000);
 }
 
-const user = loginUser('abc@xyz.com', 123456)
-console.log(user)
+const user = loginUser("abc@xyz.com", 123456);
+console.log(user);
 
-console.log('End')
+console.log("End");
 
 /*
 output :-
@@ -20,30 +20,30 @@ End
 
 We need to pass a callback function inorder to fetch the data.
 */
-console.log('\n')
-console.log('Start')
+console.log("\n");
+console.log("Start");
 
 function loginUser2(email, password, callback) {
-    // passing a callback as third argument.
-    setTimeout(() => {
-        console.log('Now we have the data!') // to check what's going on.
-        callback({ userEmail: email, userPass: password })
-    }, 5000)
+  // passing a callback as third argument.
+  setTimeout(() => {
+    console.log("Now we have the data!"); // to check what's going on.
+    callback({ userEmail: email, userPass: password });
+  }, 5000);
 }
 
 function getVideo(email, callback) {
-    setTimeout(() => {
-        callback(['video1', 'video2', 'video3'])
-    }, 2000)
+  setTimeout(() => {
+    callback(["video1", "video2", "video3"]);
+  }, 2000);
 }
 
-const user2 = loginUser2('abc@xyz.com', 123456, (user2) => {
-    console.log(user2)
-    getVideo(user2.userEmail, (videos) => {
-        console.log(videos)
-    })
-})
-console.log('End')
+const user2 = loginUser2("abc@xyz.com", 123456, (user2) => {
+  console.log(user2);
+  getVideo(user2.userEmail, (videos) => {
+    console.log(videos);
+  });
+});
+console.log("End");
 
 /*
 output :-

@@ -10,42 +10,42 @@
 // f1().then((value) => { console.log(value) }); // Prints 5
 
 async function f2() {
-    let delhiWeather = new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve('31 Deg')
-        }, 3000)
-    })
+  let delhiWeather = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("31 Deg");
+    }, 3000);
+  });
 
-    let bangloreWeather = new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve('29 Deg')
-        }, 5000)
-    })
+  let bangloreWeather = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("29 Deg");
+    }, 5000);
+  });
 
-    // delhiWheather.then(value => { console.log(value) })
-    // bangloreWheather.then(value => { console.log(value) })
+  // delhiWheather.then(value => { console.log(value) })
+  // bangloreWheather.then(value => { console.log(value) })
 
-    console.log('Fetching Delhi Weather please wait...') // PROOF THAT FUNCTION EXECUTION STOPS HERE !
-    let delhi = await delhiWeather
-    /* Delhi weather will be fulfilled first and fetch it's value, 
+  console.log("Fetching Delhi Weather please wait..."); // PROOF THAT FUNCTION EXECUTION STOPS HERE !
+  let delhi = await delhiWeather;
+  /* Delhi weather will be fulfilled first and fetch it's value, 
       Execution will be awaited(stopped) unless it is fulfilled.
       Once it is fufilled, then the function executon will continue. */
-    console.log('Fetched Delhi Weather is: ' + delhi)
+  console.log("Fetched Delhi Weather is: " + delhi);
 
-    console.log('Fetching Banglore Weather please wait...') // PROOF THAT FUNCTION EXECUTION STOPS HERE !
-    let banglore = await bangloreWeather
-    /* Once delhiWeather is fulfilled then, bangloreWeather will be fulfilled. */
-    console.log('Fetched Banglore Weather is: ' + banglore)
+  console.log("Fetching Banglore Weather please wait..."); // PROOF THAT FUNCTION EXECUTION STOPS HERE !
+  let banglore = await bangloreWeather;
+  /* Once delhiWeather is fulfilled then, bangloreWeather will be fulfilled. */
+  console.log("Fetched Banglore Weather is: " + banglore);
 
-    return [delhi, banglore] //  returns array of values.
+  return [delhi, banglore]; //  returns array of values.
 }
 
-let a = f2()
+let a = f2();
 
 const cherry = async () => {
-    console.log("Hello I am cherry & I'm not waiting here.")
-}
-let b = cherry()
+  console.log("Hello I am cherry & I'm not waiting here.");
+};
+let b = cherry();
 /*
 output :-
 Fetching Delhi Weather please wait...

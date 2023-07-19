@@ -15,28 +15,28 @@ Promise API Is nothing but some Promise Class methods.
 */
 
 function f1() {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve('Value 1 Resolved.')
-        }, 2000)
-    })
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("Value 1 Resolved.");
+    }, 2000);
+  });
 }
 
 function f2() {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            // resolve("Value 2 Resolved.")
-            reject(new Error('Error Occured'))
-        }, 4000)
-    })
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      // resolve("Value 2 Resolved.")
+      reject(new Error("Error Occured"));
+    }, 4000);
+  });
 }
 
 function f3() {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve('Value 3 Resolved.')
-        }, 6000)
-    })
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("Value 3 Resolved.");
+    }, 6000);
+  });
 }
 
 // f1().then(value => { console.log(value); }); // Resolves in 2 secs independently.
@@ -57,8 +57,8 @@ at same time when every promise is resolved, we use promise.all()
 // let promise_all = Promise.race([f1(), f2(), f3()]);
 // prints only the first / fastest resolved promise.
 
-let promise_all = Promise.any([f1(), f2(), f3()])
+let promise_all = Promise.any([f1(), f2(), f3()]);
 
 promise_all.then((value) => {
-    console.log(value)
-})
+  console.log(value);
+});

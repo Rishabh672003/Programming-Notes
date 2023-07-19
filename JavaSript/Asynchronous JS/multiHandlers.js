@@ -1,19 +1,19 @@
 function f1() {
-    return new Promise((resolve, reject) => {
-        console.log('Not yet Resolved.')
-        setTimeout(() => {
-            resolve(1)
-        }, 4000)
-    })
+  return new Promise((resolve, reject) => {
+    console.log("Not yet Resolved.");
+    setTimeout(() => {
+      resolve(1);
+    }, 4000);
+  });
 }
 
 f1().then(() => {
-    console.log("Congo we're resolved now.")
-})
+  console.log("Congo we're resolved now.");
+});
 
 f1().then(() => {
-    console.log("Congo we're resolved again.")
-})
+  console.log("Congo we're resolved again.");
+});
 
 // This is not same as Promise Chaining !!!!
 /*
