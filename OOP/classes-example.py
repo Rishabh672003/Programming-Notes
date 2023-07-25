@@ -1,9 +1,9 @@
 # way to make a class with empty body
-class person:
+class person2:
     pass
 
 
-class person2:
+class person:
     def __init__(self, name, age, SSN, alive):
         self.name = name
         self.age = age
@@ -12,24 +12,25 @@ class person2:
         self._SSN = SSN
 
         # __ is used to make an attribute protected and its also a convention
-        self.__alive = alive
+        self.__alive = "yes"
 
     # _ and __ have the same meaning for methods also
     def sayHello(self):
         print(f"Hello {self.name}!")
 
 
-class police(person2):
+class police(person):
     def __init__(self, name, age, SSN, badge, alive):
         super().__init__(name, age, SSN, alive)
         self.badge = badge
+        self.__alive = "no"
 
     def sayHello(self):
         print(f"{self.name} is a {self.badge}")
 
 
 if __name__ == "__main__":
-    rahul = person2("rishabh", 20, 69420, alive="yes")
+    rahul = person("rishabh", 20, 69420, "no")
     rahul.sayHello()
 
     aditya = police("Aditya", 20, 42, "inspector", alive="no")
