@@ -14,17 +14,17 @@ pubic class Main {
 
 1. **public class Main :**
 
-- **public:** This is an access modifier that specifies the visibility of the class. In this case, it means the class Main is accessible from any other class.
-- **class:** This keyword is used to define a class in Java.
-- **Main:** This is the name of the class. _The name of the Java file should match the class name._
+   - **public:** This is an access modifier that specifies the visibility of the class. In this case, it means the class Main is accessible from any other class.
+   - **class:** This keyword is used to define a class in Java.
+   - **Main:** This is the name of the class. _The name of the Java file should match the class name._
 
 2. **public static void main(String[] args)**
 
-- **public:** This is another access modifier that specifies the visibility of the method main(). It means the main() method can be accessed from any other class.
-- **static:** This keyword indicates that the main() method belongs to the class itself, not an instance of the class. It allows the program to run without creating an object of the class.
-- **void:** This is the return type of the main() method, indicating that it doesn't return any value.
-- **main:** This is the name of the method. _The main() method is the entry point of a Java program, and it's executed when the program starts._
-- **String[] args:** This is the parameter list of the main() method. It allows you to pass command-line arguments to the program. The args variable is an array of strings that can hold the command-line arguments.
+   - **public:** This is another access modifier that specifies the visibility of the method main(). It means the main() method can be accessed from any other class.
+   - **static:** This keyword indicates that the main() method belongs to the class itself, not an instance of the class. It allows the program to run without creating an object of the class.
+   - **void:** This is the return type of the main() method, indicating that it doesn't return any value.
+   - **main:** This is the name of the method. _The main() method is the entry point of a Java program, and it's executed when the program starts._
+   - **String[] args:** This is the parameter list of the main() method. It allows you to pass command-line arguments to the program. The args variable is an array of strings that can hold the command-line arguments.
 
 ## 2. Output
 
