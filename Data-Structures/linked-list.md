@@ -1,9 +1,10 @@
 # Linked Lists.
 
-WHAT? : It is a Linear Data Structure, which is made up of collection of nodes. For example consider a capsule having two parts. Each part is made up of nodes, The first node is the "DATA", and the second node is the "Address of the next NODE". A linked list ends by pointing a "NULL Pointer".
-How a Linked List looks : `[DATA | ADDRESS ]->[ DATA | ADDRESS ]->[ DATA | NULL ]`
+**WHAT?** : It is a Linear Data Structure, which is made up of collection of nodes. For example consider a capsule having two parts. Each part is made up of nodes, The first node is the "DATA", and the second node is the "Address of the next NODE". A linked list ends by pointing a "NULL Pointer".
+How a Linked List looks :<br>
+`[DATA | ADDRESS ]->[ DATA | ADDRESS ]->[ DATA | NULL ]`
 
-WHY? : Think if you have an array of 10 size, so can we change its size on run time ? NO A Vector, when same value is inserted to it, it doubles its size and additional memory gets wasted, hence a vector is not an optimal data structure. Unlike these two, size of linked list can grow or shrink on run time, hence no memory waste.
+**WHY?** : Think if you have an array of 10 size, so can we change its size on run time ? NO A Vector, when same value is inserted to it, it doubles its size and additional memory gets wasted, hence a vector is not an optimal data structure. Unlike these two, size of linked list can grow or shrink on run time, hence no memory waste.
 
 ## Types of Linked Lists:
 
