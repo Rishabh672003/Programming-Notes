@@ -232,3 +232,17 @@ print(MyStack.stack)
 # remove an element from the stack
 print(MyStack.remove())
 ```
+
+### Real-life examples of queues (because our sir loves those)
+
+1. Ticket lines: Queues are often used to manage ticket lines, such as at a movie theater or a sporting event. The first person in line gets the first ticket, and so on.
+
+2. Print spoolers: Print spoolers use queues to manage print jobs. When a user sends a print job to a printer, it is placed in the print queue. The print jobs are then processed in the order in which they were received.
+
+3. Message queues: Message queues are used to send and receive messages between different processes. Messages are placed in a queue, and then they are processed by the processes in the order in which they were received.
+
+4. Traffic lights: Traffic lights use queues to control the flow of traffic. Cars are placed in a queue, and then they are allowed to pass through the intersection one at a time.
+
+5. Operating systems: Operating systems often use queues to manage resources, such as CPU time and memory. Processes are placed in a queue, and then they are allocated resources in the order in which they were received.
+
+6. Web servers: Web servers often use queues to manage requests from web browsers. Requests are placed in a queue, and then they are processed by the web server in the order in which they were received.
