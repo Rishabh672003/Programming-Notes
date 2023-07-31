@@ -8,6 +8,8 @@ first. A real-life example of a stack is a pile of plates stacked on top of
 another. If you want the plate at the bottom, you must first remove all the
 plates on top.
 
+![STACK](https://cdn.programiz.com/sites/tutorial2program/files/stack.png)
+
 ### Working of stack
 
 A stack uses a pointer called TOP to keep track of the top element in the stack.
@@ -15,6 +17,8 @@ When initializing the stack, its value is set to -1 so that we can check if the
 stack is empty by comparing TOP == -1. On pushing an element, we increase the
 value of TOP and place the new element in the position pointed to by TOP. On
 popping an element, we return the element pointed to by TOP and reduce its value.
+
+![Working of Stack](https://cdn.programiz.com/sites/tutorial2program/files/stack-operations.png)
 
 ### Advantages and uses of Stacks
 
