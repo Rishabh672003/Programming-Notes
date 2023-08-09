@@ -84,6 +84,12 @@ int main() {
 }
 ```
 
+## While vs Do-While Loop
+
+![while-vs-do-while](https://github.com/Rishabh672003/Programming-Notes/assets/53911515/3b283fbf-014d-43d3-ada6-fa8c0477a39c)
+
+## Summary
+
 In summary, loops are an integral part of C++ programming that allow you to execute a block of code multiple times. The three types of loops in C++ are `for`, `while`, and `do-while`. Each type has its own specific use case and can be chosen depending on the desired behavior.
 
 - [C++ For Loop](https://www.w3schools.com/cpp/cpp_for_loop.asp)

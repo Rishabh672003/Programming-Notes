@@ -50,3 +50,6 @@ int main() {
     return 0;
 }
 ```
+<hr>
+
+![meme](https://img.devrant.com/devrant/rant/r_77251_3xSNn.jpg)
