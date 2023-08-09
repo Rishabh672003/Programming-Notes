@@ -75,4 +75,7 @@ int main() {
 
 ## Conclusion
 
+![C vs C++](/Memes/c-vs-c++.jpg)
+
+
 Both C and C++ are powerful languages with unique features and capabilities. While C is simpler and focuses on procedural programming, C++ offers the versatility of using different programming paradigms and improved code organization. Understanding the differences between these two languages can help you decide which one is more suitable for your specific needs and programming style.
