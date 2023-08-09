@@ -86,7 +86,7 @@ int main() {
 
 ## While vs Do-While Loop
 
-![While vs Do-While](/Memes/while-vs-do-while.jpg)
+![while-vs-do-while](https://github.com/Rishabh672003/Programming-Notes/assets/53911515/3b283fbf-014d-43d3-ada6-fa8c0477a39c)
 
 ## Summary
 
