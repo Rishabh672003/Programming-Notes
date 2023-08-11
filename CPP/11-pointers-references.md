@@ -44,7 +44,7 @@ Modifying the value of `ref` will also modify the value of `num` because they sh
 
 ```cpp
     int a = 0;
-    int *address = &a;
+    int* address = &a;
 
     cout << address << endl; // will out put memory address of a
     cout << *address << endl; // will output 0 as the pointer is derefrenced
