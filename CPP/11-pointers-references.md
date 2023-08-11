@@ -75,4 +75,16 @@ Modifying the value of `ref` will also modify the value of `num` because they sh
     }
 ```
 
+### References and some of there uses
+
+```cpp
+    int &b = a; // reference of a is b
+
+    // references are aliases to original variable and can be called by
+    // functions using call by reference which changes the og variable
+    auto point = [&a]() { return a += 2; };
+    point();
+    cout << a << endl; // will output 2 now
+```
+
 - [Pointers in C explained](https://www.freecodecamp.org/news/pointers-in-c-are-not-as-difficult-as-you-think/)
