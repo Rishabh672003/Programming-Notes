@@ -3,7 +3,7 @@
 OOP stands for Object-Oriented Programming. It is a programming paradigm that
 organizes code around objects, which are instances of classes that encapsulate
 data and behavior. In OOP, objects are the building blocks of programs, and they
-interact with each other through methods, messages, and inheritance.
+interact through methods, messages, and inheritance.
 
 ## Why should you use OOP?
 
