@@ -39,6 +39,16 @@ int &ref = num; // Reference 'ref' is now an alias of 'num'
 Modifying the value of `ref` will also modify the value of `num` because they share the same memory location.
 
 **Note:** References are generally used when you want to pass a variable by reference in function arguments or when you want to create an alias for a variable without the need for pointer syntax.
+like this:
+
+```cpp
+int a = 0;
+// references are aliases to original variable and can be called by
+// functions using call by reference which changes the og variable
+auto point = [&a]() { return a += 2; };
+point();
+cout << a << endl; // will output 2 now
+```
 
 ### Pointers and how to use and operate on them
 
@@ -73,18 +83,6 @@ cout << "after adding one: " << *(&prime[0] + 1) << endl;
 for(int i = 0; i < 5; i++){
     cout << *(prime + i)  << " ";
 }
-```
-
-### References and some of there uses
-
-```cpp
-int &b = a; // reference of a is b
-
-// references are aliases to original variable and can be called by
-// functions using call by reference which changes the og variable
-auto point = [&a]() { return a += 2; };
-point();
-cout << a << endl; // will output 2 now
 ```
 
 - [Pointers in C explained](https://www.freecodecamp.org/news/pointers-in-c-are-not-as-difficult-as-you-think/)
