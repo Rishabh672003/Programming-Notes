@@ -1,6 +1,6 @@
 # A sample program
 
-A very simple program to demonstrate concepts of OOP.
+A damn simple program to demonstrate concepts of OOP.
 
 ## Program
 
