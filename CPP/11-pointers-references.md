@@ -10,7 +10,7 @@ dataType *pointerName;
 
 ```cpp
 int num = 10;
-int *ptr = &num;  // Pointer 'ptr' now points to the memory address of 'num'
+int* ptr = &num;  // Pointer 'ptr' now points to the memory address of 'num'
 ```
 
 **Accessing value using a pointer:**
@@ -60,6 +60,7 @@ cout << address << endl; // will out put memory address of a
 cout << *address << endl; // will output 0 as the pointer is derefrenced
 cout << &address << endl; // will output the memory address of pointer
 cout << *address + 1 << endl; // will output 1
+cout << *(&address) << endl; // is same as *address addres
 cout << address + 2
      << endl; // will output memory_adress + n*(memory byte of int)
 cout << address + 'a'
