@@ -18,11 +18,8 @@ class Doctor {
     int id_no;
 
   public:
-    Doctor(std::string name, int age, int id_no) {
-        this->name = name;
-        this->age = age;
-        this->id_no = id_no;
-    }
+    Doctor(std::string name, int age, int id_no)
+        : name(name), age(age), id_no(id_no) {}
 
     std::string getName() const { return name; }
     void setName(const std::string &name) { this->name = name; }
@@ -38,7 +35,6 @@ class Doctor {
     virtual void task() { cout << "Treat patients" << std::endl; }
 
     Doctor(){};
-    ~Doctor() { cout << "Object deleted" << std::endl; }
 };
 
 class surgeon : public Doctor {
@@ -51,13 +47,12 @@ class vet : public Doctor {
     int no_of_animals;
 
   public:
-    vet(std::string name, int no_of_animals) : Doctor(name, 0, 0) {
-        this->no_of_animals = no_of_animals;
-    }
+    vet(std::string name, int no_of_animals)
+        : Doctor(name, 0, 0), no_of_animals(no_of_animals) {}
 
     void task() override { cout << "Operates on animals" << std::endl; }
 
-    void no_animals() {
+    void no_animals() const {
         cout << "No of Animals: " << no_of_animals << std::endl;
     }
 };
