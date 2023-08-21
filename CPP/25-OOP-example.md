@@ -39,6 +39,7 @@ class Doctor {
 
 class surgeon : public Doctor {
   public:
+    surgeon(std::string name): Doctor(name,0,0){};
     void task() override { cout << "Do surgery" << std::endl; }
 };
 
@@ -63,7 +64,8 @@ int main() {
     rishabh->get_name();
     rishabh->task();
 
-    std::unique_ptr<surgeon> amit = std::make_unique<surgeon>();
+    std::unique_ptr<surgeon> amit = std::make_unique<surgeon>("Amit");
+    amit->get_name();
     amit->task();
 
     std::unique_ptr<vet> sumit = std::make_unique<vet>("Sumit", 1231);
