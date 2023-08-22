@@ -6,3 +6,8 @@ What we are now working on basic Computer Science concepts like different Data S
 
 If you want to contribute to the repository don't be afraid to open a PR
 if its good, We will most definitely merge it. Thanks for your time.
+
+## Credits 
+
+For CPP notes: Credit to [developer-roadmap](https://github.com/kamranahmedse/developer-roadmap) and [roadmap.sh](roadmap.sh), I followed there roadmap and
+also took many of the notes from there, so thanks to them
