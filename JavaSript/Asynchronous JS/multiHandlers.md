@@ -1,3 +1,4 @@
+```js
 function f1() {
   return new Promise((resolve, reject) => {
     console.log("Not yet Resolved.");
@@ -21,3 +22,4 @@ f1().then(() => {
   passes the result to each other.
 - Multiple handlers doesn't passes the result to each other; instead they process it independently.
 */
+```

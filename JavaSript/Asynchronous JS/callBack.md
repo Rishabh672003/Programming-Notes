@@ -1,3 +1,4 @@
+```js
 console.log("Start");
 
 function loginUser(email, password) {
@@ -65,3 +66,4 @@ Now we have the data!
 // adding more and more callback is called a "Callback Hell"and is quite had to read.
 
 // Promises are used to fix these callback hell
+```

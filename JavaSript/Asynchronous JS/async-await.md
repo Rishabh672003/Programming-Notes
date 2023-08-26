@@ -1,3 +1,4 @@
+```js
 /*
 - There is a special async-await syntax by which we can make any function Async and then make promises await in it.
 - An Async function always returns a Promise other values are wrapped in a Promise automatically.
@@ -78,3 +79,4 @@ Fetching Banglore Weather please wait...
 Fetched Banglore Weather is: 29 Deg
 Hello I am cherry
 */
+```

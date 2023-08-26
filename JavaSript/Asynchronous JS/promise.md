@@ -1,3 +1,4 @@
+```js
 // using promises to resolve a callback hell.
 
 /* Promise : Promising a Data Fetch from a network.
@@ -77,3 +78,4 @@ loginUser("amit", "ababab")
 
   // The getVideo function returns a Promise that resolves to an array of videos.
   .then((detail) => console.log(detail));
+```
