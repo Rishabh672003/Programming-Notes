@@ -1,3 +1,4 @@
+```js
 const p1 = new Promise((resolve, reject) => {
   setTimeout(() => {
     resolve("Resolved.");
@@ -16,7 +17,7 @@ p1.then(
   function (error) {
     /* handle an error */
     console.log(error);
-  }, // doesn't run if there's no error
+  } // doesn't run if there's no error
 );
 
 /* If we’re interested only in successful completions, 
@@ -50,3 +51,4 @@ f2().catch((err) => {
   // catching the error
   console.log(err);
 });
+```

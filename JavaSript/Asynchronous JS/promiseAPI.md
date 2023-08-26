@@ -1,3 +1,4 @@
+```js
 /*
 Promise API Is nothing but some Promise Class methods.
 1. Promise.all() : if we want all the values at same time, when every promise is resolved, we use promise.all()
@@ -62,3 +63,4 @@ let promise_all = Promise.any([f1(), f2(), f3()]);
 promise_all.then((value) => {
   console.log(value);
 });
+```

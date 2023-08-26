@@ -1,3 +1,4 @@
+```js
 /*
 - We can chain promises and resolved values can be passed one after the another.
 - resolved value of one promise is passed to .then() and the resolved value of
@@ -89,3 +90,4 @@ f1()
 // }).catch((error) => {
 //     console.log("sorry, error loading script file");
 // })
+```

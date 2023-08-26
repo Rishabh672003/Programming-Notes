@@ -1,3 +1,4 @@
+```js
 // Synchronous Code : Code that runs in order; top-down.
 // Asynchronous Code : Code that runs in parallel with other code.
 
@@ -31,3 +32,4 @@ START
 END
 We're in Timeout
 */
+```
