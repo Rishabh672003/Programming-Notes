@@ -126,74 +126,103 @@ int main() {
 
 ```java
 public class Queue {
-    private int maxSize;
-    private int front;
-    private int rear;
-    private int currentSize;
-    private int array[];
+  int SIZE = 5;
+  int items[] = new int[SIZE];
+  int front, rear;
 
-    public Queue(int size) {
-        this.maxSize = size;
+  Queue() {
+    front = -1;
+    rear = -1;
+  }
+
+  // check if the queue is full
+  boolean isFull() {
+    if (front == 0 && rear == SIZE - 1) {
+      return true;
+    }
+    return false;
+  }
+
+  // check if the queue is empty
+  boolean isEmpty() {
+    if (front == -1)
+      return true;
+    else
+      return false;
+  }
+
+  // insert elements to the queue
+  void enqueue(int element) {
+    if (isFull()) {
+      System.out.println("Queue is full");
+    }
+    else {
+      if (front == -1) {
+        // mark front denote first element of queue
         front = 0;
+      }
+      rear++;
+      // insert element at the rear
+      items[rear] = element;
+      System.out.println("Insert " + element);
+    }
+  }
+
+  // delete element from the queue
+  int dequeue() {
+    int element;
+    if (isEmpty()) {
+      System.out.println("Queue is empty");
+      return (-1);
+    } else {
+      element = items[front];
+      if (front >= rear) {
+        front = -1;
         rear = -1;
-        currentSize = 0;
-        array = new int[maxSize];
+      } else {
+        front++;
+      }
+      System.out.println(element + " Deleted");
+      return (element);
     }
+  }
 
-    public boolean isFull() {
-        return (currentSize == maxSize);
+  void display() {
+    if (isEmpty()) {
+      System.out.println("Empty Queue");
+    } else {
+      System.out.println("Front index: " + front);
+      System.out.println("Rear index: " + rear);
+      System.out.println("Items in the queue: ");
+      for (int i = front; i <= rear; i++) {
+        System.out.print(items[i] + " ");
+      }
     }
+  }
 
-    public boolean isEmpty() {
-        return (currentSize == 0);
-    }
+  public static void main(String[] args) {
+    Queue q = new Queue();
 
-    public void enqueue(int item) {
-        if (isFull()) {
-            System.out.println("Queue is full!");
-            return;
-        }
-        rear = (rear + 1) % maxSize;
-        array[rear] = item;
-        currentSize++;
-        System.out.println("Added to queue" + item);
-    }
+    // deQueue is not possible on empty queue
+    q.dequeue();
 
-    public int dequeue() {
-        if (isEmpty()) {
-            System.out.println("Queue is empty!");
-            return -1;
-        }
-        int temp = front;
-        front = (front + 1) % maxSize;
-        currentSize--;
-        System.out.println("Removed from queue" + array[temp]);
-        return array[temp];
-    }
+    // enQueue 5 elements
+    q.enqueue(1);
+    q.enqueue(2);
+    q.enqueue(3);
+    q.enqueue(4);
+    q.enqueue(5);
 
-    public void display() {
-        if (isEmpty()) {
-            System.out.println("Queue is empty!");
-            return;
-        }
-        int temp = front;
-        while (temp != rear) {
-            System.out.println(array[temp]);
-            temp = (temp + 1) % maxSize;
-        }
-        System.out.println(array[rear]);
-    }
+    // 6th element can't be added to queue because queue is full
+    q.enqueue(6);
 
-    public static void main(String[] args) {
-        Queue queue = new Queue(5);
-        queue.enqueue(1);
-        queue.enqueue(2);
-        queue.enqueue(3);
-        queue.enqueue(4);
-        queue.dequeue();
-        queue.enqueue(5);
-        queue.display();
-    }
+    q.display();
+
+    // deQueue removes element entered first
+    q.dequeue();
+
+    q.display();
+  }
 }
 ```
 
