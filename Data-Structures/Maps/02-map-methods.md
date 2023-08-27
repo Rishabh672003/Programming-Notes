@@ -4,7 +4,7 @@
 
    `mapName[key] = value` - Inserts a key-value pair into the map.
 
-   i`nsert({key, value})` - Inserts a key-value pair into the map.
+   `insert({key, value})` - Inserts a key-value pair into the map.
 
 2. Access:
 

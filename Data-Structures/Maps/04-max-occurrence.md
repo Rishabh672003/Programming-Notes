@@ -140,4 +140,4 @@ um = {
 }
 ```
 
-**Hence the most occured element here becomes 3.**
+**Hence the most occurred element here becomes 3.**
