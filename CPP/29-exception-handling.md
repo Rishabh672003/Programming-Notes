@@ -85,6 +85,7 @@ In this example, we modified the `divide` function to throw a `std::runtime_erro
 ## Examples
 
 **Very Simple Example**
+
 ```cpp
 #include <iostream>
 using namespace std;
@@ -108,6 +109,7 @@ int main() {
     return 0;
 }
 ```
+
 **Somewhat complex example that handles multiple exception**
 
 ```cpp
@@ -116,19 +118,19 @@ using namespace std;
 int main() {
     double numerator, denominator, arr[4] = {0.0, 0.0, 0.0, 0.0};
     int index;
-    
+
     cout << "Enter array index: ";
     cin >> index;
-    
+
     try {
         // throw exception if array out of bounds
         if (index >= 4)
             throw "Error: Array out of bounds!";
-            
+
         // not executed if array is out of bounds
         cout << "Enter numerator: ";
         cin >> numerator;
-    
+
         cout << "Enter denominator: ";
         cin >> denominator;
         // throw exception if denominator is 0
@@ -150,8 +152,7 @@ int main() {
     catch (...) {
         cout << "Unexpected exception!" << endl;
     }
-    
-    return 0;    
+
+    return 0;
 }
 ```
-

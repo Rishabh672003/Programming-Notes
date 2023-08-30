@@ -1,4 +1,5 @@
 ## Functions
+
 ```py
 def function_name(parameters): # define the function
     # code goes here
@@ -6,12 +7,12 @@ function_name(arguments) # call function
 ```
 
 ## Define a function to add two numbers
+
 ```py
 def add(a, b):
     return a + b
 print(add(2, 3))
 ```
-
 
 ## Define a function to greet user
 
@@ -42,12 +43,13 @@ def gcd(n1, n2):
         return abs(n1)
     else:
         return gcd(n2, n1 % n2)
-    
+
 n, m = map(int, input("Enter two numbers: ").split())
 print(f"GCD of {n} and {m} is {gcd(n, m)}")
 ```
 
 ## Define a function to print first nth terms in fibonacci terms.
+
 ```py
 def fibo(n):
     if n <= 0:
@@ -58,7 +60,7 @@ def fibo(n):
         return 1
     else:
         return fibo(n - 1) + fibo(n - 2)
-    
+
 d = int(input("Enter the value of 'n': "))
 
 if d > 0:
@@ -78,12 +80,13 @@ def fact(n):
         return 1
     else:
         return n * fact(n - 1)
-    
+
 e = int(input("Enter the value of 'n': "))
 print(f"Factorial of {e} is {fact(e)}")
 ```
 
 ## Define a function to convert decimal to binary
+
 ```py
 def toBinary(n):
     ans = ""

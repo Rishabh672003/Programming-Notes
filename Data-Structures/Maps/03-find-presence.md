@@ -173,8 +173,8 @@ Explanation :
 
 - `return iterator -> second`:
 
-  This line returns the second element of the pair pointed to by the iterator it. 
-  
+  This line returns the second element of the pair pointed to by the iterator it.
+
   In this case, the iterator it is pointing to the element in the map that has the key X.
 
   The `second` element of this pair is the index of the element in the array, so the expression `iterator -> second` returns the index of the element that is equal to X.
