@@ -17,7 +17,7 @@ p1.then(
   function (error) {
     /* handle an error */
     console.log(error);
-  } // doesn't run if there's no error
+  }, // doesn't run if there's no error
 );
 
 /* If we’re interested only in successful completions, 

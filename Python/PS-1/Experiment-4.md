@@ -45,4 +45,3 @@ plt.show()
 ### Output
 
 ![image](https://github.com/Rishabh672003/Programming-Notes/assets/53911515/531d2a20-5827-4758-a519-bdf3a48fc180)
-

@@ -18,7 +18,7 @@ void leftShift() {
     flipFlops[i] = flipFlops[i - 1];
   }
 // Set the least significant bit to 0
-  flipFlops[0] = 0; 
+  flipFlops[0] = 0;
 }
 
 void rightShift() {

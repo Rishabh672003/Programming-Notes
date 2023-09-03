@@ -4,7 +4,6 @@
 - For example, 2’s complement of “01000” is “11000” (Note that we first find one’s complement of 01000 as 10111).
 - If there are all 1’s (in one’s complement), we add an extra 1 in the string. For example, 2’s complement of “000” is “1000” (1’s complement of “000” is “111”).
 
-
 ```cpp
 // C++ program to print 1's and 2's complement of
 // a binary number

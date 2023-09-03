@@ -48,8 +48,7 @@ int main() {
 }
 ```
 
-
-### For octal to binary 
+### For octal to binary
 
 ```cpp
 #include <iostream>

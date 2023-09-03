@@ -1,5 +1,7 @@
 ## Pearson's Correlation coefficient.
+
 ### To measure linear relationship between two variables in a dataset.
+
 #### The coefficient lies between -1 to +1, where -1 is negative (unlike) relationship, +1 is a positive (like) relationship and 0 is no relationship between those datasets
 
 ```py
@@ -27,7 +29,9 @@ print("Dataset 1: ", dataset1)
 print("Dataset 2: ", dataset2)
 print("Pearson's Correlation Coefficient: ", correlation_coefficient)
 ```
+
 **output :**
+
 ```
 Dataset 1:  [0.5881308  0.89771373 0.89153073 0.81583748 0.03588959 0.69175758
  0.37868094 0.51851095 0.65795147 0.19385022 0.2723164  0.71860593

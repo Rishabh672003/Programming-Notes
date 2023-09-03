@@ -24,7 +24,7 @@ the visibility and accessibility of class members:
 3. Protected: Protected members are accessible within the class itself and its
    subclasses (derived classes). They provide a limited level of accessibility for inheritance scenarios.
 
-4. Default (Package-private): Members without an explicit access modifier are
+4. Default (Package-private)(Only in java): Members without an explicit access modifier are
    accessible within the same package.
 
 ### Implementation of encapsulation in C++, Java and Python
