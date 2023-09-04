@@ -11,7 +11,7 @@ int main() {
     }
 
     // precompute
-    int hash[n + 1] = {0};
+    int hash[n] = {0};
     for(int i = 0; i < n; i++){
         // go to the index of hash array and do a +1
         hash[arr[i]]++;
@@ -40,9 +40,7 @@ output :
 
 - We create an array `arr` of size `n`, and take input of the elements.
 
-- The Precomputation is done by creating an hash array with size `n + 1`.
-
-- `n + 1` because the hash array will keep count of **ith** element of `arr` at **i+1th** index in hash array.
+- The Precomputation is done by creating an hash array with size `n`.
 
 - **Example** : if `arr[i] = 1`, then `hash[1]` will be incremented by 1 and so on.
 
