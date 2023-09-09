@@ -13,13 +13,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Format HTML
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-      - run: npm install --global prettier
-      - run: prettier --write '**/*.html'
-
       - name: Format Markdown
         uses: actions/checkout@v2
         with:
