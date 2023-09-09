@@ -1,6 +1,8 @@
 name: Format Code
 
 on:
+  workflow_dispatch:
+    
   push:
 
   pull_request:
