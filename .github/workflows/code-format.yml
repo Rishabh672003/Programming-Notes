@@ -1,0 +1,29 @@
+name: Format Code
+
+on:
+  workflow_dispatch:
+    
+  push:
+
+  pull_request:
+
+jobs:
+  format:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Format Markdown
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - run: npm install --global prettier
+      - run: prettier --write '**/*.md'
+
+      - name: Commit and Push Changes
+        uses: actions-js/push@v1.4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          message: 'Formatted the code'
