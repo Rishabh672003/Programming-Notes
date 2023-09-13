@@ -17,7 +17,7 @@ _Search Element in a Linear **Sorted** Data Structure._
 6. If mid < target, end --> same, start --> mid + 1.
 7. Repeat.
 
-## Implementation
+## Implementation 1 - Iterative Approach
 
 ```cpp
 #include <bits/stdc++.h>
@@ -43,6 +43,48 @@ int binarySearch(int *arr, int size, int target) {
 int main() {
     int arr[5] = {1, 2, 3, 4, 5};
     int index = binarySearch(arr, 5, 3);
+    if (index == -1)
+        cout << "NOT FOUND!";
+    else
+        cout << "Element found at Index " << index;
+    return 0;
+}
+
+```
+
+---
+
+## Implementation 2 - Recursive Approach
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int binarySearch(vector<int>&arr, int low, int high, int target) {
+
+    // base case
+    if (low > high) return -1;
+
+    // calculate mid
+    int mid = low + (high - low) / 2;
+
+    // if found, return mid index
+    if (arr[mid] == target) return mid;
+
+    // if target > arr[mid], call the binarySearch function with updated low index.
+    else if (target > arr[mid]) return binarySearch(arr, mid+1, high, target);
+
+    // else when target < arr[mid], call the binarySearch function with updated high index.
+    return binarySearch(arr, low, mid-1, target);
+}
+
+int search(vector<int>&nums, int target){
+    return binarySearch(nums, 0, nums.size() - 1, target);
+}
+
+int main() {
+    int vector<int>arr = {1, 2, 3, 4, 5};
+    int index = search(arr, 5, 3);
     if (index == -1)
         cout << "NOT FOUND!";
     else
