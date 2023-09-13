@@ -80,19 +80,17 @@ public:
   int i = 0, j = 0;
   long long sum = 0;
   long long maxi = INT_MIN;
-
-  while (j < n) {
+  while (j < n){
     sum += arr[j];
-    if (j - i + 1 < k) {
-      j++;
-    } else if (j - i + 1 == k) {
-      maxi = max(maxi, sum);
-      sum -= arr[i];
-      i++;
-      j++;
+    if (j - i + 1 == k){
+        maxi = max(maxi, sum);
+        sum -= arr[i];
+        i++;
     }
-  } return maxi;
-    }
+    j++;
+  }
+    return maxi;
+  }
 };
 
 int main()
