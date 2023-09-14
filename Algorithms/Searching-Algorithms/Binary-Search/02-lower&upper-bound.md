@@ -53,7 +53,7 @@ If we iterate over the array, we can find that 5 > 4 and 7 > 4. But the value 5 
 ```cpp
 int arr[6] = {1, 2, 4, 4, 5, 7};
 int x = 7;
-/* 
+/*
 this x value would have upper bound == 6,
 as no element is > than 7
 */
