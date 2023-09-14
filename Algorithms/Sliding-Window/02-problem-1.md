@@ -32,7 +32,7 @@ Return an integer which is maximum sum among all the sub-arrays.
 
 **Identificaion :**
 
-We are given with an **array/string**, we're asked for a **sub-array/substring** and either we have a window size [**fixed size window**] or a condition for window size [**variable size window**].
+We are given with an **array/string**, we're asked for a **subarray/substring** and either we have a window size [**fixed size window**] or a condition for window size [**variable size window**].
 
 ---
 
