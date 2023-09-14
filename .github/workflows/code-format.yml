@@ -21,6 +21,7 @@ jobs:
       - run: prettier --write '**/*.md'
 
       - name: Commit and Push Changes
+        if: github.repository == ‘Rishabh672003/Programming-notes’
         uses: actions-js/push@v1.4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
