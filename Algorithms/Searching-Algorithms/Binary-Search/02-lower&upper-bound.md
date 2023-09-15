@@ -113,3 +113,9 @@ int main(){
     return 0;
 }
 ```
+
+---
+
+**Solve it on :**
+
+[Coding Ninjas - Lower Bound](https://www.codingninjas.com/studio/problems/lower-bound_8165382?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf) & [Upper Bound](https://www.codingninjas.com/studio/problems/implement-upper-bound_8165383?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf)

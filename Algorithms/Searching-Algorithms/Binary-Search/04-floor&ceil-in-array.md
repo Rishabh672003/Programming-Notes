@@ -82,3 +82,9 @@ The ceil of 7 is 7
 
 **Refer :**
 [Lower Bound](./02-lower&upper-bound.md), [Binary Search](./01-binary-search.md).
+
+---
+
+**Solve it on :**
+
+[Coding Ninjas](https://www.codingninjas.com/studio/problems/ceiling-in-a-sorted-array_1825401?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf)

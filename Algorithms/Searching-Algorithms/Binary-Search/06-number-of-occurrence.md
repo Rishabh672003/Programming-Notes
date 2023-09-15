@@ -65,3 +65,9 @@ int main() {
 Output :
 The number of occurrences of 5 in the array is 4
 ```
+
+---
+
+**Solve it on :**
+
+[Coding Ninjas](https://www.codingninjas.com/studio/problems/occurrence-of-x-in-a-sorted-array_630456?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf).

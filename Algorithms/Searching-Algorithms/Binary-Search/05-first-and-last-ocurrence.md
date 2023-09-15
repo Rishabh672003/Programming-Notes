@@ -61,3 +61,10 @@ int main() {
 Output :
 The first and last position of 5 in the array are 2 and 5
 ```
+
+---
+
+**Solve it on :**
+
+[Coding Ninjas](https://www.codingninjas.com/studio/problems/first-and-last-position-of-an-element-in-sorted-array_1082549?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf) &
+[LeetCode](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/).
