@@ -67,11 +67,11 @@ as no element is > than 7
 #include <bits/stdc++.h>
 using namespace std;
 
-int lowerBound(int* arr, int n, int x){
+int lowerBound(vector<int> &arr, int n, int x){
     int low = 0, high = n - 1;
-    int ans = n; // edge case
+    int ans = n;
     while (low <= high){
-        int mid = (low + (high - low)) / 2;
+        int mid = low + (high - low) / 2;
         // maybe answer
         if (arr[mid] >= x){
             ans = mid;
@@ -84,11 +84,11 @@ int lowerBound(int* arr, int n, int x){
     return ans;
 }
 
-int upperBound(int* arr, int n, int x){
+int upperBound(vector<int> &arr, int n, int x){
     int low = 0, high = n - 1;
     int ans = n;
     while (low <= high){
-        int mid = (low + (high - low)) / 2;
+        int mid = low + (high - low) / 2;
         // maybe answer
         if (arr[mid] > x){
             ans = mid;
