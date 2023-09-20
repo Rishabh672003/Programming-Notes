@@ -219,3 +219,8 @@ int search(vector<int>& arr, int n, int k)
     return -1;
 }
 ```
+
+**Solve it on :**
+
+[Coding Ninjas](https://www.codingninjas.com/studio/problems/search-in-rotated-sorted-array_1082554?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf) &
+[LeetCode](https://leetcode.com/problems/search-in-rotated-sorted-array/).

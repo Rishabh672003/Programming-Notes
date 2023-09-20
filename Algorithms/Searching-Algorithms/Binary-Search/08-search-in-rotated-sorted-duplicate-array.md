@@ -104,3 +104,10 @@ bool searchInARotatedSortedArrayII(vector<int>&arr, int target) {
     return false;
 }
 ```
+
+---
+
+**Solve it on :**
+
+[Coding Ninjas](https://www.codingninjas.com/studio/problems/search-in-a-rotated-sorted-array-ii_7449547?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf) &
+[LeetCode](https://leetcode.com/problems/search-in-rotated-sorted-array-ii/).
