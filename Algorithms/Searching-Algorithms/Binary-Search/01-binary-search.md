@@ -115,3 +115,9 @@ N = 2<sup>k</sup>
 Log<sub>2</sub>N = K
 
 Which means, at kth comparison, the size of array will be log<sub>2</sub>N
+
+---
+
+**Solve it on :**
+
+[Coding Ninjas](https://www.codingninjas.com/studio/problems/binary-search_972?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf) & [LeetCode](https://leetcode.com/problems/binary-search/).
