@@ -28,8 +28,9 @@
 
 1. Make a `void` function which accepts a reference to head & tail pointer and a position & data as parameter.
 2. Make a temp node which'll initially point to head.
-3. 
-4. 
+3.
+4.
+
 ---
 
 ### Implementation :
