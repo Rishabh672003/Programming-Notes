@@ -1,4 +1,4 @@
-## In-Order-Traversal C++ Implementation
+## Post-Order-Traversal ~ Recursive approach C++ Implementation
 
 ```
           1
@@ -13,12 +13,14 @@
 ### Implemantation :
 
 ```cpp
-void inorder(int node){
+void postorder(int node){
     if (node == NULL) { // base case
         return;
     }
-    inorder(node->left); // recursion
+    postorder(node->left); // recursion
+    postorder(node->right); // recursion
     cout << node->data << endl;
-    inorder(node->right);
 }
 ```
+
+pattern : left --> right --> print
