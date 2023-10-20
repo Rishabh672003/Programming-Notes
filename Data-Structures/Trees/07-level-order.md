@@ -88,11 +88,15 @@ The vector becomes :
 
 ---
 
+![Visualization](./assets/level-order.png)
+
+---
+
 ### Approach :
 
 - Declare a vector of vectors (ans).
 - if root == NULL, return ans.
-- declare a queue, psuh the root into it.
+- declare a queue, push the root into it.
 - while the queue is not empty,
 - calculate it's size to traverse.
 - declare a vector to store levels (levels).
@@ -125,9 +129,10 @@ public:
         vector<vector<int>> ans; // vector of vector
         if (root == NULL) return ans;
         queue<TreeNode*> q; // queue
+        q.push(root);
         while(!q.empty()){
             int size = q.size();
-            vector<int> ans;
+            vector<int> level;
             for (int i = 0; i < size; i++){
                 TreeNode *node = q.front();
                 q.pop();
