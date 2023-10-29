@@ -1,6 +1,6 @@
 ## Level Order Traversal [BFS] C++ Implementation
 
-==> We'll need two data structures, A queue and a vector of vectors.
+==> We'll need two data sructures, A queue and a vector of vectors.
 
 --> The Queue will hold the roots of tree.
 
@@ -94,8 +94,8 @@ The vector becomes :
 
 ### Approach :
 
-- Declare a vector of vectors (and).
-- if root == NULL, return and.
+- Declare a vector of vectors (ans).
+- if root == NULL, return ans.
 - declare a queue, push the root into it.
 - while the queue is not empty,
 - calculate it's size to traverse.
@@ -105,14 +105,14 @@ The vector becomes :
 - pop the node out of the queue and check if it's left and right exists.
 - If exists, push them to queue
 - push the node's value into the (level) vector.
-- push the (level) vector to (and) vector.
+- push the (level) vector to (ans) vector.
 
 ---
 
 ### Implementation :
 
 ```cpp
-/* Definition for binary tree :
+/* Defination for binary tree :
 struct TreeNode {
     int val;
     TreeNode *left;
@@ -127,9 +127,9 @@ right(right) {}
 class Solution {
   public:
     vector<vector<int>> levelOrder(TreeNode* root) {
-        vector<vector<int>>and; // vector of vector
+        vector<vector<int>> ans; // vector of vector
         if (root == NULL)
-            return and;
+            return ans;
         queue<TreeNode*> q; // queue
         q.push(root);
         while (!q.empty()) {
@@ -144,9 +144,9 @@ class Solution {
                     q.push(node->right);
                 level.push_back(node->value);
             }
-            and.push_back(level);
+            ans.push_back(level);
         }
-        return and;
+        return ans;
     }
 };
 ```

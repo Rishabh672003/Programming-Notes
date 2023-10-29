@@ -1,6 +1,6 @@
 ## In order traversal ~ Iterative Approach
 
---> In this approach, we'll need an auxiliary stack space and the stack will hold the upcoming nodes.
+--> In this approach, we'll need an auxillary stack space and the stack will hold the upcoming nodes.
 
 **Approach :**
 
@@ -73,7 +73,7 @@ Stack becomes :
 ### Implementation :
 
 ```cpp
-/* Definition for binary tree :
+/* Defination for binary tree :
 struct TreeNode {
     int val;
     TreeNode *left;
@@ -90,7 +90,7 @@ class Solution {
     vector<int> inorderTraversal(TreeNode* root) {
 
         stack<TreeNode*> st; // declare a stack
-        vector<int>and;      // declare an answer vector
+        vector<int> ans;     // declare an answer vector
 
         TreeNode* node = root; // take the root node
 
@@ -103,11 +103,11 @@ class Solution {
                     break;
                 node = st.top();          // if null,
                 st.pop();                 // pop the node out
-                and.push_back(node->val); // push it to and vector
+                ans.push_back(node->val); // push it to ans vector
                 node = node->right;       // now check for right
             }
         }
-        return and;
+        return ans;
     }
 };
 ```

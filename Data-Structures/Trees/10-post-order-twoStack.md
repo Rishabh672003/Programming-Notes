@@ -33,7 +33,7 @@ class Solution {
   public:
     vector<int> postOrderTwoStack(TreeNode* root) {
 
-        vector<int>and;
+        vector<int> ans;
         if (root == NULL)
             return and;
 
@@ -55,11 +55,11 @@ class Solution {
         }
 
         while (!st2.empty()) {
-            and.push_back(st2.top()->val);
+            ans.push_back(st2.top()->val);
             st2.pop();
         }
 
-        return and;
+        return ans;
     }
 }
 ```

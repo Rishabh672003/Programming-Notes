@@ -1,0 +1,4 @@
+[codespell]
+ignore_words = "ans"
+count =
+quiet-level = 3

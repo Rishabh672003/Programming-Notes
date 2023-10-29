@@ -1,7 +1,7 @@
 ## Post Order Traversal ~ One Stack Iteration
 
 ```cpp
-/* Definition for binary tree :
+/* Defination for binary tree :
 struct TreeNode {
     int val;
     TreeNode *left;
@@ -16,9 +16,9 @@ right(right) {}
 class Solution {
   public:
     vector<int> postOrderOneStack(TreeNode* root) {
-        vector<int>and;
+        vector<int> ans;
         if (root == NULL)
-            return and;
+            return ans;
 
         TreeNode* curr = root;
         TreeNode* temp = NULL;
@@ -33,11 +33,11 @@ class Solution {
                 if (temp == NULL) {
                     temp = st.top();
                     st.pop();
-                    and.push_back(temp);
+                    ans.push_back(temp);
                     while (!st.empty()&& temp = st.top()->right) {
                         temp = st.top();
                         st.pop();
-                        and.push_back(temp);
+                        ans.push_back(temp);
                     }
                 } else {
                     curr = temp;
