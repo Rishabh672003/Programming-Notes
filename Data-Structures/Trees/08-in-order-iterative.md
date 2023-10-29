@@ -66,7 +66,7 @@ Stack becomes :
 
 ---
 
-![Inorder Iterative](./assets/in-depth-itr.png)
+![pre-order-itr](https://github.com/Rishabh672003/Programming-Notes/assets/53911515/81e7bd40-4e9e-4023-b399-b832d04aab2f)
 
 ---
 

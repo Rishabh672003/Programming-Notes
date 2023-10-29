@@ -8,7 +8,7 @@
 4. The stack iteration continues, pop the top most (left) element out and push it to the answer vector, then check if it has any left or right.
 5. Continue the iteration untill the stak gets empty.
 
-![Pre Order Itr](./assets/pre-order-itr.png)
+![pre-order-itr](https://github.com/Rishabh672003/Programming-Notes/assets/53911515/eb403e15-29ca-410a-913b-b9f79822c59a)
 
 ### Implementation :
 
