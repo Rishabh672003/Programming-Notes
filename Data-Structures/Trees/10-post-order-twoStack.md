@@ -51,7 +51,7 @@ public:
                 st1.push(root->right);
             }
         }
-        
+
         while(!st2.empty()){
             ans.push_back(st2.top()->val);
             st2.pop();
