@@ -1,8 +1,8 @@
-## Tress - A hierarchical Data Struture
+## Tress - A hierarchical Data Structure
 
 Trees are hierarchical data structures consisting of nodes.
 
-A tree consits of root node, parent nodes, children nodes, leaf-nodes, sub-tree and ancestors.
+A tree consists of root node, parent nodes, children nodes, leaf-nodes, sub-tree and ancestors.
 
 ```
           1   <-- root node

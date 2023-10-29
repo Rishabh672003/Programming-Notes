@@ -10,14 +10,14 @@
        8     9  10
 ```
 
-### Implemantation :
+### Implementation :
 
 ```cpp
-void postorder(int node){
+void postorder(int node) {
     if (node == NULL) { // base case
         return;
     }
-    postorder(node->left); // recursion
+    postorder(node->left);  // recursion
     postorder(node->right); // recursion
     cout << node->data << endl;
 }

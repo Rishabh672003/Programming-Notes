@@ -17,47 +17,49 @@
 ### Implementation
 
 ```cpp
-/* Defination for binary tree :
+/* Definition for binary tree :
 struct TreeNode {
     int val;
     TreeNode *left;
     TreeNode *right;
     TreeNode() : val(x), left(nullptr), right(nullptr) {}
     TreeNode(int x): val(x), left(nullptr), right(nullptr) {}
-    TreeNode(int x, TreeNode *left, TreeNode *right): val(x), left(left), right(right) {}
+    TreeNode(int x, TreeNode *left, TreeNode *right): val(x), left(left),
+right(right) {}
 }
 */
 
 class Solution {
-public:
-    vector<int> postOrderTwoStack(TreeNode *root) {
+  public:
+    vector<int> postOrderTwoStack(TreeNode* root) {
 
-        vector<int> ans;
-        if (root == NULL) return ans;
+        vector<int>and;
+        if (root == NULL)
+            return and;
 
         stack<TreeNode*> st1, st2;
         st1.push(root);
 
-        while(!st1.empty()){
+        while (!st1.empty()) {
 
             root = st1.top();
             st1.pop();
             st2.push(root);
 
-            if (root->left != NULL){
+            if (root->left != NULL) {
                 st1.push(root->left);
             }
-            if (root->right != NULL){
+            if (root->right != NULL) {
                 st1.push(root->right);
             }
         }
 
-        while(!st2.empty()){
-            ans.push_back(st2.top()->val);
+        while (!st2.empty()) {
+            and.push_back(st2.top()->val);
             st2.pop();
         }
 
-        return ans;
+        return and;
     }
 }
 ```

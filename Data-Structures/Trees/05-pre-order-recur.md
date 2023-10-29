@@ -10,15 +10,15 @@
        8     9  10
 ```
 
-### Implemantation :
+### Implementation :
 
 ```cpp
-void preorder(int node){
+void preorder(int node) {
     if (node == NULL) { // base case
         return;
     }
     cout << node->data << endl;
-    preorder(node->left); // recursion
+    preorder(node->left);  // recursion
     preorder(node->right); // recursion
 }
 ```

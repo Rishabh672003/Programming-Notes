@@ -1,6 +1,6 @@
 ## Level Order Traversal [BFS] C++ Implementation
 
-==> We'll need two data sructures, A queue and a vector of vectors.
+==> We'll need two data structures, A queue and a vector of vectors.
 
 --> The Queue will hold the roots of tree.
 
@@ -94,8 +94,8 @@ The vector becomes :
 
 ### Approach :
 
-- Declare a vector of vectors (ans).
-- if root == NULL, return ans.
+- Declare a vector of vectors (and).
+- if root == NULL, return and.
 - declare a queue, push the root into it.
 - while the queue is not empty,
 - calculate it's size to traverse.
@@ -105,44 +105,48 @@ The vector becomes :
 - pop the node out of the queue and check if it's left and right exists.
 - If exists, push them to queue
 - push the node's value into the (level) vector.
-- push the (level) vector to (ans) vector.
+- push the (level) vector to (and) vector.
 
 ---
 
 ### Implementation :
 
 ```cpp
-/* Defination for binary tree :
+/* Definition for binary tree :
 struct TreeNode {
     int val;
     TreeNode *left;
     TreeNode *right;
     TreeNode() : val(x), left(nullptr), right(nullptr) {}
     TreeNode(int x): val(x), left(nullptr), right(nullptr) {}
-    TreeNode(int x, TreeNode *left, TreeNode *right): val(x), left(left), right(right) {}
+    TreeNode(int x, TreeNode *left, TreeNode *right): val(x), left(left),
+right(right) {}
 }
 */
 
 class Solution {
-public:
-    vector<vector<int>> levelOrder(TreeNode *root){
-        vector<vector<int>> ans; // vector of vector
-        if (root == NULL) return ans;
+  public:
+    vector<vector<int>> levelOrder(TreeNode* root) {
+        vector<vector<int>>and; // vector of vector
+        if (root == NULL)
+            return and;
         queue<TreeNode*> q; // queue
         q.push(root);
-        while(!q.empty()){
+        while (!q.empty()) {
             int size = q.size();
             vector<int> level;
-            for (int i = 0; i < size; i++){
-                TreeNode *node = q.front();
+            for (int i = 0; i < size; i++) {
+                TreeNode* node = q.front();
                 q.pop();
-                if (node->left != NULL) q.push(node->left);
-                if (node->right != NULL) q.push(node->right);
+                if (node->left != NULL)
+                    q.push(node->left);
+                if (node->right != NULL)
+                    q.push(node->right);
                 level.push_back(node->value);
             }
-            ans.push_back(level);
+            and.push_back(level);
         }
-        return ans;
+        return and;
     }
 };
 ```

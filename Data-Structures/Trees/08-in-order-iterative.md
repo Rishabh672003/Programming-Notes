@@ -1,6 +1,6 @@
 ## In order traversal ~ Iterative Approach
 
---> In this approach, we'll need an auxillary stack space and the stack will hold the upcoming nodes.
+--> In this approach, we'll need an auxiliary stack space and the stack will hold the upcoming nodes.
 
 **Approach :**
 
@@ -73,40 +73,41 @@ Stack becomes :
 ### Implementation :
 
 ```cpp
-/* Defination for binary tree :
+/* Definition for binary tree :
 struct TreeNode {
     int val;
     TreeNode *left;
     TreeNode *right;
     TreeNode() : val(x), left(nullptr), right(nullptr) {}
     TreeNode(int x): val(x), left(nullptr), right(nullptr) {}
-    TreeNode(int x, TreeNode *left, TreeNode *right): val(x), left(left), right(right) {}
+    TreeNode(int x, TreeNode *left, TreeNode *right): val(x), left(left),
+right(right) {}
 }
 */
 
 class Solution {
-public:
-  vector<int> inorderTraversal(TreeNode* root){
+  public:
+    vector<int> inorderTraversal(TreeNode* root) {
 
-    stack<TreeNode*> st; // declare a stack
-    vector<int> ans; // declare an answer vector
+        stack<TreeNode*> st; // declare a stack
+        vector<int>and;      // declare an answer vector
 
-    TreeNode* node = root; // take the root node
+        TreeNode* node = root; // take the root node
 
-    while(true){
-      if(node != NULL){ // if not null
-        st.push(node); // push into the stack
-        node = node->left; // go to left
-      }
-      else {
-        if (st.empty() == true) break;
-        node = st.top(); // if null,
-        st.pop(); // pop the node out
-        ans.push_back(node->val); // push it to ans vector
-        node = node->right;  // now check for right
-      }
+        while (true) {
+            if (node != NULL) {    // if not null
+                st.push(node);     // push into the stack
+                node = node->left; // go to left
+            } else {
+                if (st.empty() == true)
+                    break;
+                node = st.top();          // if null,
+                st.pop();                 // pop the node out
+                and.push_back(node->val); // push it to and vector
+                node = node->right;       // now check for right
+            }
+        }
+        return and;
     }
-    return ans;
-  }
 };
 ```
