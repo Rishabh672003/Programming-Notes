@@ -28,6 +28,6 @@ A Binary tree is a type of tree where each parent node consists of at **max 2** 
 
 3. **Perfect Binary Tree :** All leaf nodes are at same level.
 
-4. **Blnced Binary Tree :** The tree can at max have a height of **Log<sub>2</sub>(n)**, where n is number of nodes.
+4. **Balnced Binary Tree :** The tree can at max have a height of **Log<sub>2</sub>(n)**, where n is number of nodes. For every node, height(left sub-tree) - height(right sub-tree) <= 1.
 
 5. **Degenerate Tree :** When every node only have a single child or parent node. This type resembles to a Linked List.
