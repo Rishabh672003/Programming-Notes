@@ -35,10 +35,8 @@ int main() {
 #include <iostream>
 
 class HelloWorld {
-public:
-    void printHello() {
-        std::cout << "Hello, World!" << std::endl;
-    }
+  public:
+    void printHello() { std::cout << "Hello, World!" << std::endl; }
 };
 
 int main() {

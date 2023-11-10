@@ -3,20 +3,21 @@
 A pointer is a variable that stores the memory address of another variable (or function). It points to the location of the variable in memory, and it allows you to access or modify the value indirectly. Here's a general format to declare a pointer:
 
 ```cpp
-dataType *pointerName;
+dataType* pointerName;
 ```
 
 **Initializing a pointer:**
 
 ```cpp
 int num = 10;
-int* ptr = &num;  // Pointer 'ptr' now points to the memory address of 'num'
+int* ptr = &num; // Pointer 'ptr' now points to the memory address of 'num'
 ```
 
 **Accessing value using a pointer:**
 
 ```cpp
-int value = *ptr; // Value now contains the value of the variable that 'ptr' points to (i.e., 10)
+int value = *ptr; // Value now contains the value of the variable that 'ptr'
+                  // points to (i.e., 10)
 ```
 
 ## References
@@ -26,14 +27,14 @@ A reference is an alias for an existing variable, meaning it's a different name 
 Here's a general format to declare a reference:
 
 ```cpp
-dataType &referenceName = existingVariable;
+dataType& referenceName = existingVariable;
 ```
 
 **Example:**
 
 ```cpp
 int num = 10;
-int &ref = num; // Reference 'ref' is now an alias of 'num'
+int& ref = num; // Reference 'ref' is now an alias of 'num'
 ```
 
 Modifying the value of `ref` will also modify the value of `num` because they share the same memory location.
@@ -56,11 +57,11 @@ cout << a << endl; // will output 2 now
 int a = 0;
 int* address = &a;
 
-cout << address << endl; // will out put memory address of a
-cout << *address << endl; // will output 0 as the pointer is derefrenced
-cout << &address << endl; // will output the memory address of pointer
+cout << address << endl;      // will out put memory address of a
+cout << *address << endl;     // will output 0 as the pointer is derefrenced
+cout << &address << endl;     // will output the memory address of pointer
 cout << *address + 1 << endl; // will output 1
-cout << *(&address) << endl; // is same as *address addres
+cout << *(&address) << endl;  // is same as *address address
 cout << address + 2
      << endl; // will output memory_adress + n*(memory byte of int)
 cout << address + 'a'
@@ -71,8 +72,8 @@ int prime[5] = {2, 3, 5, 7, 11};
 
 // all will return the memory address of first element of the array
 cout << "Result using &prime = " << &prime << endl;
-cout <<"Result using prime = " <<  prime << endl;
-cout <<"Result using &prime[0] = " <<  &prime[0] << endl;
+cout << "Result using prime = " << prime << endl;
+cout << "Result using &prime[0] = " << &prime[0] << endl;
 
 // will return the second elements memory address
 cout << "after adding one: " << &prime[0] + 1 << endl;
@@ -81,8 +82,8 @@ cout << "after adding one: " << &prime[0] + 1 << endl;
 // this can be used to loop around the array
 cout << "after adding one: " << *(&prime[0] + 1) << endl;
 
-for(int i = 0; i < 5; i++){
-    cout << *(prime + i)  << " ";
+for (int i = 0; i < 5; i++) {
+    cout << *(prime + i) << " ";
 }
 ```
 

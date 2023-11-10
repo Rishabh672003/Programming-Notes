@@ -22,16 +22,12 @@ Here's a simple example of a C++ program that demonstrates some essential featur
 #include <iostream>
 
 // A simple function to add two numbers
-int add(int a, int b) {
-    return a + b;
-}
+int add(int a, int b) { return a + b; }
 
 class Calculator {
   public:
     // A member function to multiply two numbers
-    int multiply(int a, int b) {
-        return a * b;
-    }
+    int multiply(int a, int b) { return a * b; }
 };
 
 int main() {
@@ -51,6 +47,6 @@ int main() {
 }
 ```
 
-<hr>
+---
 
 ![meme](https://img.devrant.com/devrant/rant/r_77251_3xSNn.jpg)

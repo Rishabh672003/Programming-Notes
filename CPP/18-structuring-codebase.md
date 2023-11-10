@@ -8,10 +8,10 @@ Namespaces are one of the tools in C++ to organize your code by providing a name
 
 ```cpp
 namespace MyNamespace {
-    int aFunction() {
-        // function implementation
-    }
+int aFunction() {
+    // function implementation
 }
+} // namespace MyNamespace
 // to use the function
 MyNamespace::aFunction();
 ```
@@ -39,9 +39,8 @@ Separating your implementation and declarations into header (_.h) and source (_.
 #ifndef MY_CLASS_H
 #define MY_CLASS_H
 
-class MyClass
-{
-public:
+class MyClass {
+  public:
     MyClass();
     int myMethod();
 };

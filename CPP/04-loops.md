@@ -9,7 +9,7 @@ A `for` loop is used when you know the number of times you want to traverse thro
 Here's the syntax for a `for` loop:
 
 ```cpp
-for (initialization; condition; increment/decrement) {
+for (initialization; condition; increment / decrement) {
     // block of code to execute
 }
 ```

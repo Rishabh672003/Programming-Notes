@@ -1,4 +1,4 @@
 [codespell]
-ignore_words = "ans"
+ignore-words-list = "and"
 count =
 quiet-level = 3

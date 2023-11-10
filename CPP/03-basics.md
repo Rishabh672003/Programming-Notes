@@ -89,15 +89,15 @@ for (initialization; condition; update) {
 
 ```cpp
 switch (variable) {
-    case value1:
-        // Code to execute if variable == value1
-        break;
-    case value2:
-        // Code to execute if variable == value2
-        break;
-    // More cases...
-    default:
-        // Code to execute if variable does not match any case value
+case value1:
+    // Code to execute if variable == value1
+    break;
+case value2:
+    // Code to execute if variable == value2
+    break;
+// More cases...
+default:
+    // Code to execute if variable does not match any case value
 }
 ```
 
@@ -116,9 +116,7 @@ ReturnType functionName(ParameterType1 parameter1, ParameterType2 parameter2) {
 For example, here's a function that adds two integers and returns the result:
 
 ```cpp
-int add(int a, int b) {
-    return a + b;
-}
+int add(int a, int b) { return a + b; }
 
 int main() {
     int result = add(3, 4);

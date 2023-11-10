@@ -31,9 +31,9 @@ The Data segment is composed of two parts: the initialized data segment and the 
 
 ```cpp
 // Initialized data segment
-int globalVar = 10; // global variables
+int globalVar = 10;        // global variables
 static int staticVar = 10; // static local variables
-const int constVar = 10; // constant variables with value
+const int constVar = 10;   // constant variables with value
 
 // Uninitialized data segment
 int globalVar; // uninitialized global variables
