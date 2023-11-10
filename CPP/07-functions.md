@@ -88,7 +88,7 @@ This kind of declaration is used in lambdas and also preferred to be used in tem
 Lambdas:
 
 ```cpp
-auto function_name->return_type = []() { /*function body*/ }
+auto function_name = []() -> return_type { /*function body*/ }
 ```
 
 Templates:
