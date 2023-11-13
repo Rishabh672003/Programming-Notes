@@ -27,7 +27,7 @@ Syntax: `arr.splice(index[, deleteCount, elem1, ..., elemN])`
 
 The mentioned elements are inserted at the index.
 
-```javascript
+```js
 let arr = ["I", "study", "JavaScript", "right", "now"];
 
 // remove 3 first elements and replace them with another
@@ -35,7 +35,7 @@ arr.splice(0, 3, "Let's", "dance");
 alert(arr); // now ["Let's", "dance", "right", "now"]
 ```
 
-```javascript
+```js
 let arr = ["I", "study", "JavaScript", "right", "now"];
 
 // remove 2 first elements
@@ -52,7 +52,7 @@ Syntax: `arr.slice([start], [end])`
 
 Returns a new array containing all items from index `start` to `end` (not including `end`).
 
-```javascript
+```js
 let arr = ["t", "e", "s", "t"];
 
 alert(arr.slice(1, 3)); // e,s (copy from 1 to 3)
@@ -65,7 +65,7 @@ Syntax: `arr.concat(arg1, arg2...)`
 
 Creates a new array that includes values from other arrays and additional items.
 
-```javascript
+```js
 let arr = [1, 2];
 
 // create an array from: arr and [3,4]
@@ -82,13 +82,13 @@ alert(arr.concat([3, 4], 5, 6)); // 1,2,3,4,5,6
 
 Syntax:
 
-```javascript
+```js
 arr.forEach(function(item, index, array) {
      ... do something with item
 });
 ```
 
-```javascript
+```js
 ["Bilbo", "Gandalf", "Nazgul"].forEach((item, index, array) => {
   alert(`${item} is at index ${index} in ${array}`);
 });
@@ -100,7 +100,7 @@ Syntax: `arr.indexOf(item, from)` and `arr.lastIndexOf(item, from)`
 
 Returns the index of the item if found, else -1.
 
-```javascript
+```js
 let fruits = ["Apple", "Orange", "Apple"];
 
 alert(fruits.indexOf("Apple")); // 0 (first Apple)
@@ -113,7 +113,7 @@ Syntax: `arr.includes(item, from)`
 
 Returns true if the array has the item, else false.
 
-```javascript
+```js
 let fruits = ["Apple", "Orange", "Apple"];
 alert(fruits.includes("Apple")); // true
 ```
@@ -122,21 +122,21 @@ alert(fruits.includes("Apple")); // true
 
 Syntax:
 
-```javascript
+```js
 arr.find(function (item, index, array) {
   // if true is returned, item is returned and iteration is stopped
   // for falsy scenario returns undefined
 });
 ```
 
-```javascript
+```js
 arr.findIndex(function (item, index, array) {
   // if true is returned, item is returned and iteration is stopped
   // for falsy scenario returns undefined
 });
 ```
 
-```javascript
+```js
 let users = [
   { id: 1, name: "John" },
   { id: 2, name: "Pete" },
@@ -155,7 +155,7 @@ alert(users.findLastIndex((user) => user.name == "John")); // 3
 
 Syntax:
 
-```javascript
+```js
 let results = arr.filter(function (item, index, array) {
   // if true item is pushed to results and the iteration continues
   // returns empty array if nothing found
@@ -164,7 +164,7 @@ let results = arr.filter(function (item, index, array) {
 
 Example:
 
-```javascript
+```js
 let users = [
   { id: 1, name: "John" },
   { id: 2, name: "Pete" },
@@ -180,7 +180,7 @@ alert(someUsers.length); // 2
 
 Syntax:
 
-```javascript
+```js
 let result = arr.map(function (item, index, array) {
   // returns the new value instead of item
 });
@@ -188,7 +188,7 @@ let result = arr.map(function (item, index, array) {
 
 Example:
 
-```javascript
+```js
 let lengths = ["Bilbo", "Gandalf", "Nazgul"].map((item) => item.length);
 alert(lengths); // 5,7,6
 ```
@@ -201,7 +201,7 @@ By default, it sorts the values as strings + modifies the older string.
 
 Use `localeCompare` for Strings:
 
-```javascript
+```js
 let countries = ["Österreich", "Andorra", "Vietnam"];
 
 alert(countries.sort((a, b) => (a > b ? 1 : -1))); // Andorra, Vietnam, Österreich (wrong)
@@ -210,7 +210,7 @@ alert(countries.sort((a, b) => a.localeCompare(b))); // Andorra,Österreich,Viet
 
 Use `compareFunction` for numbers:
 
-```javascript
+```js
 function compareNumeric(a, b) {
   if (a > b) return 1;
   if (a == b) return 0;
@@ -230,7 +230,7 @@ Reverses the order
 
 of the elements in the array.
 
-```javascript
+```js
 let arr = [1, 2, 3, 4, 5];
 arr.reverse();
 ```
@@ -241,7 +241,7 @@ Syntax: `str.split(delim)`
 
 Splits the string into an array by the given delimiter delim.
 
-```javascript
+```js
 let names = "Bilbo, Gandalf, Nazgul";
 let arr = names.split(", ");
 for (let name of arr) {
@@ -255,7 +255,7 @@ Syntax: `arr.join(glue)`
 
 Joins the array into a string using glue.
 
-```javascript
+```js
 let arr = ["Bilbo", "Gandalf", "Nazgul"];
 let str = arr.join(";"); // glue the array into a string using ;
 alert(str); // Bilbo;Gandalf;Nazgul
@@ -265,7 +265,7 @@ alert(str); // Bilbo;Gandalf;Nazgul
 
 Syntax:
 
-```javascript
+```js
 arr.reduce(
   function (accumulator, item, index, array) {
     // ...
@@ -274,7 +274,7 @@ arr.reduce(
 );
 ```
 
-```javascript
+```js
 let arr = [1, 2, 3, 4, 5];
 
 // removed initial value from reduce (no 0)
@@ -286,7 +286,7 @@ alert(result); // 15
 
 Syntax: `arr.some(function(item, index, array) { // returns true if the function returns true for any array element })`
 
-```javascript
+```js
 const array = [1, 2, 3, 4, 5];
 const even = (element) => element % 2 === 0; // Checks whether an element is even
 console.log(array.some(even)); // true
@@ -296,7 +296,7 @@ console.log(array.some(even)); // true
 
 Syntax: `arr.every(function(item, index, array) { // returns true if the function returns true for all array elements })`
 
-```javascript
+```js
 const isBelowThreshold = (currentValue) => currentValue < 40;
 const array1 = [1, 30, 39, 29, 10, 13];
 console.log(array1.every(isBelowThreshold)); // true
@@ -308,7 +308,7 @@ Syntax: `arr.copyWithin(target, start, end)`
 
 Copies its elements to another position in the array, overwriting the existing values.
 
-```javascript
+```js
 let arr = [1, 2, 3, 4, 5];
 arr.copyWithin(0, 3); // copy to 0th index from the 3rd index
 alert(arr); // 4,5,3,4,5
@@ -320,7 +320,7 @@ Syntax: `arr.fill(value, start, end)`
 
 Fills the array with repeating value from index start to end.
 
-```javascript
+```js
 let arr = [1, 2, 3, 4];
 
 // Fill with 0 from position 2 until position 4
@@ -337,7 +337,7 @@ Syntax: `arr.flat(depth)`
 
 Creates a new array with all sub-array elements concatenated into it recursively up to the specified depth.
 
-```javascript
+```js
 const arr1 = [0, 1, 2, [3, 4]];
 console.log(arr1.flat()); // Array [0, 1, 2, 3, 4]
 
@@ -351,7 +351,7 @@ console.log(arr2.flat(Infinity)); // Array [0, 1, 2, 3, 4, 5]
 
 Syntax:
 
-```javascript
+```js
 arr.flatMap(function callback(currentValue[, index[, array]]) {
     // return element for new_array
 }[, thisArg])
@@ -359,7 +359,7 @@ arr.flatMap(function callback(currentValue[, index[, array]]) {
 
 First maps each element using a mapping function, then flattens the result into a new array.
 
-```javascript
+```js
 const arr = [1, 2, 1];
 const results = arr.flatMap((num) => (num === 2 ? [2, 2] : 1));
 console.log(results); // Array [1, 2, 2, 1]
