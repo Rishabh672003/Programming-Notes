@@ -1,7 +1,7 @@
 # Array Methods
 
 - [Splice](#splice)
-- [Slice](#slice) 
+- [Slice](#slice)
 - [Concat](#concat)
 - [ForEach](#foreach)
 - [IndexOf/LastIndexOf](#indexof-lastindexof)
@@ -32,15 +32,16 @@ let arr = ["I", "study", "JavaScript", "right", "now"];
 
 // remove 3 first elements and replace them with another
 arr.splice(0, 3, "Let's", "dance");
-alert(arr) // now ["Let's", "dance", "right", "now"]
+alert(arr); // now ["Let's", "dance", "right", "now"]
 ```
+
 ```javascript
 let arr = ["I", "study", "JavaScript", "right", "now"];
 
 // remove 2 first elements
 let removed = arr.splice(0, 2);
 alert(removed); // "I", "study" <-- array of removed elements
-alert(arr); // "JavaScript", "right", "now" 
+alert(arr); // "JavaScript", "right", "now"
 ```
 
 `splice` method is also able to insert the elements at the index without any removals. For that, we need to set `deleteCount` to 0. Negative indices are allowed too (they specify the position from the end of the array).
@@ -79,7 +80,7 @@ alert(arr.concat([3, 4], 5, 6)); // 1,2,3,4,5,6
 
 ## ForEach
 
-Syntax: 
+Syntax:
 
 ```javascript
 arr.forEach(function(item, index, array) {
@@ -89,7 +90,7 @@ arr.forEach(function(item, index, array) {
 
 ```javascript
 ["Bilbo", "Gandalf", "Nazgul"].forEach((item, index, array) => {
-    alert(`${item} is at index ${index} in ${array}`);
+  alert(`${item} is at index ${index} in ${array}`);
 });
 ```
 
@@ -100,10 +101,10 @@ Syntax: `arr.indexOf(item, from)` and `arr.lastIndexOf(item, from)`
 Returns the index of the item if found, else -1.
 
 ```javascript
-let fruits = ['Apple', 'Orange', 'Apple']
+let fruits = ["Apple", "Orange", "Apple"];
 
-alert(fruits.indexOf('Apple')); // 0 (first Apple)
-alert(fruits.lastIndexOf('Apple')); // 2 (last Apple)
+alert(fruits.indexOf("Apple")); // 0 (first Apple)
+alert(fruits.lastIndexOf("Apple")); // 2 (last Apple)
 ```
 
 ## Includes
@@ -113,77 +114,82 @@ Syntax: `arr.includes(item, from)`
 Returns true if the array has the item, else false.
 
 ```javascript
-let fruits = ['Apple', 'Orange', 'Apple']
+let fruits = ["Apple", "Orange", "Apple"];
 alert(fruits.includes("Apple")); // true
 ```
 
 ## Find(left->right) and FindLast(right->left)
 
-Syntax: 
+Syntax:
 
 ```javascript
-arr.find(function(item, index, array) {
-    // if true is returned, item is returned and iteration is stopped
-    // for falsy scenario returns undefined
+arr.find(function (item, index, array) {
+  // if true is returned, item is returned and iteration is stopped
+  // for falsy scenario returns undefined
 });
-``` 
+```
+
 ```javascript
-arr.findIndex(function(item, index, array) {
-    // if true is returned, item is returned and iteration is stopped
-    // for falsy scenario returns undefined
+arr.findIndex(function (item, index, array) {
+  // if true is returned, item is returned and iteration is stopped
+  // for falsy scenario returns undefined
 });
 ```
 
 ```javascript
 let users = [
-    { id: 1, name: "John" },
-    { id: 2, name: "Pete" },
-    { id: 3, name: "Mary" },
-    { id: 4, name: "John" }
+  { id: 1, name: "John" },
+  { id: 2, name: "Pete" },
+  { id: 3, name: "Mary" },
+  { id: 4, name: "John" },
 ];
 
 // Find the index of the first John
-alert(users.findIndex(user => user.name == 'John')); // 0 
+alert(users.findIndex((user) => user.name == "John")); // 0
 
 // Find the index of the last John
-alert(users.findLastIndex(user => user.name == 'John')); // 3
+alert(users.findLastIndex((user) => user.name == "John")); // 3
 ```
 
 ## Filter
 
-Syntax: 
+Syntax:
+
 ```javascript
-let results = arr.filter(function(item, index, array) {
-    // if true item is pushed to results and the iteration continues
-    // returns empty array if nothing found
+let results = arr.filter(function (item, index, array) {
+  // if true item is pushed to results and the iteration continues
+  // returns empty array if nothing found
 });
 ```
 
 Example:
+
 ```javascript
 let users = [
-    { id: 1, name: "John" },
-    { id: 2, name: "Pete" },
-    { id: 3, name: "Mary" }
+  { id: 1, name: "John" },
+  { id: 2, name: "Pete" },
+  { id: 3, name: "Mary" },
 ];
 
 // returns array of the first two users
-let someUsers = users.filter(item => item.id < 3);
+let someUsers = users.filter((item) => item.id < 3);
 alert(someUsers.length); // 2
 ```
 
 ## Map
 
-Syntax: 
+Syntax:
+
 ```javascript
-let result = arr.map(function(item, index, array) {
-    // returns the new value instead of item
+let result = arr.map(function (item, index, array) {
+  // returns the new value instead of item
 });
 ```
 
 Example:
+
 ```javascript
-let lengths = ["Bilbo", "Gandalf", "Nazgul"].map(item => item.length);
+let lengths = ["Bilbo", "Gandalf", "Nazgul"].map((item) => item.length);
 alert(lengths); // 5,7,6
 ```
 
@@ -196,24 +202,24 @@ By default, it sorts the values as strings + modifies the older string.
 Use `localeCompare` for Strings:
 
 ```javascript
-let countries = ['Österreich', 'Andorra', 'Vietnam'];
+let countries = ["Österreich", "Andorra", "Vietnam"];
 
-alert( countries.sort( (a, b) => a > b ? 1 : -1) ); // Andorra, Vietnam, Österreich (wrong)
-alert( countries.sort( (a, b) => a.localeCompare(b) ) ); // Andorra,Österreich,Vietnam (correct!)
+alert(countries.sort((a, b) => (a > b ? 1 : -1))); // Andorra, Vietnam, Österreich (wrong)
+alert(countries.sort((a, b) => a.localeCompare(b))); // Andorra,Österreich,Vietnam (correct!)
 ```
 
 Use `compareFunction` for numbers:
 
 ```javascript
 function compareNumeric(a, b) {
-    if (a > b) return 1;
-    if (a == b) return 0;
-    if (a < b) return -1;
+  if (a > b) return 1;
+  if (a == b) return 0;
+  if (a < b) return -1;
 }
 
-let arr = [ 1, 2, 15 ];
+let arr = [1, 2, 15];
 arr.sort(compareNumeric);
-alert(arr);  // 1, 2, 15
+alert(arr); // 1, 2, 15
 ```
 
 ## Reverse
@@ -222,7 +228,7 @@ Syntax: `arr.reverse()`
 
 Reverses the order
 
- of the elements in the array.
+of the elements in the array.
 
 ```javascript
 let arr = [1, 2, 3, 4, 5];
@@ -236,10 +242,10 @@ Syntax: `str.split(delim)`
 Splits the string into an array by the given delimiter delim.
 
 ```javascript
-let names = 'Bilbo, Gandalf, Nazgul';
-let arr = names.split(', ');
+let names = "Bilbo, Gandalf, Nazgul";
+let arr = names.split(", ");
 for (let name of arr) {
-  alert( `A message to ${name}.` ); // A message to Bilbo  (and other names)
+  alert(`A message to ${name}.`); // A message to Bilbo  (and other names)
 }
 ```
 
@@ -250,18 +256,22 @@ Syntax: `arr.join(glue)`
 Joins the array into a string using glue.
 
 ```javascript
-let arr = ['Bilbo', 'Gandalf', 'Nazgul'];
-let str = arr.join(';'); // glue the array into a string using ;
-alert( str ); // Bilbo;Gandalf;Nazgul
+let arr = ["Bilbo", "Gandalf", "Nazgul"];
+let str = arr.join(";"); // glue the array into a string using ;
+alert(str); // Bilbo;Gandalf;Nazgul
 ```
 
 ## Reduce
 
-Syntax: 
+Syntax:
+
 ```javascript
-arr.reduce(function(accumulator, item, index, array) {
+arr.reduce(
+  function (accumulator, item, index, array) {
     // ...
-}, [initial]);
+  },
+  [initial],
+);
 ```
 
 ```javascript
@@ -269,7 +279,7 @@ let arr = [1, 2, 3, 4, 5];
 
 // removed initial value from reduce (no 0)
 let result = arr.reduce((sum, current) => sum + current);
-alert( result ); // 15
+alert(result); // 15
 ```
 
 ## Some
@@ -301,7 +311,7 @@ Copies its elements to another position in the array, overwriting the existing v
 ```javascript
 let arr = [1, 2, 3, 4, 5];
 arr.copyWithin(0, 3); // copy to 0th index from the 3rd index
-alert( arr ); // 4,5,3,4,5
+alert(arr); // 4,5,3,4,5
 ```
 
 ## Fill
@@ -339,7 +349,8 @@ console.log(arr2.flat(Infinity)); // Array [0, 1, 2, 3, 4, 5]
 
 ## FlatMap
 
-Syntax: 
+Syntax:
+
 ```javascript
 arr.flatMap(function callback(currentValue[, index[, array]]) {
     // return element for new_array
