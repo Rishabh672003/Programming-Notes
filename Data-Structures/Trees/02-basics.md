@@ -15,10 +15,10 @@
 ```cpp
 struct Node {
     int data;
-    struct Node *left;
-    struct Node *right;
+    struct Node* left;
+    struct Node* right;
     // constructor
-    Node(int value){
+    Node(int value) {
         data = value;
         left = right = NULL; // initially pointing to null
     }
@@ -27,7 +27,7 @@ struct Node {
 // Tree Creation
 int main() {
     // calling constructor and passing root's value.
-    struct Node *root = new Node(1);
+    struct Node* root = new Node(1);
 
     root->left = new Node(2);
     root->right = new Node(3);

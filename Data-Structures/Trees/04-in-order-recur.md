@@ -10,10 +10,10 @@
        8     9  10
 ```
 
-### Implemantation :
+### Implementation :
 
 ```cpp
-void inorder(int node){
+void inorder(int node) {
     if (node == NULL) { // base case
         return;
     }

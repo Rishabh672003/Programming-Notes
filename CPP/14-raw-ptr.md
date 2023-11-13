@@ -10,7 +10,7 @@ Here's an example of using the `new` operator:
 
 ```cpp
 int* ptr = new int; // Dynamically allocates an int on the heap
-*ptr = 42; // Assigns the value 42 to the allocated int
+*ptr = 42;          // Assigns the value 42 to the allocated int
 ```
 
 ## `delete` Operator
@@ -21,7 +21,7 @@ Here's an example of using the `delete` operator:
 
 ```cpp
 int* ptr = new int; // Dynamically allocates an int on the heap
-*ptr = 42; // Assigns the value 42 to the allocated int
+*ptr = 42;          // Assigns the value 42 to the allocated int
 
 delete ptr; // Deallocates the memory assigned to ptr
 ```
@@ -34,11 +34,12 @@ Here's an example of using the `new[]` and `delete[]` operators:
 
 ```cpp
 int n = 10;
-int* arr = new int[n]; // Dynamically allocates an array of 10 integers on the heap
+int* arr =
+    new int[n]; // Dynamically allocates an array of 10 integers on the heap
 
 // Set some values in the array
 for (int i = 0; i < n; i++) {
-  arr[i] = i;
+    arr[i] = i;
 }
 
 delete[] arr; // Deallocates the memory assigned to the array

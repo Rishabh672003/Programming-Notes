@@ -124,13 +124,11 @@ Example:
 
 ```cpp
 class Person {
-public:
+  public:
     string name;
     int age;
 
-    void printInfo() {
-        cout << "Name: " << name << ", Age: " << age << endl;
-    };
+    void printInfo() { cout << "Name: " << name << ", Age: " << age << endl; };
 };
 
 Person p1;

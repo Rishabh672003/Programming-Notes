@@ -11,11 +11,11 @@ Here's a simple code example to demonstrate static typing in C++:
 #include <string>
 
 int main() {
-    int num = 42;        // 'num' is statically typed as an integer
+    int num = 42; // 'num' is statically typed as an integer
 
-    std::string ans = "The answer to everything in the Universe";
-    num = ans; // This assignment would cause a compile-time error as the types
-              // don't match
+    std::string and = "The answer to everything in the Universe";
+    num = and; // This assignment would cause a compile-time error as the types
+               // don't match
 
     std::cout << "The value of num is: " << num << std::endl;
     std::cout << "The value of pi is: " << pi << std::endl;
@@ -24,4 +24,4 @@ int main() {
 }
 ```
 
-In the code above, the variable `num` is statically typed as an `int`, and `pi` is statically typed as a `string`. If you attempt to assign the value of `ans` to `num`, you'll get a compile-time error. This is because the static typing system ensures that variables are only used with compatible data types.
+In the code above, the variable `num` is statically typed as an `int`, and `pi` is statically typed as a `string`. If you attempt to assign the value of `and` to `num`, you'll get a compile-time error. This is because the static typing system ensures that variables are only used with compatible data types.

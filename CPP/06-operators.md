@@ -90,7 +90,7 @@ int product = a * b;
 It divides one number by another. Note that if both operands are integers, it will perform integer division and the result will be an integer.
 
 ```cpp
-int quotient = a / b; // integer division
+int quotient = a / b;                 // integer division
 float quotient = float(a) / float(b); // floating-point division
 ```
 

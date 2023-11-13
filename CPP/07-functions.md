@@ -73,4 +73,31 @@ int multiplyNumbers(int x, int y) {
 
 In this example, we use a function prototype for `multiplyNumbers()` before defining it. This way, we can call the function from the `main()` function even though it hasn't been defined yet in the code.
 
+## Functions with trailing return types
+
+In this type of declaration is done in following ways:
+
+```cpp
+auto function_name(parameters) -> return_type {
+    // function body
+}
+```
+
+This kind of declaration is used in lambdas and also preferred to be used in templates
+
+Lambdas:
+
+```cpp
+auto function_name = []() -> return_type { /*function body*/ }
+```
+
+Templates:
+
+```cpp
+template <typename T, typename U>
+auto function_name(T t, U u) -> decltype(t + u) {
+    return t + u;
+}
+```
+
 - [introduction to functions in c++](https://www.learncpp.com/cpp-tutorial/introduction-to-functions/)

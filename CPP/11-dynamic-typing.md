@@ -24,10 +24,12 @@ int main() {
     std::cout << "int value: " << *(static_cast<int*>(void_ptr)) << std::endl;
 
     void_ptr = &y;
-    std::cout << "float value: " << *(static_cast<float*>(void_ptr)) << std::endl;
+    std::cout << "float value: " << *(static_cast<float*>(void_ptr))
+              << std::endl;
 
     void_ptr = &z;
-    std::cout << "string value: " << *(static_cast<std::string*>(void_ptr)) << std::endl;
+    std::cout << "string value: " << *(static_cast<std::string*>(void_ptr))
+              << std::endl;
 
     return 0;
 }
@@ -40,8 +42,8 @@ C++17 introduced the `std::any` class which represents a generalized type-safe c
 Example:
 
 ```cpp
-#include <iostream>
 #include <any>
+#include <iostream>
 
 int main() {
     std::any any_value;
@@ -50,10 +52,12 @@ int main() {
     std::cout << "int value: " << std::any_cast<int>(any_value) << std::endl;
 
     any_value = 3.14;
-    std::cout << "double value: " << std::any_cast<double>(any_value) << std::endl;
+    std::cout << "double value: " << std::any_cast<double>(any_value)
+              << std::endl;
 
     any_value = std::string("Hello, world!");
-    std::cout << "string value: " << std::any_cast<std::string>(any_value) << std::endl;
+    std::cout << "string value: " << std::any_cast<std::string>(any_value)
+              << std::endl;
 
     return 0;
 }

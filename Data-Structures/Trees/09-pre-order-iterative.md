@@ -20,21 +20,23 @@ struct TreeNode {
     TreeNode *right;
     TreeNode() : val(x), left(nullptr), right(nullptr) {}
     TreeNode(int x): val(x), left(nullptr), right(nullptr) {}
-    TreeNode(int x, TreeNode *left, TreeNode *right): val(x), left(left), right(right) {}
+    TreeNode(int x, TreeNode *left, TreeNode *right): val(x), left(left),
+right(right) {}
 }
 */
 
 class Solution {
-public:
-    vector<int> preorder(TreeNode *root) {
+  public:
+    vector<int> preorder(TreeNode* root) {
 
         vectro<int> ans;
-        if (root == NULL) return ans;
+        if (root == NULL)
+            return ans;
 
         stack<TreeNode*> st;
         st.push(root);
 
-        while(!st.empty()){
+        while (!st.empty()) {
 
             root = st.top();
             st.pop();
@@ -46,7 +48,6 @@ public:
             if (root->left != NULL) {
                 st.push(root->left);
             }
-            
         }
         return ans;
     }
