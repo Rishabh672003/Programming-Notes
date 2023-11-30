@@ -127,6 +127,7 @@ int main() {
 ```
 
 **Output** :
+
 ```
 Initial List : 10
 List after insertion at head : 12 10
