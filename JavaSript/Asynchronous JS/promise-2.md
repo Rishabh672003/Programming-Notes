@@ -1,6 +1,6 @@
 ```js
 /*
-Promise API Is nothing but some Promise Class methods.
+Promise Is nothing but some Promise Class methods.
 1. Promise.all() : if we want all the values at same time, when every promise is resolved, we use promise.all()
    but, promise.all() only works for all resolved values and fails if any of the promise gets rejected.
    So if still we want to get the values, even if any of the promise is rejected, we use promise.allSettled()
