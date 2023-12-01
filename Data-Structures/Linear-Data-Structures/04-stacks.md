@@ -39,7 +39,7 @@ O(1)
 #define MAX_SIZE 100
 
 // Function to push an element into the stack
-void push(int stack[], int &top, int value) {
+void push(int stack[], int& top, int value) {
     if (top == MAX_SIZE - 1) {
         std::cout << "Stack Overflow!\n";
     } else {
@@ -50,7 +50,7 @@ void push(int stack[], int &top, int value) {
 }
 
 // Function to pop an element from the stack
-void pop(int stack[], int &top) {
+void pop(int stack[], int& top) {
     if (top == -1) {
         std::cout << "Stack Underflow!\n";
     } else {
@@ -187,6 +187,7 @@ class Stack:
     def size(self):
         return len(self.stack)
 
+
 stack = Stack()
 stack.push(10)
 stack.push(20)
@@ -199,5 +200,4 @@ print("Popped element:", popped_element)
 
 print("Is stack empty?", stack.is_empty())
 print("Stack size:", stack.size())
-
 ```
