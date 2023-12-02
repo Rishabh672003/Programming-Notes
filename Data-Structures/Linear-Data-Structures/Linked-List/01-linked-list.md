@@ -1,76 +1,61 @@
 # Linked Lists.
 
-**WHAT?** : It is a Linear Data Structure, which is made up of collection of nodes. For example consider a capsule having two parts. Each part is made up of nodes, The first node is the "DATA", and the second node is the "Address of the next NODE". A linked list ends by pointing a "NULL Pointer".
+**Table of content :**
+1. Why do we need Linked list ?
+2. What is a Linked List ?
+3. Structure of a Linked List.
+4. Linked List Terminologies.
+5. Depiction of a Linked list.
 
 ---
 
-**How a Linked List looks :**
+### Why do we need Linked list ?
+
+Before konwing the defination, let's first know its need.
+
+We need a data structure which is dynamic in nature, means it should not have a fixed size. The size could be changed during the run-time.
+
+An **array** with size 10 will be allocated a fixed 10 sized in memory and hence it cannot span or contract during the run-time.
+
+A **vector** can span double to its size if extra elements are meant to be added, but it ultimately wastes the remaining allocated memory.
+
+Hence we need an optimal data structure which can grow or shrink on run time with no memory waste.
+
+---
+
+### What is a Linked List ?
+
+A Linked list is a **Linear** but **Non-contiguous** Data Structure. Unlike arrays, hey are **Dynamic** in nature.
+
+Linked list elements are randomly placed in the heap memory and hence **cannot be indexed**.
+
+---
+
+### Structure of a Linked List
+
+**If Linked list elements are non-contiguous, then how do they form a linear collection?**
+
+This is only possible because, in a Linked list, each member element is linked to the other with a reference to its memory location, means each linked list element stores its **data** and also a pointer to point the **memory address** of its next element.
+
+**But there's no Primitive or Collective data type which can hold two things at a time!**
+
+So we need to create a **Self Defined data type (a struct or a class)**, which can hold two values, the data (of any type) and a pointer to point a memory address at the same time.
+
+Let's call this self defined data type a **NODE**. Now each node will have two halves, the first half will store data, the other half will store a pointer. A single node may look like a capsule with two halves:
 
 ```
-[DATA | ADDRESS]->[DATA | ADDRESS]->[DATA | NULL]
-  ^                                   ^
- head                                tail
+  [ Data | Pointer* ]
 ```
 
 ---
 
-**WHY?** : Think if you have an array of 10 size, so can we change its size on run time ? NO A Vector, when same value is inserted to it, it doubles its size and additional memory gets wasted, hence a vector is not an optimal data structure. Unlike these two, size of linked list can grow or shrink on run time, hence no memory waste.
+### Linked List Terminologies
 
-## Types of Linked Lists:
-
-1. Singly Linked List.
-2. Doubly Linked List.
-3. Circular Linked List.
-4. Circular Doubly Linked List.
-
-## Implementation:
-
-```cpp
-// Singly Linked List.
-class Node {
-  public:
-    int data;       // the "DATA" part of node.
-    Node *nextNode; // the "ADDRESS" part of node.
-
-    // Constructor
-    Node(int data) {
-        this->data = data;
-        this->nextNode = NULL;
-    }
-};
-
-int main() {
-    Node *node1 = new Node(10);
-    cout << node1->data << endl; // prints the data i.e, 10.
-    cout << node1->nextNode << endl; // prints NULL address.
-    return 0;
-}
-```
+1. **Head node** : The first node of Linked list is the head node and acts as a starting point for most of the opertions.
+2. **Tail node** : The last node of Linked list which points to the NULL Pointer 0x0.
 
 ---
 
-`Node* node1 = new Node();`
+### A depiction of a Linked list in heap memory :
 
-This line of code is allocating memory for a new object of the class named "Node" on the heap and assigning the address of the object to a pointer variable named
-"node1".
-
-The "new" operator dynamically allocates memory for the object and returns a pointer to the allocated memory.
-
-The parentheses after "Node()" call the default constructor of the class or struct to initialize the object.
-
-The result of this line of code is that we now have a dynamically allocated object of the "Node" class, and we can access its member variables and functions through the "node1" pointer.
-
----
-
-### Traverse and print linked list :
-
-```cpp
-void printLinkedList(Node *&head) {
-  Node *temp = head;
-  while (temp != NULL) {
-    cout << temp->data << " ";
-    temp = temp->next;
-  }
-  cout << endl;
-}
-```
+![Linked-list](image.png)
