@@ -59,4 +59,4 @@ Let's call this self defined data type a **NODE**. Now each node will have two h
 
 ### A depiction of a Linked list in heap memory :
 
-<img src="https://drive.google.com/file/d/17D7m1Y43pycPmjULdX0t4xQrVCu-QnwN/view" alt="img">
+![Linked-List-1](https://github.com/amitsuthar69/assets/blob/main/linked-lists/linked-list-1.png?raw=true)
