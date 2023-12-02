@@ -1,6 +1,7 @@
 # Linked Lists.
 
 **Table of content :**
+
 1. Why do we need Linked list ?
 2. What is a Linked List ?
 3. Structure of a Linked List.
@@ -58,4 +59,4 @@ Let's call this self defined data type a **NODE**. Now each node will have two h
 
 ### A depiction of a Linked list in heap memory :
 
-![Linked-list](image.png)
+<img src="https://drive.google.com/file/d/17D7m1Y43pycPmjULdX0t4xQrVCu-QnwN/view" alt="img">
