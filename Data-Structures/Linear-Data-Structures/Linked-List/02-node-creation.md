@@ -9,24 +9,24 @@ The self defined data type to create a node could be a struct or a class.
 using namespace std;
 
 class Node {
-public:
-  // node members
-  int data;   // data
-  Node *next; // pointer
+  public:
+    // node members
+    int data;   // data
+    Node* next; // pointer
 
-  // constructor
-  Node(int val) {
-    data = val;
-    next = nullptr;
-  }
+    // constructor
+    Node(int val) {
+        data = val;
+        next = nullptr;
+    }
 };
 
 int main() {
-  vector<int> arr = {2, 3, 4, 6, 3};
-  Node *n1 = new Node(arr[1]); // creating a new node
-  cout << n1->data << endl; // print 3
-  cout << n1->next << endl; // prints Null address
-  return 0;
+    vector<int> arr = {2, 3, 4, 6, 3};
+    const Node* n1 = new Node(arr[1]); // creating a new node
+    cout << n1->data << endl;          // print 3
+    cout << n1->next << endl;          // prints Null address
+    return 0;
 }
 ```
 

@@ -1,18 +1,19 @@
 # Linked Lists.
 
+<!--toc:start-->
+
 **Table of content :**
 
-1. Why do we need Linked list ?
-2. What is a Linked List ?
-3. Structure of a Linked List.
-4. Linked List Terminologies.
-5. Depiction of a Linked list.
+- [Why do we need Linked list ?](#why-do-we-need-linked-list)
+- [What is a Linked List ?](#what-is-a-linked-list)
+- [Structure of a Linked List](#structure-of-a-linked-list)
+- [Linked List Terminologies](#linked-list-terminologies)
+- [A depiction of a Linked list in heap memory](#a-depiction-of-a-linked-list-in-heap-memory)
+<!--toc:end-->
 
 ---
 
 ### Why do we need Linked list ?
-
-Before konwing the defination, let's first know its need.
 
 We need a data structure which is dynamic in nature, means it should not have a fixed size. The size could be changed during the run-time.
 
@@ -52,7 +53,7 @@ Let's call this self defined data type a **NODE**. Now each node will have two h
 
 ### Linked List Terminologies
 
-1. **Head node** : The first node of Linked list is the head node and acts as a starting point for most of the opertions.
+1. **Head node** : The first node of Linked list is the head node and acts as a starting point for most of the operations.
 2. **Tail node** : The last node of Linked list which points to the NULL Pointer 0x0.
 
 ---

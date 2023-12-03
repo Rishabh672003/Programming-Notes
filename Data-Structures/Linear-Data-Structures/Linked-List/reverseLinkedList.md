@@ -16,8 +16,9 @@
 ### Imlementation :
 
 ```cpp
-#include <bits/stdc++.h>
-using namespace std;
+#include <iostream>
+
+using std::cout, std::cin, std::endl;
 
 template <typename T> class LinkedListNode {
 public:
