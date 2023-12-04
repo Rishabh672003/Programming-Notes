@@ -15,11 +15,9 @@
 
 ### Why do we need Linked list ?
 
-Before knowing the defination, let's first know its need.
-
 We need a data structure which is dynamic in nature, means it should not have a fixed size. The size could be changed during the run-time.
 
-An **array** with size 10 will be allocated a fixed 10 sized space in memory and hence it cannot span or contract during the run-time.
+An **array** with size 10 will be allocated a fixed 10 sized in memory and hence it cannot span or contract during the run-time.
 
 A **vector** can span double to its size if extra elements are meant to be added, but it ultimately wastes the remaining allocated memory.
 
@@ -29,7 +27,7 @@ Hence we need an optimal data structure which can grow or shrink on run time wit
 
 ### What is a Linked List ?
 
-A Linked list is a **Linear** but **Non-contiguous** Data Structure. Unlike arrays, they are **Dynamic** in nature.
+A Linked list is a **Linear** but **Non-contiguous** Data Structure. Unlike arrays, hey are **Dynamic** in nature.
 
 Linked list elements are randomly placed in the heap memory and hence **cannot be indexed**.
 

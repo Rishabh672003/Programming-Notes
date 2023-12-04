@@ -24,4 +24,4 @@ class Solution {
 
 ### Depiction of traversal
 
-![linked-list-1](https://github.com/amitsuthar69/assets/blob/main/linked-lists/linked-list-traversal.png?raw=true)
+![linked-list-1](https://github.com/Rishabh672003/Programming-Notes/assets/53911515/98f79c73-5949-4bd7-8001-7201c0f46e44)
