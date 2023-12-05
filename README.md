@@ -11,3 +11,5 @@ if its good, We will most definitely merge it. Thanks for your time.
 
 For CPP notes: Credit to [developer-roadmap](https://github.com/kamranahmedse/developer-roadmap) and [roadmap.sh](roadmap.sh), I followed there roadmap and
 also took many of the notes from there, so thanks to them
+
+For Data Structures and Algorithm notes: Credit to Striver (Raj Vikramaditya).
