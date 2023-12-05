@@ -6,8 +6,6 @@
 2. Object Types.
 3. Type Aliases.
 4. Function Types.
-5. Generic Types.
-6. Generic Functions.
 
 ---
 
@@ -248,98 +246,4 @@ let computeAverage: NumberArrayToNumber = function (numbers: number[]) {
 };
 
 console.log(computeAverage([5, 10, 15])); // Prints 10
-```
-
----
-
-### Generic Types.
-
-TypeScript’s generics are ways to create **collections of types** that share certain formal similarities.
-
-To define a generic type alias, use the `type` keyword followed by the alias name and angle brackets `<...>` containing a symbol for the generic type and assign it a custom definition. The symbol can be any alphanumeric character or string.
-
-Here’s an example:
-
-```ts
-type Family<T> = {
-  parents: [T, T];
-  mate: T;
-  children: T[];
-};
-```
-
-This code defines a collection of object types, with a different type for every value of `T`. The generic `Family<T>` cannot actually be used as a type in a type annotation.
-
-Instead, we must substitute `T` with some type of our choosing, let's choose `string`. Then, `Family<string>` is exactly the same as the object type given by setting `T` to :
-
-```ts
-string: {
-  parents: [string,string],
-  mate: string,
-  children: string[]
-}
-```
-
-In general, writing generic types with `type typeName<T>` allows us to use `T` within the type annotation as **a type placeholder**. Later, when the generic type is used, **T is replaced with the provided type**.
-
-Another Example :
-
-```ts
-// A generic Family
-type Family<T> = {
-  parents: [T, T];
-  children: T[];
-};
-
-// two type aliases for Species
-type Human = { name: string; job: string };
-type Dog = { name: string; tailWagSpeed: number };
-
-// a human family which uses Family generics with Human alias
-let humanFamily: Family<Human> = {
-  parents: [
-    { name: "Mom", job: "software engineer" },
-    { name: "Dad", job: "web3 engineer" },
-  ],
-  children: [{ name: "kohli", job: "cricketer" }],
-};
-
-// a dog family which uses Family generics with Dog alias
-let dogFamily: Family<Dog> = {
-  parents: [
-    { name: "Momo", tailWagSpeed: 3 },
-    { name: "Dado", tailWagSpeed: 100 },
-  ],
-  children: [{ name: "Puppin", tailWagSpeed: 0.001 }],
-};
-```
-
----
-
-### Generic Functions
-
-Similar to typed functions, we can also use generics to create collections of typed functions.
-
-Imagine we wanted to create a function that returns arrays filled with a certain value, the JavaScript would be :
-
-```js
-let getFilledArray = (value, n) => {
-  return Array(n).fill(value);
-};
-```
-
-Here, `getFilledArray('cheese', 3)` evaluates to `['cheese', 'cheese', 'cheese']`. No problem, right? Well, we run into a problem when we try to specify the function’s return type.
-
-We know it should be an array of whatever value‘s type is—do we have to write a separate type annotation for every type of value? Nope. Here, we are rescued by generic functions!
-
-```ts
-type getFilledArray<T>(value: T, n: number): T[] => {
-  return Array(n).fill(value);
-}
-```
-
-This still evaluates to `['cheese', 'cheese', 'cheese']`, but the function is now **correctly typed and less prone to errors**. The function `getFilledArray<string>` is precisely the same as if we had written it in its type annotation.
-
-```ts
-getFilledArray(value: string, n: number): string[]
 ```
