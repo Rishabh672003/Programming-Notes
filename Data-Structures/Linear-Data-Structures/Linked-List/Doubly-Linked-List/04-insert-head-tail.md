@@ -16,7 +16,7 @@ Node* insertBeforeTail(Node* head, int val){
         Node* newHead = new Node(val);
         return newHead;
     }
-    
+
     if (head->next == NULL && head->back == NULL) {
         insertBeforeHead(head, val);
     }
