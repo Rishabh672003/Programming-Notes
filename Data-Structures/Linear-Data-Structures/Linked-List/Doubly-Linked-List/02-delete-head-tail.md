@@ -38,7 +38,7 @@ Node* deleteHeadDLL(Node* head){
     return head;
 }
 
-Node* deleteHeadDLL(Node* head){
+Node* deleteTailDLL(Node* head){
     if (head == NULL || head->next == NULL){
         return NULL;
     }
