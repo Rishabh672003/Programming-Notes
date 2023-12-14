@@ -11,10 +11,14 @@ prints out the value of an object of any type:
 
 ```cpp
 template <typename T> void print(T value) { std::cout << value << std::endl; }
+
+print(1);
+print("Hello");
+print(5.3);
 ```
 
 In the above code, `T` is a placeholder for any data type. When you call the `print` function, you can pass an object of
-any type, and the `print` function will print out the value of the object.
+any type for which operator `<<` is overloaded, and the `print` function will print out the value of the object.
 
 **Class Templates**
 
