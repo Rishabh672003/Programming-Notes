@@ -34,6 +34,13 @@ class Solution {
         int rh = minDepth(root->right);
         return 1 + min(lh, rh); // formula
     }
+    void deleteTree(TreeNode* node) {
+        if (node != NULL) {
+            deleteTree(node->left);
+            deleteTree(node->right);
+            delete node;
+        }
+    }
 };
 
 int main() {
@@ -50,5 +57,6 @@ int main() {
     std::cout << "Max Depth of tree : " << maxDepth << std::endl;
     std::cout << "Min Depth of tree : " << minDepth << std::endl;
 
+    solution.deleteTree(root);
     return 0;
 }

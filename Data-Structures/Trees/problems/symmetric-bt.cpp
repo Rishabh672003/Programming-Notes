@@ -26,6 +26,15 @@ class Solution {
         return helper(left->left, right->right) &&
                helper(left->right, right->left);
     }
+    // recursively free the memory of all the nodes
+    // call this function at the end of the program
+    void deleteTree(TreeNode* node) {
+        if (node != NULL) {
+            deleteTree(node->left);
+            deleteTree(node->right);
+            delete node;
+        }
+    }
 };
 
 int main() {
@@ -45,6 +54,9 @@ int main() {
     } else {
         cout << "The tree is not symmetric." << endl;
     }
+    // whenever you are allocating on the heap by using the new keyword you
+    // need to free that memory with the delete keyword
+    solution.deleteTree(root);
 
     return 0;
 }

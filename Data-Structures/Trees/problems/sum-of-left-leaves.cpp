@@ -27,6 +27,13 @@ class Solution {
 
         return sum;
     }
+    void deleteTree(TreeNode* node) {
+        if (node != NULL) {
+            deleteTree(node->left);
+            deleteTree(node->right);
+            delete node;
+        }
+    }
 };
 
 int main() {
@@ -41,5 +48,6 @@ int main() {
     int result = solution.sumOfLeftLeaves(root);
     std::cout << "Sum of left leaves: " << result << std::endl;
 
+    solution.deleteTree(root);
     return 0;
 }

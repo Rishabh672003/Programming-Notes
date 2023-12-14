@@ -39,6 +39,14 @@ class Solution {
 
         return max(lh, rh) + 1;
     }
+
+    void deleteTree(TreeNode* node) {
+        if (node != NULL) {
+            deleteTree(node->left);
+            deleteTree(node->right);
+            delete node;
+        }
+    }
 };
 
 int main() {
@@ -54,5 +62,7 @@ int main() {
 
     bool isBalancedResult = solution.isBalanced(balancedTree);
     cout << "tree balanced? " << (isBalancedResult ? "Yes" : "No") << endl;
+
+    solution.deleteTree(balancedTree);
     return 0;
 }
