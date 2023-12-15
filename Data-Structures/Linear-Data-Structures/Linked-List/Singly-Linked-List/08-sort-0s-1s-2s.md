@@ -1,6 +1,6 @@
 ## Sort the 0s, 1s and 2s in the given LL
 
-Given a LL of N nodes, where each node has an integer value that can be 0, 1, or 2. You need to sort the linked list in non-decreasing order and the return the head of the sorted list.
+Given a LL of N nodes, where each node has an integer value that can be 0, 1, or 2. You need to sort the linked list in **non-decreasing order** and the return the head of the sorted list.
 
 **Expected TC O(N), SC O(1)**
 
