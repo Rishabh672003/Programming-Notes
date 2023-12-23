@@ -7,6 +7,8 @@ What we are now working on basic Computer Science concepts like different Data S
 If you want to contribute to the repository don't be afraid to open a PR
 if its good, We will most definitely merge it. Thanks for your time.
 
+Now at least all the CPP notes are hosted on this website - https://rishabh672003.github.io/Programming-Notes/
+
 ## Credits
 
 For CPP notes: Credit to [developer-roadmap](https://github.com/kamranahmedse/developer-roadmap) and [roadmap.sh](roadmap.sh), I followed there roadmap and
