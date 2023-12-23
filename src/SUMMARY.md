@@ -20,7 +20,7 @@
 - [Structuring-codebase](18-structuring-codebase.md)
 - [Scope](19-scope.md)
 - [Namespace](20-namespace.md)
-  - [Dont use namesapce STD](20.1-dont-use-namesapce-std.md)
+  - [Dont use namesapce std](20.1-dont-use-namesapce-std.md)
 - [Code-splitting](21-code-splitting.md)
 - [Forward-declaration](22-forward-declaration.md)
 - [Structs-classes](23-structs-classes.md)
