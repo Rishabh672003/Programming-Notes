@@ -68,14 +68,14 @@ So don't use `malloc` use `new` keyword instead in C++
 class A {
   public:
     int x = 3;
-    virtual void f() { cout << "abc"; }
+    virtual void f() { std::cout << "abc"; }
 };
 
 A* a1 = new A;
 A* a2 = (A*)malloc(sizeof(A));
 
 std::cout << a1->x; // print "3"
-cout << a2->x;      // undefined value!!
+std::cout << a2->x; // undefined value!!
 a1->f();            // print "abc"
 a2->f();            // segmentation fault
 ```
