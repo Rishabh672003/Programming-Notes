@@ -13,26 +13,20 @@ Here's an example in C++ demonstrating dynamic polymorphism.
 
 // Base class
 class Shape {
-public:
-    virtual void draw() {
-        std::cout << "Drawing a shape" << std::endl;
-    }
+  public:
+    virtual void draw() { std::cout << "Drawing a shape" << std::endl; }
 };
 
 // Derived class 1
 class Circle : public Shape {
-public:
-    void draw() override {
-        std::cout << "Drawing a circle" << std::endl;
-    }
+  public:
+    void draw() override { std::cout << "Drawing a circle" << std::endl; }
 };
 
 // Derived class 2
 class Rectangle : public Shape {
-public:
-    void draw() override {
-        std::cout << "Drawing a rectangle" << std::endl;
-    }
+  public:
+    void draw() override { std::cout << "Drawing a rectangle" << std::endl; }
 };
 
 int main() {
@@ -64,3 +58,24 @@ Drawing a rectangle
 ```
 
 As you can see, using dynamic polymorphism, we can determine at runtime which `draw` method should be called based on the type of object being used.
+
+## **Never use `malloc` in C++**
+
+In this code calling of `f()` with the _a2_ object will cause a segmentation fault as _a2_ is instantiated using `malloc`
+So don't use `malloc` use `new` keyword instead in C++
+
+```cpp
+class A {
+  public:
+    int x = 3;
+    virtual void f() { std::cout << "abc"; }
+};
+
+A* a1 = new A;
+A* a2 = (A*)malloc(sizeof(A));
+
+std::cout << a1->x; // print "3"
+std::cout << a2->x; // undefined value!!
+a1->f();            // print "abc"
+a2->f();            // segmentation fault
+```
