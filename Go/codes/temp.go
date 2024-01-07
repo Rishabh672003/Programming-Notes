@@ -1,73 +1,48 @@
 package main
 
 import (
-	"errors"
 	"fmt"
+	"math"
 )
 
-type Message struct {
-	sender   string
-	receiver string
+type Shape interface {
+	area() float64
+}
+type Circle struct {
+	radius float64
 }
 
-type person struct {
-	name string
-	age  int
+type Squ struct {
+	side float64
 }
 
-type user struct {
-	person
-	isVerified bool
+func (c Circle) area() float64 {
+	return math.Pi * c.radius * c.radius
 }
 
-type Rect struct {
-	width  int
-	height int
+func (s Squ) area() float64 {
+	return s.side * s.side
 }
 
-func (r Rect) area() int {
-	return r.width * r.height
-}
-
-func sendMessage(m Message) {
-	fmt.Printf("Message sent by %s to %s", m.sender, m.receiver)
+func printDetails(s Shape) {
+	switch v := s.(type) {
+	case Circle:
+		fmt.Printf("Area: %f \n", v.area())
+	default:
+		fmt.Println("Imposter!")
+	}
 }
 
 func main() {
-	var age int
-	fmt.Print("Enter your age: ")
-	fmt.Scanf("%d", &age)
-	message, err := isAdult(age)
-	if err != nil {
-		fmt.Println(err)
-	} else {
-		fmt.Println(message)
+	var radius float64
+	fmt.Print("Enter Radius: ")
+	fmt.Scanf("%f", &radius)
+	circle := Circle{
+		radius: radius,
 	}
-	msg := Message{"Amit", "Rizzabh"}
-	sendMessage(msg)
-
-	fmt.Println()
-
-	user1 := user{
-		person: person{
-			name: "Amit",
-			age:  19,
-		},
-		isVerified: true,
+	squ := Squ{
+		side: 10,
 	}
-	fmt.Println(user1.name)
-
-	rect := Rect{
-		width:  10,
-		height: 10,
-	}
-	fmt.Println(rect.area())
-}
-
-func isAdult(age int) (string, error) {
-	if age < 18 {
-		return "", errors.New("you're not an elegible")
-	}
-	status := "You are elegible"
-	return status, nil
+	printDetails(circle)
+	printDetails(squ)
 }
