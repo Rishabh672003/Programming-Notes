@@ -126,6 +126,25 @@ for i = 3; i > 0; i-- {
 }
 ```
 
+For loops in Go are quite unique because, unlike other languages, we can skip statements of loop signature.
+
+```go
+for INITIAL; ;AFTER {
+    // do something
+}
+```
+
+Due to this ability, there are **no while loops** in Go.
+
+We can just use a for loop by skipping the initialization and incremental part and keeping the conditional part.
+
+```go
+for CONDITION {
+    // a while loop, runs untill CONDITION is no longer true
+    // make sure you handle the loop braking logic
+}
+```
+
 ---
 
 ### functions
