@@ -36,4 +36,31 @@ func main() {
 			}
 		}
 	}
+
+	// map
+	ages := map[string]int{
+		"Amit":    19,
+		"Rishabh": 18,
+	}
+	ages["Sumit"] = 19  // inserting new element
+	age := ages["Amit"] // getting a value with it's key
+	fmt.Printf("Amit's age: %d", age)
+
+	fmt.Println()
+
+	fmt.Println("Map before sumit : ")
+	for key, value := range ages {
+		fmt.Println(key, value)
+	}
+
+	fmt.Println()
+
+	delete(ages, "Sumit") // deleting a value with it's key
+
+	fmt.Println("Map after sumit : ")
+
+	// printing the map as key value pair
+	for key, value := range ages {
+		fmt.Println(key, value)
+	}
 }
