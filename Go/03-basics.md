@@ -8,6 +8,7 @@
 4. String Formatting
 5. if-else and for loop
 6. functions
+7. Variadic functions
 
 ---
 
@@ -226,4 +227,43 @@ func main() {
 	fmt.Println(Add(2, 3)) // calling Add
 	fmt.Println(Add(4, 3)) // calling Sub
 }
+```
+
+### Variadic functions (variable arguments)
+
+Variadic function in Go are funtions with variable number of argumets as [slices](https://github.com/amitsuthar69/Programming-Notes/blob/main/Go/07-arrays-slices.md).
+
+While this concept is more similar to Python's `args`, the syntax is more similar to javascript's `...spread` operator.
+
+```go
+func addNums(nums ...int) int {
+    sum := 0
+    for i := 0; i < len(nums); i++ {
+        sum += nums[i]
+    }
+    return sum
+}
+```
+
+```go
+func main(){
+    slice := []int{1, 2, 3, 4, 5}
+    total  := addNums(slice...)
+    fmt.Println(total) // prints 15
+}
+```
+
+You would've noticed 3 strange things here!
+
+1. the `nums` in function signature is treated as a slice, hence we can leverage the `len` and underlying index of `nums`.
+
+2. `...int` is a type spread operator which assigns type `int` to each slice element and expects the function call to be injected with all the slice elements.
+
+3. `slice...` populates the function call with all the slice element which is the expected behaviour.
+
+The familiar `fmt.Println()` and `fmt.Sprintf()` are variadic!
+`fmt.Println()` prints each element with space delimiters and a newline at the end.
+
+```go
+func Println(a ...interface{}) (n int, err error) {}
 ```

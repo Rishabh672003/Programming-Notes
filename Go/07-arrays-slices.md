@@ -4,6 +4,9 @@
 
 1. Arrays in Go.
 2. What are Slices?
+3. Slices ~ `append()` function
+4. Slices ~ `range()` function
+5. 2D slices or Slice of slices
 
 ---
 
@@ -87,6 +90,8 @@ If we want to create a slice with specific set of values, we can use slice liter
 **Syntax : `sliceName := []type{"slice", "elements"}`**
 
 ```go
+mySlice := make([]int, len, cap)
+// or
 mySlice := []string{"I", "am", "Amit"}
 
 fmt.Println(len(mySlice)) // 3 (current size)
@@ -96,5 +101,67 @@ fmt.Println(cap(mySlice)) // 3 (maximum size)
 Note that the array brackets do not have a `3` in them. If they id, we'd have an array instad of a slice.
 
 ---
+
+### `append()` function in slices
+
+The built-in append function is used to dynamically add elements to a slice.
+
+If the underlying array is not large enough, `append()` will create a new underlying array and point the slice to it.
+
+```go
+func append(slice []Type, elems ...Type) []Type {}
+```
+
+As we can see, the `append()` function takes a slice of type `T`, the elements to be appended in, and it returns a new modified slice of type `T`.
+
+Notice that `append()` is variadic, the following are all vaild:
+
+```go
+mySlice = append(mySlice, anElement)
+mySlice = append(mySlice, anElement, anotherElement)
+mySlice = append(mySlice, anotherSlice...)
+```
+
+The `append()` function changes the underlying array of its parameter AND returns a new slice. This means, **using `append()` on anything other than itself is a BAD idea!**
+
+```go
+// don't do this !
+someSlice = append(otherSlice, element)
+```
+
+---
+
+### `range()` function in slices
+
+Go provides a syntactic sugar to iterate easily over elements in slice using built-in `range()` function
+
+syntax : `for INDEX, ELEMENT := range SLICE {...}`
+
+Example :
+
+```go
+fruits := []string{"apples", "bananas", "grapes"}
+for i, fruit := range fruits {
+    fmt.Println(i, fruit)
+}
+// 0 apple
+// 1 banana
+// 2 grapes
+```
+---
+
+### 2D slices or Slice of slices
+
+Slices can hold other slices, effectively creating a **matrix**, or a 2D array.
+
+```go
+rows := [][]int{}
+```
+
+The above statement initializes an empty 2D slice of type `int`.
+
+---
+
+Slices are used in [Variadic Functions](https://github.com/amitsuthar69/Programming-Notes/blob/main/Go/03-basics.md).
 
 In Go, 99% of the time, we never deal with an array, we use slices instead.
