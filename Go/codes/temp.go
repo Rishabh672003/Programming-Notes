@@ -4,6 +4,18 @@ import (
 	"fmt"
 )
 
+func add(x, y int) int {
+	return x + y
+}
+
+func mul(x, y int) int {
+	return x * y
+}
+
+func aggregate(x, y, z int, arithmetic func(int, int) int) int {
+	return arithmetic(arithmetic(x, y), z)
+}
+
 func addNums(nums ...int) int {
 	sum := 0
 	for i := 0; i < len(nums); i++ {
@@ -13,6 +25,10 @@ func addNums(nums ...int) int {
 }
 
 func main() {
+
+	fmt.Println(aggregate(1, 2, 3, add))
+	fmt.Println(aggregate(2, 3, 2, mul))
+
 	array := [5]int{1, 2, 3, 4, 5}
 	slice := array[1:4]
 	fmt.Println(array)
