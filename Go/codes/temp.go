@@ -4,6 +4,27 @@ import (
 	"fmt"
 )
 
+type Shape interface {
+	area() float64
+	perimeter() float64
+}
+type Rectangle struct {
+	length  float64
+	breadth float64
+}
+
+func (r Rectangle) area() float64 {
+	return r.length * r.breadth
+}
+
+func (r Rectangle) perimeter() float64 {
+	return 2*r.length + 2*r.breadth
+}
+
+func printdetails(s Shape) {
+	fmt.Printf("Area : %f, Perimeter: %f", s.area(), s.perimeter())
+}
+
 func add(x, y int) int {
 	return x + y
 }
@@ -24,7 +45,45 @@ func addNums(nums ...int) int {
 	return sum
 }
 
+type User struct {
+	name string
+	age  int
+}
+
+// closure
+func concattor() func(string) string {
+	doc := ""
+	return func(word string) string {
+		doc += word + " "
+		return doc
+	}
+}
+
 func main() {
+
+	rect := Rectangle{
+		length:  10,
+		breadth: 10,
+	}
+
+	printdetails(rect)
+
+	fmt.Println()
+
+	user := User{
+		name: "Amit",
+		age:  19,
+	}
+	fmt.Println(user)
+
+	person := struct {
+		name string
+		age  int
+	}{
+		name: "Amit",
+		age:  19,
+	}
+	fmt.Println(person)
 
 	fmt.Println(aggregate(1, 2, 3, add))
 	fmt.Println(aggregate(2, 3, 2, mul))
@@ -64,10 +123,17 @@ func main() {
 
 	fmt.Println()
 
+	makeFriends := concattor()
+
 	fmt.Println("Map before sumit : ")
 	for key, value := range ages {
 		fmt.Println(key, value)
+		makeFriends(key)
 	}
+
+	fmt.Println()
+
+	fmt.Println(makeFriends("Harshil")) // prints Amit Rishabh Sumit Harshil
 
 	fmt.Println()
 
