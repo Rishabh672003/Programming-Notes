@@ -1,4 +1,14 @@
-## Calling codes from an external package
+## Packages
+
+Every Go program is mode up of packages!
+
+You have probably noticed the `package main` at the top of the programs we've seen yet. A package named `main` has an entrypoint at the `main()` function. **A main package is compiled into an executable program.**
+
+A package by any other name is a `library package`. Such libraries have no entry point. Libraries simply export functionality that can be used by other packages.
+
+A collection of these packages that are released together are called **Go module(s)**
+
+---
 
 When you need your code to do something that might have been implemented by someone else, you can look for a package that has functions you can use in your code.
 

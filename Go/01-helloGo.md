@@ -6,13 +6,20 @@ Ensure you've Go installed in your system!
 
 Navigate to the directory where you want to create your Go project and run the command
 
+```bash
+mkdir hellogo
+cd hellogo
 ```
-go mod init example/hello
+
+- **go mod init {REMOTE}/{USERNAME}/hellogo**
+
+```bash
+go mod init github.com/amitsuthar69/hellogo
 ```
 
 What it does:
 
-- Initializes a new Go module named `example/hello` in the current directory.
+- Initializes a new Go module named `github.com/amitsuthar69/hellogo` in the current directory.
 - Generates a file named `go.mod` at the root of your project, which tracks the module's dependencies.
 
 Purpose of `go.mod`:
@@ -23,7 +30,7 @@ Purpose of `go.mod`:
 `go.mod` file :
 
 ```mod
-module example/hello
+module github.com/amitsuthar69/hellogo
 
 go 1.21.5
 ```
