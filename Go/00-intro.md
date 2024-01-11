@@ -1,5 +1,16 @@
 ## Introduction to Go
 
+**Table of contents:**
+
+1. Introduciton to Go Language.
+2. Go under the hood.
+3. Memory Management.
+4. Comparison with other languages.
+
+---
+
+### Introduciton to Go Language.
+
 Go, often called Golang, is a statically typed & compiled programming language created at Google.
 
 It aims for simplicity, readability, and **concurrency**, making it great for building performant web services, network applications, and CLI tools.
@@ -26,9 +37,15 @@ _goroutines_ : these are the foundation of Go's powerful concurrency features. T
 
 Go uses garbage collection (GC) to automatically reclaim unused memory allocated during program execution. This simplifies memory management for developers and prevents memory leaks.
 
+The Go runtime automatically manages memory allocation and deallocation for the programmer. This eliminates the need for manual memory management, but it comes with a cost:
+
+- The Go runtime must keep track of every object that is allocated, leading to increased performance overhead.
+
+- In certain scenarios, such as when an HTTP server processes requests with large protobuf blobs (which contain many small objects), this can result in the Go runtime spending a significant amount of time tracking each of those individual allocations, and then deallocating them. As a result this also causes signicant performance overhead.
+
 ---
 
-Comparison to Other Languages:
+### Comparison with other languages:
 
 Unlike interpreted languages like Python, Go compiles to native code, offering faster execution. However, compilation adds an extra step compared to directly running interpreted code.
 
