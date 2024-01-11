@@ -13,6 +13,14 @@ type Rectangle struct {
 	breadth float64
 }
 
+type car struct {
+	color string
+}
+
+func (c *car) setColor(color string) {
+	c.color = color
+}
+
 func (r Rectangle) area() float64 {
 	return r.length * r.breadth
 }
@@ -60,6 +68,22 @@ func concattor() func(string) string {
 }
 
 func main() {
+
+	myString := "Hello"
+	fmt.Println(myString)
+
+	myStringPtr := &myString
+	fmt.Println(myStringPtr)
+	fmt.Println(*myStringPtr)
+
+	*myStringPtr = "world"
+	fmt.Println(myString)
+
+	myCar := car{
+		color: "Red",
+	}
+	myCar.setColor("Black")
+	fmt.Println(myCar.color)
 
 	rect := Rectangle{
 		length:  10,
