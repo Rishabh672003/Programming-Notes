@@ -71,3 +71,7 @@ Here's a breakdown of the syntax :
 ```
 $ go run .
 ```
+
+This `go run` command is used to quickly compile and run a Go package. The compiled binary is not saved in our working directory.
+
+Instead we should use `go build` to compile production executables.
