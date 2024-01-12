@@ -76,4 +76,8 @@ This `go run` command is used to quickly compile and run a Go package. The compi
 
 Instead we should use `go build` to compile production executables.
 
+To make this executable file run anywhere on your mchine, you can run `go install` which will make this `hellogo` executable file globally available and now anywhere in your system, you can simply run `hellgo` as a shell scrpit!
+
+This is helpful to make our custom scripts written in go!
+
 **NOTE:** Once used `go build`, you need to re-compile (`go build`) our code everytime you make changes in our code or else the changes would not be reflected.
