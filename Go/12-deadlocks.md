@@ -51,6 +51,8 @@ In this corrected version:
 - The goroutine is started before attempting to send a value to the channel.
 - The value 10 is sent to the channel inside the main goroutine.
 
----
+Taking care of deadlocks can be a major headache if not handled properly.
 
-... to be continued
+To handle this, Go comes with **buffered channels**, which provide a flexible mechanism for managing asynchronous communication between goroutines, allowing temporary storage of values and reducing the risk of deadlocks by decoupling the timing of senders and receivers.
+
+Learn more about [Buffered channels](13-buffered-channels.md).

@@ -1,45 +1,36 @@
 package main
 
-import (
-	"fmt"
-	"time"
-)
+import "fmt"
 
-func getUserId(id chan<- int) {
-	time.Sleep(time.Second)
-	id <- 69
+func addEmailsToQueue(emails []string) chan string {
+	emailsToSend := make(chan string, len(emails))
+	for _, email := range emails {
+		emailsToSend <- email
+	}
+	return emailsToSend
 }
 
-func getUserById(id int) string {
-	if id == 69 {
-		return "Amit"
+func sendEmails(batchSize int, ch chan string) {
+	for i := 0; i < batchSize; i++ {
+		email := <-ch
+		fmt.Println("Sending email:", email)
 	}
-	return "user not found"
+}
+
+func test(emails ...string) {
+	fmt.Printf("Adding %v emails to queue...\n", len(emails))
+
+	ch := addEmailsToQueue(emails)
+
+	fmt.Println("Sending emails...")
+	sendEmails(len(emails), ch)
+	fmt.Println("--------------------------")
 }
 
 func main() {
-	idChannel := make(chan int)
-	go getUserId(idChannel)
-
-	fmt.Println("fetching user id...")
-	userId := <-idChannel
-
-	fmt.Println("fetching User by id:", userId)
-	user := getUserById(userId)
-
-	fmt.Println("User: ", user)
+	fmt.Println("Buffered Channels: ")
+	test("Hello John, tell Kathy I said hi", "Whazzup bruther")
+	test("I find that hard to believe.", "When? I don't know if I can", "What time are you thinking?")
+	test("She says hi!", "Yeah its tomorrow. So we're good.", "Cool see you then!", "Bye!")
 }
 
-/*
-- flow of execution :
-1. main function runs,
-2. idChannel gets spawned,
-3. a new goroutine named getUserId is launched concurrently with main goroutine,
-4. getUserId goroutine gets blocked for a second, but the main goroutine still runs,
-5. after a second, getUserId gouroutne sends 69 into the idChannel,
-6. Meanwhile, the main goroutine prints the message "fetching user id..." to the console,
-7. The main goroutine then receives the value from the idChannel channel using userId := <-idChannel.
-8. The getUserById function checks if the user ID is 69 and returns,
-9. The main goroutine prints the retrieved user information to the console,
-10. The execution completes.
-*/
