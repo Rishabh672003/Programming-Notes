@@ -6,7 +6,7 @@
 2. Concurrency in Go.
 3. Goroutines
 4. Channels
-5. Blockings and Deadlocks
+5. Read-only Channels
 
 ---
 
@@ -180,3 +180,19 @@ In the above code, there are **two** goroutines:
 - **The goroutine created by the go statement inside the main function when calling `getResult(resultChannel)`.**
 
 The `getResult` function is executed concurrently in the second goroutine, simulating some work and passing the value 42 through the channel.
+
+---
+
+### Read-only Channels
+
+A channel can be marked as read-only by casting it from a `chan` to a `<-chan` type. For example:
+
+```go
+func readChan(ch <-chan int){
+	// can only perform readable activities
+}
+func main(){
+	ch := make(chan int)
+	readChan(ch)
+}
+```
