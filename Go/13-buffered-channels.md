@@ -272,3 +272,49 @@ In this example:
 - The program prints "Ticker stopped" to indicate that the ticker has been stopped.
 
 This is a simple use case, but Ticker is often employed in scenarios where periodic actions need to be performed, such as **polling for updates, checking for changes, or triggering regular maintenance tasks**.
+
+---
+
+Example for better understanding :
+
+```go
+package main
+import (
+	"fmt"
+	"time"
+)
+
+func saveBackups(snapshotTicker, saveAfter <-chan time.Time) {
+	for {
+		select {
+		case <-snapshotTicker:
+			takeSnapshot()
+		case <-saveAfter:
+			saveSnapshot()
+			return
+		default:
+			waitForData()
+			time.Sleep(500 * time.Millisecond)
+		}
+	}
+}
+
+func takeSnapshot() {
+	fmt.Println("Taking a backup snapshot...")
+}
+
+func saveSnapshot() {
+	fmt.Println("All backups saved!")
+}
+
+func waitForData() {
+	fmt.Println("Nothing to do, waiting...")
+}
+
+func main() {
+	snapshotTicker := time.Tick(800 * time.Millisecond)
+	saveAfter := time.After(2800 * time.Millisecond)
+	saveBackups(snapshotTicker, saveAfter)
+	fmt.Println()
+}
+```
