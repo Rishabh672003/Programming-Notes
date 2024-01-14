@@ -40,7 +40,16 @@ func fibonacci(n int) int {
 	return total
 }
 
+func splitAnySlice[T any](s []T) ([]T, []T) {
+	mid := len(s) / 2
+	return s[:mid], s[mid:]
+}
+
 func main() {
+
+	firstInts, secondInts := splitAnySlice([]int{0, 1, 2, 3})
+	fmt.Println(firstInts, secondInts)
+
 	fmt.Println("Buffered Channels: ")
 	test("Hello John, tell Kathy I said hi", "Whazzup bruther")
 	test("I find that hard to believe.", "When? I don't know if I can", "What time are you thinking?")
