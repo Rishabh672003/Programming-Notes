@@ -20,7 +20,7 @@
 - [Structuring-codebase](18-structuring-codebase.md)
 - [Scope](19-scope.md)
 - [Namespace](20-namespace.md)
-  - [Dont use namesapce std](20.1-dont-use-namesapce-std.md)
+  - [Dont use namespace std](20.1-dont-use-namespace-std.md)
 - [Code-splitting](21-code-splitting.md)
 - [Forward-declaration](22-forward-declaration.md)
 - [Structs-classes](23-structs-classes.md)
@@ -39,3 +39,4 @@
 - [Type-casting](32-type-casting.md)
 - [Standard-template-library](33-standard-template-library.md)
 - [Templates](34-templates.md)
+- [Name Mangling](35-name-mangling.md)
