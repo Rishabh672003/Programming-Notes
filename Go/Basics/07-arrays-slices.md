@@ -148,6 +148,7 @@ for i, fruit := range fruits {
 // 1 banana
 // 2 grapes
 ```
+
 ---
 
 ### 2D slices or Slice of slices

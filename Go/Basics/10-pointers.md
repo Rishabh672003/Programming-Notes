@@ -85,4 +85,3 @@ func main(){
 ```
 
 NOTE that `c` is not a pointer to in the calling fuction but the method still gains access to a pointer to `c`.
- 

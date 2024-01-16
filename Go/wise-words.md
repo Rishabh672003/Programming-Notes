@@ -3,23 +3,23 @@
 The [Go Proverbs](https://go-proverbs.github.io/) are a beautiful collection of wise words from Rob Pike, one of Go's creators.
 
 > Don't communicate by sharing memory, share memory by communicating.
-> 
+>
 > Concurrency is not parallelism.
-> 
+>
 > Channels orchestrate; mutexes serialize.
-> 
+>
 > The bigger the interface, the weaker the abstraction.
-> 
+>
 > Make the zero value useful.
-> 
+>
 > interface{} says nothing.
 >
 > Gofmt's style is no one's favorite, yet gofmt is everyone's favorite.
-> 
+>
 > A little copying is better than a little dependency.
-> 
+>
 > Syscall must always be guarded with build tags.
-> 
+>
 > Cgo must always be guarded with build tags.
 >
 > Cgo is not Go.
