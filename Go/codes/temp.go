@@ -1,74 +1,57 @@
 package main
 
-import (
-	"fmt"
-	"time"
-)
+import "fmt"
 
-func addEmailsToQueue(emails []string) chan string {
-	emailsToSend := make(chan string, len(emails))
-	for _, email := range emails {
-		emailsToSend <- email
+type Book struct {
+	title  string
+	author string
+	pages  int
+	isRead bool
+}
+
+type Shelf []Book
+
+func addBookToShelf(b Book, s *Shelf) {
+	*s = append(*s, b)
+}
+
+func addBook(t, a string, p int, r bool) Book {
+	book := Book{
+		title: t, author: a, pages: p, isRead: r,
 	}
-	return emailsToSend
+	return book
 }
 
-func sendEmails(batchSize int, ch chan string) {
-	for i := 0; i < batchSize; i++ {
-		email := <-ch
-		fmt.Println("Sending email:", email)
+func readBook(b *Book) {
+	b.isRead = true
+}
+
+func printBook(b Book) {
+	fmt.Printf("Title: %s by %s\nPages: %d\nisRead: %v",
+		b.title, b.author, b.pages, b.isRead,
+	)
+}
+
+func printShelf(s Shelf) {
+	for i, book := range s {
+		fmt.Printf("Book no: %d\n", i+1)
+		printBook(book)
+		fmt.Println()
+		fmt.Println()
 	}
-}
-
-func test(emails ...string) {
-	fmt.Printf("Adding %v emails to queue...\n", len(emails))
-
-	ch := addEmailsToQueue(emails)
-
-	fmt.Println("Sending emails...")
-	sendEmails(len(emails), ch)
-	fmt.Println("--------------------------")
-}
-
-func fibonacci(n int) int {
-	x, y := 0, 1
-	total := 0
-	for i := 0; i < n; i++ {
-		total += x
-		x, y = y, x+y
-	}
-	return total
-}
-
-func splitAnySlice[T any](s []T) ([]T, []T) {
-	mid := len(s) / 2
-	return s[:mid], s[mid:]
 }
 
 func main() {
+	fmt.Println("============> Book Shelf <===========")
+	var myShelf Shelf
 
-	firstInts, secondInts := splitAnySlice([]int{0, 1, 2, 3})
-	fmt.Println(firstInts, secondInts)
+	book1 := addBook("Ramayana", "Valmiki", 200, false)
+	addBookToShelf(book1, &myShelf)
 
-	fmt.Println("Buffered Channels: ")
-	test("Hello John, tell Kathy I said hi", "Whazzup bruther")
-	test("I find that hard to believe.", "When? I don't know if I can", "What time are you thinking?")
-	test("She says hi!", "Yeah its tomorrow. So we're good.", "Cool see you then!", "Bye!")
+	book2 := addBook("Can't Hurt Me", "David Goggins", 100, false)
+	addBookToShelf(book2, &myShelf)
+
+	readBook(&myShelf[0])
 	fmt.Println()
-
-	fib := fibonacci(69)
-	fmt.Print(fib)
-
-	ticker := time.NewTicker(1000 * time.Millisecond)
-	go func() {
-		<-ticker.C
-		fmt.Println("Tick at", time.Now())
-	}()
-
-	// Allow the ticker to run for 3 seconds
-	time.Sleep(3 * time.Second)
-
-	// Stop the ticker after 3 seconds
-	ticker.Stop()
-	fmt.Println("Ticker stopped")
+	printShelf(myShelf)
 }
