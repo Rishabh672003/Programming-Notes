@@ -48,7 +48,7 @@ class AsyncTaskQueue {
     while (this.queue.length > 0) {
       const task = this.queue.shift();
       try {
-        await task();
+        await task(); // here awaiting the task is important as we wait untill it's done i.e blocking the execution of other tasks
       } catch (error) {
         console.log("Error in processing task", error);
       }
@@ -59,115 +59,88 @@ class AsyncTaskQueue {
 
 const asyncQueue = new AsyncTaskQueue();
 
-const task1 = async () => {
-  console.log("Task 1 queued");
-  await new Promise((resolve) => setTimeout(resolve, 1000));
-  console.log("Task 1 ended");
+const task = async (id) => {
+  console.log(`Task ${id} queued`);
+  const response = await fetch(
+    `https://jsonplaceholder.typicode.com/todos/${id}`
+  );
+  const data = await response.json();
+  console.log({ id: data.id, title: data.title });
+  console.log(`Task ${id} ended`);
 };
 
-const task2 = async () => {
-  console.log("Task 2 queued");
-  await new Promise((resolve) => setTimeout(resolve, 500));
-  console.log("Task 2 ended");
-};
-
-// asyncQueue.enqueue(task1);
-// asyncQueue.enqueue(task2);
+for (let i = 1; i <= 10; i++) {
+  asyncQueue.enqueue(() => task(i));
+}
 
 /* 
-Here is a version of the async queue whihc is quite efficient and introduces the concept of concurrency control 
+Here is a version of the async queue which is quite efficient and introduces the concept of concurrency control 
 by limiting the number of "workers" (i.e., concurrent tasks) that can be processed at any given time.
 */
 
-function createQueue(tasks, maxNumOfWorkers = 4) {
-  var activeWorkers = 0; // Track how many tasks are currently being worked on
-  var taskIndex = 0; // Track the index of the next task to execute
+class RateLimitedQueue {
+  constructor(maxRequests) {
+    this.maxRequests = maxRequests;
+    this.queue = [];
+    this.activeTasks = 0;
+  }
 
-  return new Promise((done) => {
-    const handleResult = (index) => (result) => {
-      tasks[index] = result; // Store the result of the task back in the array at the correct index
-      activeWorkers--; // Decrement the number of active workers
-      getNextTask(); // Try to process the next task
-    };
+  enqueue(task) {
+    this.queue.push(task);
+    this.processQueue();
+  }
 
-    const getNextTask = () => {
-      // Check if we can start a new task (if there's room for more workers)
-      if (activeWorkers < maxNumOfWorkers && taskIndex < tasks.length) {
-        // Execute the next task and handle its result
-        tasks[taskIndex]()
-          .then(handleResult(taskIndex))
-          .catch(handleResult(taskIndex));
+  async processQueue() {
+    if (this.activeTasks >= this.maxRequests) return; // Ensuring rate limit is respected
 
-        taskIndex++; // Move to the next task in the queue
-        activeWorkers++; // Increment the number of active workers
-        getNextTask(); // Recursively call getNextTask to fill up the worker slots
-      }
-      // Check if all tasks have been processed and all workers are done
-      else if (activeWorkers === 0 && taskIndex === tasks.length) {
-        // All tasks completed, resolve the main promise
-        done(tasks);
-      }
-    };
-    getNextTask(); // Start processing tasks
-  });
+    while (this.activeTasks < this.maxRequests && this.queue.length > 0) {
+      const task = this.queue.shift(); // Get the next task in the queue
+      this.activeTasks++;
+
+      // Process the task
+      task()
+        .then((result) => {
+          console.log(result); // process the result
+        })
+        .catch((error) => {
+          console.error("Task failed:", error);
+        })
+        .finally(() => {
+          this.activeTasks--; // Mark task as completed
+          this.processQueue(); // Continue processing the queue
+        });
+    }
+
+    // Wait 1 second before processing the next batch of requests
+    if (this.queue.length > 0) {
+      setTimeout(() => {
+        this.processQueue();
+      }, 1000);
+      // the 1000 ensures that no more than maxRequests tasks are processed every second.
+    }
+  }
 }
 
-const tasks = [
-  () =>
-    new Promise((resolve) =>
-      setTimeout(() => resolve("Task 1 complete"), 1000)
-    ),
-  () =>
-    new Promise((resolve) => setTimeout(() => resolve("Task 2 complete"), 500)),
-  () =>
-    new Promise((resolve) =>
-      setTimeout(() => resolve("Task 3 complete"), 2000)
-    ),
-  () =>
-    new Promise((resolve) => setTimeout(() => resolve("Task 4 complete"), 800)),
-  () =>
-    new Promise((resolve) =>
-      setTimeout(() => resolve("Task 5 complete"), 1200)
-    ),
-  () =>
-    new Promise((resolve) =>
-      setTimeout(() => resolve("Task 6 complete"), 2000)
-    ),
-  () =>
-    new Promise((resolve) =>
-      setTimeout(() => resolve("Task 7 complete"), 3000)
-    ),
-  () =>
-    new Promise((resolve) =>
-      setTimeout(() => resolve("Task 8 complete"), 1000)
-    ),
-];
+/*
+The hardcoded wait (setTimeout) of 1000 is there to simulate rate limiting
+and ensure you don’t overwhelm a system that has constraints (e.g., API rate limits).
+If you don’t need rate limiting, you can remove the wait
+and let the tasks be processed as fast as possible, up to your concurrency limit (maxNumOfWorkers).
+*/
 
-createQueue(tasks, 3).then((results) => {
-  console.log("All tasks completed");
-  console.log("Results:", results);
-});
+const makeApiRequest = (id) => {
+  return () =>
+    fetch(`https://jsonplaceholder.typicode.com/todos/${id}`)
+      .then((response) => response.json())
+      .then((data) => {
+        // console.log(`Request ${id} complete`, data);
+        return { id: data.id, title: data.title };
+      });
+};
 
-// const task1 = async () => {
-//   console.log("Task 1 queued");
-//   await new Promise((resolve) => setTimeout(resolve, 1000)).then(() =>
-//     console.log("Task 1 ended")
-//   );
-// };
+const rateLimitedQueue = new RateLimitedQueue(3); // Limit to 3 API requests per second
 
-// const task2 = async () => {
-//   console.log("Task 2 queued");
-//   await new Promise((resolve) => setTimeout(resolve, 500)).then(() =>
-//     console.log("Task 2 ended")
-//   );
-// };
-
-// const task1 = async () => {
-//   console.log("Task 1 queued");
-//   await new Promise((resolve) => setTimeout(resolve("Task 1 ended"), 1000));
-// };
-
-// const task2 = async () => {
-//   console.log("Task 2 queued");
-//   await new Promise((resolve) => setTimeout(resolve("Task 2 ended"), 500));
-// };
+// enqueuing 20 tasks to fetch data from the API
+for (let i = 10; i <= 20; i++) {
+  rateLimitedQueue.enqueue(makeApiRequest(i));
+}
