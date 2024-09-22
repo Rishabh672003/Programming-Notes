@@ -17,7 +17,7 @@ p1.then(
   function (error) {
     /* handle an error */
     console.log(error);
-  } // doesn't run if there's no error
+  }, // doesn't run if there's no error
 );
 
 /* If we’re interested only in successful completions, 
@@ -62,7 +62,7 @@ const p1 = new Promise((resolve, reject) => {
 
 p1.then(
   (value) => console.log(value), // onResolve
-  (error) => console.log(error) // onReject
+  (error) => console.log(error), // onReject
 );
 
 Promise.resolve("foo")
@@ -74,7 +74,7 @@ Promise.resolve("foo")
           string += "bar";
           resolve(string);
         }, 1);
-      })
+      }),
   )
   // 2. receive "foobar", register a callback function to work on that string
   // and print it to the console, but not before returning the unworked on
