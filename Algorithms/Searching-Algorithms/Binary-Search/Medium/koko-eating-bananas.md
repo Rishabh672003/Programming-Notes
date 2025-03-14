@@ -53,7 +53,7 @@ So, our answer i.e. the minimum value of ‘k’ lies between 1 and the maximum 
 #include <bits/stdc++.h>
 using namespace std;
 
-long long calculateTotalHours(vector<int> &v, long long hourly) {
+long long calculateTotalHours(vector<int>& v, long long hourly) {
     long long totalH = 0;
     int n = v.size();
     for (int i = 0; i < n; i++) {
@@ -62,7 +62,7 @@ long long calculateTotalHours(vector<int> &v, long long hourly) {
     return totalH;
 }
 
-long long minimumRateToEatBananas(vector<int> &v, long long h) {
+long long minimumRateToEatBananas(vector<int>& v, long long h) {
     long long low = 1, high = INT_MAX;
 
     while (low < high) {

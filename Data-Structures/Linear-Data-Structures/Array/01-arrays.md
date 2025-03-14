@@ -2,52 +2,56 @@
 
 ### Basic definition
 
-In C++, an array is a collection of elements of the same type that are stored sequentially in memory. Each element in an array can be accessed using an index value, which starts at 0 for the first element and increments by 1 for each subsequent element.
+In C++, an array is a collection of elements of the same type that are stored sequentially in memory. Each element in an
+array can be accessed using an index value, which starts at 0 for the first element and increments by 1 for each
+subsequent element.
 
 ### Initializing an array
 
-First you define the type of each element in the array, and then you initialize the array with its name and number of elements in the array
+First you define the type of each element in the array, and then you initialize the array with its name and number of
+elements in the array
 
 ```cpp
-int arr[5]; // defines an array of 5 integers
+int arr[5];    // defines an array of 5 integers
 string arr[5]; // defines an array of 5 strings
 ```
 
 OR
 
 ```cpp
-int arr[5] = {1,2,3,4,5}
-string arr[5] = {"a","b","c","d","e"}
-
+int arr[5] = {1, 2, 3, 4, 5};
+string arr[5] = {"a", "b", "c", "d", "e"}
 ```
 
-You access the elements of an array using the index value, which starts at 0 for the first element and increments by 1 for each subsequent
+You access the elements of an array using the index value, which starts at 0 for the first element and increments by 1
+for each subsequent
 
 ```cpp
 int x = arr[0]; // access the first element of the array
 int y = arr[1]; // access the second element of the array
 int z = arr[2]; // access the third element of the
-
 ```
 
-##### Note that in C++, arrays do not perform bounds checking, so it is possible to access elements outside the bounds of the array. This can lead to undefined behavior, so it's important to be careful when working with arrays to ensure that you stay within the bounds of the array.
+**Note that in C++, arrays do not perform bounds checking, so it is possible to access elements outside the bounds of
+the array. This can lead to undefined behavior, so it's important to be careful when working with arrays to ensure that
+you stay within the bounds of the array.**
 
 ### Size of Array
 
 ```cpp
-int arr[2] = {2,7};
-int arrSize = sizeof(arr)/sizeof(int); // That is 8 / 4 = 2.
-cout<<" Size of array is " << arrSize <<endl;
+int arr[2] = {2, 7};
+int arrSize = sizeof(arr) / sizeof(int); // That is 8 / 4 = 2.
+cout << " Size of array is " << arrSize << endl;
 ```
 
 ### Array & Functions.
 
 ```cpp
 void printArray(int arr[], int size) {
-  cout<< " printing the array " << endl;
-  for(int i =0; i<size; i++) {
-      cout << arr[i] << " ";
-  }
+    cout << " printing the array " << endl;
+    for (int i = 0; i < size; i++) {
+        cout << arr[i] << " ";
+    }
 }
 ```
 
@@ -56,25 +60,20 @@ void printArray(int arr[], int size) {
 - 1. Linear Search.
 
   ```cpp
-
   #include <bits/stdc++.h>
   using namespace std;
 
-  bool isPresent(int *arr, int size, int key)
-  {
+  bool isPresent(int* arr, int size, int key) {
 
-      for (int i = 0; i < size; i++)
-      {
-          if (arr[i] == key)
-          {
+      for (int i = 0; i < size; i++) {
+          if (arr[i] == key) {
               return 1;
           }
       }
       return 0;
   }
 
-  int main()
-  {
+  int main() {
       int arr[7] = {3, 4, 5, 67, -9, 1, 0};
       int key;
       cout << "Enter Number to be found: ";
@@ -88,46 +87,43 @@ void printArray(int arr[], int size) {
 
       return 0;
   }
-
   ```
 
 - 2. Binary search.
 
   ```cpp
-  #include<iostream>
+  #include <iostream>
   using namespace std;
 
   int binarySearch(int arr[], int size, int key) {
 
       int start = 0;
-      int end = size-1;
+      int end = size - 1;
 
-      int mid = start + (end-start)/2;
+      int mid = start + (end - start) / 2;
 
-      while(start <= end) {
+      while (start <= end) {
 
-          if(arr[mid] == key) {
+          if (arr[mid] == key) {
               return mid;
           }
 
-          //go to right wala part
-          if(key > arr[mid]) {
+          // go to right part
+          if (key > arr[mid]) {
               start = mid + 1;
-          }
-          else{ //key < arr[mid]
+          } else { // key < arr[mid]
               end = mid - 1;
           }
 
-          mid = start + (end-start)/2;
+          mid = start + (end - start) / 2;
       }
 
       return -1;
   }
 
-
   int main() {
 
-      int even[6] = {2,4,6,8,12,18};
+      int even[6] = {2, 4, 6, 8, 12, 18};
       int odd[5] = {3, 8, 11, 14, 16};
 
       int evenIndex = binarySearch(even, 6, 6);
@@ -138,24 +134,22 @@ void printArray(int arr[], int size) {
 
       cout << " Index of 14 is " << oddIndex << endl;
 
-
       return 0;
   }
 
   int findPeak(int arr[], int n) {
 
-      int s =0, e = n-1;
-      int mid = s + (e-s)/2;
+      int s = 0, e = n - 1;
+      int mid = s + (e - s) / 2;
 
-      while(s<e) {
-          //cout<<" s " << s <<" e " << e << endl;
-          if(arr[mid] < arr[mid+1]){
-              s = mid+1;
-          }
-          else{
+      while (s < e) {
+          // cout <<" s " << s <<" e " << e << endl;
+          if (arr[mid] < arr[mid + 1]) {
+              s = mid + 1;
+          } else {
               e = mid;
           }
-          mid = s + (e-s)/2;
+          mid = s + (e - s) / 2;
       }
       return s;
   }
@@ -167,29 +161,24 @@ void printArray(int arr[], int size) {
   #include <bits/stdc++.h>
   using namespace std;
 
-  void revArray(int arr[], int size)
-  {
+  void revArray(int arr[], int size) {
       int start = 0;
       int end = size - 1;
 
-      while (start <= end)
-      {
+      while (start <= end) {
           swap(arr[start], arr[end]);
           start++;
           end--;
       }
   }
 
-  void printArr(int arr[], int size)
-  {
-      for (int i = 0; i < size; i++)
-      {
+  void printArr(int arr[], int size) {
+      for (int i = 0; i < size; i++) {
           cout << arr[i] << " ";
       }
   }
 
-  int main()
-  {
+  int main() {
       int even[6] = {1, 2, 3, 4, 5, 6};
       int odd[5] = {1, 2, 3, 4, 5};
       revArray(even, 6);
@@ -209,16 +198,14 @@ void printArray(int arr[], int size) {
   #include <bits/stdc++.h>
   using namespace std;
 
-  int findUnique(int a[], int size)
-  {
+  // extra time
+  int findUnique(int a[], int size) {
       sort(a, a + size); // Time Complexity O(nLogn)
 
       int duplicate = a[0];
 
-      for (int i = 1; i < size; i++)
-      {
-          if (a[i] == a[i - 1])
-          {
+      for (int i = 1; i < size; i++) {
+          if (a[i] == a[i - 1]) {
               duplicate = a[i];
               break;
           }
@@ -227,8 +214,19 @@ void printArray(int arr[], int size) {
       return duplicate;
   }
 
-  int main()
-  {
+  // extra space
+  int findUnique(int a[], int size) {
+      map<int, int> freq_map;
+      for (size_t i = 0; i < size; i++) {
+          freq_map[a[i]] += 1;
+          if (freq_map[a[i]] > 1) {
+              return a[i];
+          }
+      }
+      return -1;
+  }
+
+  int main() {
       int a[7] = {1, 2, 3, 4, 5, 6, 6};
       int size = sizeof(a) / sizeof(a[0]);
 
@@ -248,17 +246,14 @@ void printArray(int arr[], int size) {
   #include <bits/stdc++.h>
   using namespace std;
 
-  void printArray(int *arr)
-  {
-      for (int i = 0; i < 10; i++)
-      {
+  void printArray(int* arr) {
+      for (int i = 0; i < 10; i++) {
           cout << arr[i] << " ";
       }
       cout << endl;
   }
 
-  void swap1(int *arr)
-  {
+  void swap1(int* arr) {
       int left = 0, right = 9; //  right == size - 1
       while (left < right)     // start from arr[i] till arr[n-1]
       {
@@ -277,8 +272,7 @@ void printArray(int arr[], int size) {
       printArray(arr);
   }
 
-  int main()
-  {
+  int main() {
       int arr[10] = {1, 1, 0, 0, 1, 0, 0, 1, 1, 1};
       // METHOD 1: Sort --> O(nLogn)
       sort(arr, arr + 7);
@@ -294,23 +288,23 @@ void printArray(int arr[], int size) {
 - 6. Array Min/Max
 
   ```cpp
-  #include<iostream>
+  #include <iostream>
   using namespace std;
 
   int getMin(int num[], int n) {
 
       int mini = INT_MAX;
 
-      for(int i = 0; i<n; i++) {
+      for (int i = 0; i < n; i++) {
 
-          mini = min( mini, num[i]);
+          mini = min(mini, num[i]);
 
-          //if(num[i] < min){
-          //    min = num[i];
-          //}
+          // if(num[i] < min){
+          //     min = num[i];
+          // }
       }
 
-      //returning min value
+      // returning min value
       return mini;
   }
 
@@ -318,16 +312,16 @@ void printArray(int arr[], int size) {
 
       int maxi = INT_MIN;
 
-      for(int i = 0; i<n; i++) {
+      for (int i = 0; i < n; i++) {
 
           maxi = max(maxi, num[i]);
 
-         // if(num[i] > max){
-           //   max = num[i];
-         // }
+          // if(num[i] > max){
+          //   max = num[i];
+          // }
       }
 
-      //returning max value
+      // returning max value
       return maxi;
   }
 
@@ -338,8 +332,8 @@ void printArray(int arr[], int size) {
 
       int num[100];
 
-      //taking input in array
-      for(int i = 0; i<size; i++) {
+      // taking input in array
+      for (int i = 0; i < size; i++) {
           cin >> num[i];
       }
 
@@ -353,30 +347,29 @@ void printArray(int arr[], int size) {
 - 7. Swap Alternate.
 
   ```cpp
-  #include<iostream>
+  #include <iostream>
   using namespace std;
 
   void printArray(int arr[], int n) {
 
-      for(int i = 0; i<n; i++ ) {
-          cout<< arr[i] <<" ";
-      }cout<<endl;
-
+      for (int i = 0; i < n; i++) {
+          cout << arr[i] << " ";
+      }
+      cout << endl;
   }
 
   void swapAlternate(int arr[], int size) {
 
-      for(int i = 0; i<size; i+=2 ) {
-          if(i+1 < size) {
-              swap(arr[i], arr[i+1]);
+      for (int i = 0; i < size; i += 2) {
+          if (i + 1 < size) {
+              swap(arr[i], arr[i + 1]);
           }
       }
-
   }
 
   int main() {
 
-      int even[8] = {5,2,9,4,7,6,1,0};
+      int even[8] = {5, 2, 9, 4, 7, 6, 1, 0};
       int odd[5] = {11, 33, 9, 76, 43};
 
       swapAlternate(even, 8);

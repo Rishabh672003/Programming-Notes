@@ -4,19 +4,14 @@ Approach :
 
 1. Brute : Sort --> Traverse from n - 2 --> if (a[i] != largest) ==> secondLargest == a[i]
 
-   Time Complexity : O(N Log N) + N ==> [Sort + Traversal]
+   Time Complexity : O(N Log N) + 1 ==> [Sort]
 
 Code :
 
 ```cpp
-int secondLargest(vector<int> &arr, int n){
-    int secondLargest = -1;
+int secondLargest(vector<int>& arr, int n) {
     sort(arr.begin(), arr.end()); // O(N Log N)
-    for (int i = n - 2; i >= 0; i++) { // O(N)
-        if (arr[i] != largest) {
-            secondLargest = arr[i];
-        }
-    }
+    int secondLargest = arr[arr.size() - 2];
     return secondLargest;
 }
 ```
@@ -28,16 +23,16 @@ int secondLargest(vector<int> &arr, int n){
 Code :
 
 ```cpp
-int secondLargest(vector<int> &arr, int n){
+int secondLargest(vector<int>& arr, int n) {
     int largest = arr[0];
     int secondLargest = -1;
-    for (int i = 0; i < n; i++){ // O(N)
-        if (arr[i] > largest){
+    for (int i = 0; i < n; i++) { // O(N)
+        if (arr[i] > largest) {
             largest = arr[i];
         }
     }
-    for (int i = 0; i < n; i++){ // O(N)
-        if (arr[i] > secondLargest && arr[i] != largest){
+    for (int i = 0; i < n; i++) { // O(N)
+        if (arr[i] > secondLargest && arr[i] != largest) {
             secondLargest = arr[i];
         }
     }
@@ -52,14 +47,14 @@ int secondLargest(vector<int> &arr, int n){
 Code :
 
 ```cpp
-int secondLargest(vector<int> &arr, int n){
+int secondLargest(vector<int>& arr, int n) {
     int largest = arr[0];
     int secondLargest = -1;
-    for (int i = 0; i < n; i++){ // O(N)
-        if (arr[i] > largest){
+    for (int i = 0; i < n; i++) { // O(N)
+        if (arr[i] > largest) {
             secondLargest = largest;
             largest = arr[i];
-        } else if (arr[i] < largest && arr[i] > secondLargest){
+        } else if (arr[i] < largest && arr[i] > secondLargest) {
             secondLargest = arr[i];
         }
     }
@@ -72,14 +67,14 @@ int secondLargest(vector<int> &arr, int n){
 ### Bonus : Find Second Smallest
 
 ```cpp
-int secondLargest(vector<int> &arr, int n){
+int secondLargest(vector<int>& arr, int n) {
     int smallest = arr[0];
     int secondSmallest = INT_MAX;
-    for (int i = 0; i < n; i++){
-        if (arr[i] < smallest){
+    for (int i = 0; i < n; i++) {
+        if (arr[i] < smallest) {
             secondSmallest = smallest;
             smallest = arr[i];
-        } else if (arr[i] != smallest && arr[i] < secondSmallest){
+        } else if (arr[i] != smallest && arr[i] < secondSmallest) {
             secondSmallest = arr[i];
         }
     }

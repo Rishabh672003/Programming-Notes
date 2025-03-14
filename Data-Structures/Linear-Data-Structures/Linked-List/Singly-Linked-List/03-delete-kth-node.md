@@ -22,8 +22,9 @@
 ### Implementation
 
 ```cpp
-Node* deleteK(Node* head, int k){
-    if (head == nullptr) return nullptr;
+Node* deleteK(Node* head, int k) {
+    if (head == nullptr)
+        return nullptr;
     if (k == 1) { // if head node
         Node* temp = head;
         head = head->next;
@@ -33,7 +34,7 @@ Node* deleteK(Node* head, int k){
     int cnt = 0;
     Node* temp = head;
     Node* prev = nullptr;
-    while(temp != nullptr){
+    while (temp != nullptr) {
         cnt++;
         if (cnt == k) {
             prev->next = prev->next->next;

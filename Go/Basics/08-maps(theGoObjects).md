@@ -24,8 +24,8 @@ ages["Amit"] = 19 // overwrites 18
 ```go
 // mapName := map[keyType]valueType{...}
 ages := map[string]int{
-    "Amit": 19,
-    "Rishabh": 18,
+	"Amit":    19,
+	"Rishabh": 18,
 }
 ```
 

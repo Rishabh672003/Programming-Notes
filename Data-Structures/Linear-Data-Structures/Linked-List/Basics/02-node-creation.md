@@ -26,6 +26,7 @@ int main() {
     const Node* n1 = new Node(arr[1]); // creating a new node
     cout << n1->data << endl;          // print 3
     cout << n1->next << endl;          // prints Null address
+    delete n1
     return 0;
 }
 ```
