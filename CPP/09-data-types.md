@@ -1,12 +1,15 @@
 # Data Types in C++
 
-In C++, data types are used to categorize different types of data that a program can process. They are essential for determining the type of value a variable can hold and how much memory space it will occupy. Some basic data types in C++ include integers, floating-point numbers, characters, and booleans.
+In C++, data types are used to categorize different types of data that a program can process. They are essential for
+determining the type of value a variable can hold and how much memory space it will occupy. Some basic data types in C++
+include integers, floating-point numbers, characters, and booleans.
 
 ## Fundamental Data Types
 
 ## Integer (int)
 
-Integers are whole numbers that can store both positive and negative values. The size of `int` depends on the system architecture (usually 4 bytes).
+Integers are whole numbers that can store both positive and negative values. The size of `int` depends on the system
+architecture (usually 4 bytes).
 
 Example:
 
@@ -22,7 +25,8 @@ There are variants of `int` that can hold different ranges of numbers:
 
 ## Floating-Point (float, double)
 
-Floating-point types represent real numbers, i.e., numbers with a decimal point. There are two main floating-point types:
+Floating-point types represent real numbers, i.e., numbers with a decimal point. There are two main floating-point
+types:
 
 - **float**: Provides single-precision floating-point numbers. It typically occupies 4 bytes of memory.
 
@@ -32,7 +36,8 @@ Example:
 float pi = 3.14f;
 ```
 
-- **double**: Provides double-precision floating-point numbers. It consumes more memory (usually 8 bytes) but has a higher precision than `float`.
+- **double**: Provides double-precision floating-point numbers. It consumes more memory (usually 8 bytes) but has a
+  higher precision than `float`.
 
 Example:
 
@@ -42,7 +47,8 @@ double pi_high_precision = 3.1415926535;
 
 ## Character (char)
 
-Characters represent a single character, such as a letter, digit, or symbol. They are stored using the ASCII value of the symbol and typically occupy 1 byte of memory.
+Characters represent a single character, such as a letter, digit, or symbol. They are stored using the ASCII value of
+the symbol and typically occupy 1 byte of memory.
 
 Example:
 
@@ -87,7 +93,8 @@ int* pNum = &num;
 
 ## References
 
-References are an alternative way to share memory locations between variables, allowing you to create an alias for another variable.
+References are an alternative way to share memory locations between variables, allowing you to create an alias for
+another variable.
 
 Example:
 

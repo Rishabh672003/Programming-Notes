@@ -1,12 +1,16 @@
 # Functions in C++
 
-A **function** is a group of statements that perform a specific task, organized as a separate unit in a program. Functions help in breaking the code into smaller, manageable, and reusable blocks.
+A **function** is a group of statements that perform a specific task, organized as a separate unit in a program.
+Functions help in breaking the code into smaller, manageable, and reusable blocks.
 
 There are mainly two types of functions in C++:
 
-- **Standard library functions**: Pre-defined functions available in the C++ standard library, such as `printf()`, `scanf()`, `sqrt()`, and many more. These functions are part of the standard library, so you need to include the appropriate header file to use them.
+- **Standard library functions**: Pre-defined functions available in the C++ standard library, such as `printf()`,
+  `scanf()`, `sqrt()`, and many more. These functions are part of the standard library, so you need to include the
+  appropriate header file to use them.
 
-- **User-defined functions**: Functions created by the programmer to perform a specific task. To create a user-defined function, you need to define the function and call it in your code.
+- **User-defined functions**: Functions created by the programmer to perform a specific task. To create a user-defined
+  function, you need to define the function and call it in your code.
 
 ## Defining a Function
 
@@ -18,9 +22,11 @@ return_type function_name(parameter list) {
 }
 ```
 
-- `return_type`: Data type of the output produced by the function. It can be `void`, indicating that the function doesn't return any value.
+- `return_type`: Data type of the output produced by the function. It can be `void`, indicating that the function
+  doesn't return any value.
 - `function_name`: Name given to the function, following C++ naming conventions.
-- `parameter list`: List of input parameters/arguments that are needed to perform the task. It is optional, and when no parameters are needed, you can leave it blank or use the keyword `void`.
+- `parameter list`: List of input parameters/arguments that are needed to perform the task. It is optional, and when no
+  parameters are needed, you can leave it blank or use the keyword `void`.
 
 ## Example
 
@@ -42,13 +48,16 @@ int main() {
 }
 ```
 
-In this example, the function `addNumbers` takes two integer parameters, `a` and `b`, and returns the sum of the numbers. We then call this function from the `main()` function and display the result.
+In this example, the function `addNumbers` takes two integer parameters, `a` and `b`, and returns the sum of the
+numbers. We then call this function from the `main()` function and display the result.
 
 ## Function Prototypes
 
-In some cases, you might want to use a function before actually defining it. To do this, you need to declare a **function prototype** at the beginning of your code.
+In some cases, you might want to use a function before actually defining it. To do this, you need to declare a
+**function prototype** at the beginning of your code.
 
-A function prototype is a declaration of the function without its body, and it informs the compiler about the function's name, return type, and parameters.
+A function prototype is a declaration of the function without its body, and it informs the compiler about the function's
+name, return type, and parameters.
 
 ```cpp
 #include <iostream>
@@ -71,7 +80,8 @@ int multiplyNumbers(int x, int y) {
 }
 ```
 
-In this example, we use a function prototype for `multiplyNumbers()` before defining it. This way, we can call the function from the `main()` function even though it hasn't been defined yet in the code.
+In this example, we use a function prototype for `multiplyNumbers()` before defining it. This way, we can call the
+function from the `main()` function even though it hasn't been defined yet in the code.
 
 ## Functions with trailing return types
 

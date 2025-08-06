@@ -4,7 +4,8 @@ Here are some basic components and concepts in C++ programming:
 
 ## Including Libraries
 
-In C++, we use the `#include` directive to include libraries or header files into our program. For example, to include the standard input/output library, we write:
+In C++, we use the `#include` directive to include libraries or header files into our program. For example, to include
+the standard input/output library, we write:
 
 ```cpp
 #include <iostream>
@@ -15,15 +16,13 @@ In C++, we use the `#include` directive to include libraries or header files int
 The entry point of a C++ program is the `main` function. Every C++ program must have a `main` function:
 
 ```cpp
-int main() {
-    // Your code goes here
-    return 0;
-}
+int main() { // Your code goes here return 0; }
 ```
 
 ## Input/Output
 
-To perform input and output operations in C++, we can use the built-in objects `std::cin` for input and `std::cout` for output, available in the `iostream` library. Here's an example of reading an integer and printing its value:
+To perform input and output operations in C++, we can use the built-in objects `std::cin` for input and `std::cout` for
+output, available in the `iostream` library. Here's an example of reading an integer and printing its value:
 
 ```cpp
 #include <iostream>
@@ -57,7 +56,8 @@ char c;
 
 ## Control Structures
 
-C++ provides control structures for conditional execution and iteration, such as `if`, `else`, `while`, `for`, and `switch` statements.
+C++ provides control structures for conditional execution and iteration, such as `if`, `else`, `while`, `for`, and
+`switch` statements.
 
 ### If-Else Statement
 
@@ -103,7 +103,8 @@ default:
 
 ## Functions
 
-Functions are reusable blocks of code that can be called with arguments to perform a specific task. Functions are defined with a return type, a name, a parameter list, and a body.
+Functions are reusable blocks of code that can be called with arguments to perform a specific task. Functions are
+defined with a return type, a name, a parameter list, and a body.
 
 ```cpp
 ReturnType functionName(ParameterType1 parameter1, ParameterType2 parameter2) {
@@ -125,7 +126,9 @@ int main() {
 }
 ```
 
-This basic introduction to C++ should provide you with a good foundation for further learning. Explore more topics such as classes, objects, inheritance, polymorphism, templates, and the Standard Template Library (STL) to deepen your understanding of C++ and start writing more advanced programs.
+This basic introduction to C++ should provide you with a good foundation for further learning. Explore more topics such
+as classes, objects, inheritance, polymorphism, templates, and the Standard Template Library (STL) to deepen your
+understanding of C++ and start writing more advanced programs.
 
 - [LearnC++](https://www.learncpp.com/)
 - [C++ Full Course by freeCodeCamp](https://youtu.be/vLnPwxZdW4Y)
