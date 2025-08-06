@@ -9,13 +9,16 @@ operations while being more insertion/deletion-friendly than AVL trees.
 ## Key Concepts
 
 ### Purpose
+
 - Maintain BST property with automatic rebalancing
 - Guarantee O(log n) time for search, insert, and delete
 - More efficient insertions/deletions than AVL trees
 - Widely used in system libraries (Java's TreeMap, C++'s std::map)
 
 ### Properties
+
 Every Red-Black Tree satisfies:
+
 1. **Node Color**: Each node is either **red** or **black**
 2. **Root Property**: The root is always **black**
 3. **Leaf Property**: All leaves (NIL nodes) are **black**
@@ -43,6 +46,7 @@ class RBNode:
 Rotations maintain BST properties while fixing color violations:
 
 ### 1. Left Rotation
+
 ```
     x                                y
    / \                             /   \
@@ -52,6 +56,7 @@ Rotations maintain BST properties while fixing color violations:
 ```
 
 ### 2. Right Rotation
+
 ```
       y                            x
      / \                         /   \
@@ -65,6 +70,7 @@ Rotations maintain BST properties while fixing color violations:
 ## Operations
 
 ### 1. Insertion
+
 1. Perform standard BST insertion
 2. Color new node **RED**
 3. Fix violations with:
@@ -72,11 +78,13 @@ Rotations maintain BST properties while fixing color violations:
    - Rotations (based on uncle's color)
 
 **Fixup Cases**:
+
 - **Case 1**: Uncle is RED -> Recolor
 - **Case 2**: Uncle is BLACK (triangle) -> Rotate
 - **Case 3**: Uncle is BLACK (line) -> Rotate & recolor
 
 ### 2. Deletion
+
 1. Perform standard BST deletion
 2. Fix "double black" violations:
    - Sibling is RED -> Rotate & recolor
@@ -84,6 +92,7 @@ Rotations maintain BST properties while fixing color violations:
    - Sibling is BLACK with RED child -> Rotate & recolor
 
 ### 3. Search
+
 - Standard BST search: O(log n)
 
 ---
@@ -99,7 +108,7 @@ class RedBlackTree:
     def __init__(self):
         self.NIL = RBNode(None, BLACK)  # Sentinel leaf node
         self.root = self.NIL
-    
+
     def left_rotate(self, x):
         y = x.right
         x.right = y.left
@@ -114,7 +123,7 @@ class RedBlackTree:
             x.parent.right = y
         y.left = x
         x.parent = y
-    
+
     def right_rotate(self, y):
         x = y.left
         y.left = x.right
@@ -129,14 +138,14 @@ class RedBlackTree:
             y.parent.left = x
         x.right = y
         y.parent = x
-    
+
     def insert(self, key):
         node = RBNode(key)
         node.parent = None
         node.left = self.NIL
         node.right = self.NIL
         node.color = RED
-        
+
         # BST insertion
         parent = None
         current = self.root
@@ -153,10 +162,10 @@ class RedBlackTree:
             parent.left = node
         else:
             parent.right = node
-        
+
         # Fix violations
         self._insert_fixup(node)
-    
+
     def _insert_fixup(self, node):
         while node != self.root and node.parent.color == RED:
             if node.parent == node.parent.parent.left:
@@ -189,12 +198,12 @@ class RedBlackTree:
                     node.parent.parent.color = RED
                     self.left_rotate(node.parent.parent)
         self.root.color = BLACK
-    
+
     def delete(self, key):
         node = self.search(key)
         if node == self.NIL:
             return
-        
+
         # Find replacement node
         y = node
         y_original_color = y.color
@@ -218,10 +227,10 @@ class RedBlackTree:
             y.left = node.left
             y.left.parent = y
             y.color = node.color
-        
+
         if y_original_color == BLACK:
             self._delete_fixup(x)
-    
+
     def _delete_fixup(self, x):
         while x != self.root and x.color == BLACK:
             if x == x.parent.left:
@@ -268,7 +277,7 @@ class RedBlackTree:
                     self.right_rotate(x.parent)
                     x = self.root
         x.color = BLACK
-    
+
     def _transplant(self, u, v):
         if u.parent is None:
             self.root = v
@@ -277,12 +286,12 @@ class RedBlackTree:
         else:
             u.parent.right = v
         v.parent = u.parent
-    
+
     def _minimum(self, node):
         while node.left != self.NIL:
             node = node.left
         return node
-    
+
     def search(self, key):
         node = self.root
         while node != self.NIL and key != node.key:
@@ -291,7 +300,7 @@ class RedBlackTree:
             else:
                 node = node.right
         return node
-    
+
     # Utility function for inorder traversal
     def inorder(self, node):
         if node != self.NIL:
@@ -304,25 +313,27 @@ class RedBlackTree:
 
 ## Time Complexities
 
-| Operation | Time Complexity |
-|-----------|-----------------|
-| **Search** | O(log n)        |
-| **Insert** | O(log n)        |
-| **Delete** | O(log n)        |
+| Operation     | Time Complexity    |
+| ------------- | ------------------ |
+| **Search**    | O(log n)           |
+| **Insert**    | O(log n)           |
+| **Delete**    | O(log n)           |
 | **Rotations** | O(1) per operation |
-| **Space** | O(n)            |
+| **Space**     | O(n)               |
 
 ---
 
 ## Advantages vs. Disadvantages
 
 **Advantages**:
+
 - Guaranteed O(log n) for all operations
 - Fewer rotations than AVL trees during insertions/deletions
 - Efficient for frequently modified datasets
 - Widely used in system libraries
 
 **Disadvantages**:
+
 - More complex implementation than basic BST
 - Slightly less balanced than AVL trees
 - Requires storing color information per node
@@ -332,14 +343,14 @@ class RedBlackTree:
 
 ## Comparison with AVL Trees
 
-| Factor          | AVL Tree                     | Red-Black Tree               |
-|-----------------|------------------------------|------------------------------|
-| **Balance**     | Strict (height-balanced)     | Approximate (color-balanced) |
-| **Search**      | Faster (more strictly balanced)| Slightly slower             |
-| **Insert/Delete**| Slower (more rotations)      | Faster (fewer rotations)     |
-| **Rebalancing** | Immediate after operation    | May propagate up tree        |
-| **Storage**     | Height/balance factor        | Color bit                    |
-| **Use Cases**   | Search-intensive             | Mixed operations             |
+| Factor            | AVL Tree                        | Red-Black Tree               |
+| ----------------- | ------------------------------- | ---------------------------- |
+| **Balance**       | Strict (height-balanced)        | Approximate (color-balanced) |
+| **Search**        | Faster (more strictly balanced) | Slightly slower              |
+| **Insert/Delete** | Slower (more rotations)         | Faster (fewer rotations)     |
+| **Rebalancing**   | Immediate after operation       | May propagate up tree        |
+| **Storage**       | Height/balance factor           | Color bit                    |
+| **Use Cases**     | Search-intensive                | Mixed operations             |
 
 ---
 
@@ -354,7 +365,6 @@ class RedBlackTree:
 7. **Blockchain**: Merkle tree implementations
 
 ---
-
 
 ```python
 # Example usage
@@ -378,6 +388,7 @@ print("\nSearch 11:", rbt.search(11) != rbt.NIL)  # True
 ## Visualizing Red-Black Properties
 
 **Valid Red-Black Tree**:
+
 ```
          10(B)
         /    \
@@ -389,6 +400,7 @@ print("\nSearch 11:", rbt.search(11) != rbt.NIL)  # True
 ```
 
 **Violations Fixed During Insertion**:
+
 - Case 1: Recoloring when uncle is red
 - Case 2: Rotation for triangle configuration
 - Case 3: Rotation for line configuration

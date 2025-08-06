@@ -27,12 +27,10 @@ equilibrium.
 ## Properties
 
 1. **BST Property**:
-
    - Left child < Parent < Right child
    - In-order traversal produces sorted sequence
 
 2. **Balance Property**:
-
    - For every node, |balance factor| ≤ 1
    - Height is always O(log n) for n nodes
 
