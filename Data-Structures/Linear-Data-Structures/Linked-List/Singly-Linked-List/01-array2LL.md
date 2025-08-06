@@ -6,7 +6,6 @@
 2. Create an another node "mover" which then points to head.
 3. Start iteration from 1 to array size.
 4. For each iteration,
-
    - Create a temp node and assign its `data` to the `i`th element of current array.
 
    - Now we want our head node to point the next nodes, but we can't have multiple heads, so we'll take help of mover node.

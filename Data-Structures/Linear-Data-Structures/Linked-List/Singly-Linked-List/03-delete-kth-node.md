@@ -7,7 +7,6 @@
 3. Create a counter to keep a track of current position in LL.
 4. Create a prev node to keep a sustain the `k-1`th node.
 5. Iterate thorugh the LL and do the following steps :
-
    - Increase counter to record current position.
    - Bring the prev node to temp and move temp ahead.
    - If current position is equal to k :

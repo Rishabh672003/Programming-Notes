@@ -21,7 +21,6 @@ QUICK DBMS Notes
 3. Key Concepts and Terminologies
 
 - ACID Properties:
-
   - Atomicity: All-or-nothing transactions.
   - Consistency: Transactions preserve database rules.
   - Isolation: Concurrent transactions do not interfere.
@@ -30,13 +29,11 @@ QUICK DBMS Notes
 - Normalization: Process of organizing data to reduce redundancy (1NF, 2NF, 3NF, BCNF).
 
 - Keys:
-
   - Primary Key: Uniquely identifies records.
   - Candidate Key: A minimal set of attributes for unique identification.
   - Foreign Key: References primary key in another table.
 
 - Indexing: (A lookup table for specific colums)
-
   - It is a data structure technique used to locate and quickly access data in databases.
   - Several database fields are used to generate indexes.
   - The main key or candidate key of the table is duplicated in the first column, which is the Search key.
@@ -64,9 +61,7 @@ QUICK DBMS Notes
   - Exclusive Locks: For writing.
 
 3. Popular Database Types:
-
    1. Relational Databases:
-
       - Store data in structured tables.
       - Schema & Query Language: Uses a fixed schema and SQL to perform CRUD operations.
       - ACID Compliance: Ensures transactions are Atomic, Consistent, Isolated, and Durable.
@@ -75,7 +70,6 @@ QUICK DBMS Notes
       - eg: MySQL, Postgre SQL, Oracle.
 
    2. Document Store:
-
       - Data is stored as documents (usually in JSON, BSON, or XML format) which can contain nested structures.
       - Schema Flexibility: Schemas are dynamic—each document can have a different structure, making it ideal for evolving
         data models.
@@ -84,7 +78,6 @@ QUICK DBMS Notes
         data. - Examples: MongoDB, CouchDB.
 
    3. Key-Value Databases:
-
       - Data is stored as a simple key-value pair, similar to a dictionary or hash table.
       - Performance: Extremely fast for lookups when the key is known; minimal overhead in data retrieval.
       - Flexibility: Keys can reference simple values, complex objects, or even serialized data.

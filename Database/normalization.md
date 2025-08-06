@@ -12,16 +12,13 @@ We will discuss 5 normal forms
 ## First Normal Form
 
 - Don't convey information about a row using the row order.
-
   - Instead use a different column to convey that information
   - To convey the height of people use a different column for the height
 
 - Don't have different data types in a same column
-
   - Most database software prevent us from doing this by default
 
 - Not having a primary key is a violation of first normal form
-
   - Primary key uniquely identifies a row in a table
   - SQL query: `ALTER TABLE table_name ADD PRIMARY KEY (row_name)`
 

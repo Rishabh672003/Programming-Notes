@@ -58,7 +58,7 @@ ORDER BY column1, column2, ... ASC|DESC;
 ```sql
 SELECT column1, column2, ...
 FROM table_name
-WHERE condition1 AND condition2 AND condition3 ...; 
+WHERE condition1 AND condition2 AND condition3 ...;
 ```
 
 ## Or operator
@@ -83,7 +83,7 @@ It can be used with all operators like `NOT BETWEEN`, `NOT LIKE` etc.
 
 ```sql
 INSERT INTO table_name (column1, column2, column3, ...)
-VALUES (value1, value2, value3, ...); 
+VALUES (value1, value2, value3, ...);
 ```
 
 ## Null values
@@ -91,21 +91,19 @@ VALUES (value1, value2, value3, ...);
 ```sql
 SELECT column_names
 FROM table_name
-WHERE column_name IS NULL; 
+WHERE column_name IS NULL;
 ```
-
 
 ## Update Command
 
 ```sql
 UPDATE table_name
 SET column1 = value1, column2 = value2, ...
-WHERE condition; 
+WHERE condition;
 ```
 
 **If the where clause is omitted all the values in the table will be updated**
 
-
-## Reference 
+## Reference
 
 - [w3 school sql tutorial](https://www.w3schools.com/sql/default.asp)
