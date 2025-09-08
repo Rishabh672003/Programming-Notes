@@ -4,10 +4,8 @@ from collections import defaultdict, deque
 class Solution:
     def isCycle(self, V: int, edges: list[list[int]]):
         adj: defaultdict[int, list[int]] = defaultdict(list)
-        indegree = [0 for _ in range(V)]
-        for i in range(V):
-            adj[i] = []
 
+        indegree = [0 for _ in range(V)]
         for u, v in edges:
             adj[u].append(v)
             indegree[v] += 1

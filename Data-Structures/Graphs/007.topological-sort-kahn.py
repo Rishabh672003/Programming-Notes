@@ -5,9 +5,6 @@ class Solution:
     def topoSort(self, V: int, edges: list[list[int]]) -> list[int]:
         adj: defaultdict[int, list[int]] = defaultdict(list)
 
-        for i in range(V):
-            adj[i] = []
-
         indegree = [0 for _ in range(V)]
         for u, v in edges:
             indegree[v] += 1
@@ -15,6 +12,7 @@ class Solution:
 
         q: deque[int] = deque()
         res: list[int] = []
+
         for index, elem in enumerate(indegree):
             if elem == 0:
                 res.append(index)

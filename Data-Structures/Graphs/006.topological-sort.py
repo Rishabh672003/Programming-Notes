@@ -5,9 +5,6 @@ class Solution:
     def topoSort(self, V: int, edges: list[list[int]]) -> list[int]:
         adj: defaultdict[int, list[int]] = defaultdict(list)
 
-        for i in range(V):
-            adj[i] = []
-
         for u, v in edges:
             adj[u].append(v)
 

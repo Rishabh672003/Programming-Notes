@@ -5,9 +5,6 @@ class Solution:
     def isCycle(self, V: int, edges: list[list[int]]):
         adj: defaultdict[int, list[int]] = defaultdict(list)
 
-        for v in range(V):
-            adj[v] = []
-
         for u, v in edges:
             adj[u].append(v)
             adj[v].append(u)

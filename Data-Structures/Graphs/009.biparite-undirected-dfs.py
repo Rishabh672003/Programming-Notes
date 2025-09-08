@@ -5,9 +5,6 @@ class Solution:
     def isBipartite(self, V: int, edges:list[list[int]]):
         adj: defaultdict[int, list[int]] = defaultdict(list)
         
-        for i in range(V):
-            adj[i] = []
-            
         for u, v in edges:
             adj[u].append(v)
             adj[v].append(u)
@@ -21,7 +18,6 @@ class Solution:
             for v in adj[u]:
                 if color[v] == currColor:
                     return False
-
                 elif color[v] == -1:
                     if not dfs(v, 1 - currColor):
                         return False

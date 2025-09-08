@@ -2,22 +2,17 @@ from collections import defaultdict, deque
 
 
 class Solution:
-    def isBipartite(self, V: int, edges:list[list[int]]):
+    def isBipartite(self, V: int, edges: list[list[int]]):
         adj: defaultdict[int, list[int]] = defaultdict(list)
-        
-        for i in range(V):
-            adj[i] = []
-            
+
         for u, v in edges:
             adj[u].append(v)
             adj[v].append(u)
-            
-        
+
         color = [-1 for _ in range(V)]
 
         def bfs(node: int, currColor: int):
-            q: deque[int] = deque()
-            q.append(node)
+            q: deque[int] = deque([node])
             color[node] = currColor
 
             while q:

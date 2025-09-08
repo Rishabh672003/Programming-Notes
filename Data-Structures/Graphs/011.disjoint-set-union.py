@@ -1,3 +1,24 @@
+# DSU without path compression and rank union
+class DSUSimple:
+    def __init__(self, n: int):
+        self.pts = [i for i in range(n)]
+
+    def find(self, u: int) -> int:
+        if u == self.pts[u]:
+            return u
+
+        return self.find(self.pts[u])
+
+    def union(self, u: int, v: int) -> bool:
+        pU = self.find(u)
+        pV = self.find(v)
+
+        if pU == pV:
+            return False
+
+        self.pts[pU] = pV
+        return True
+
 class DSU:
     def __init__(self, n: int):
         self.pts = [i for i in range(n)]

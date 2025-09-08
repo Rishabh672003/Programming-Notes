@@ -14,8 +14,8 @@ class Solution:
         def union(self, u: int, v: int) -> bool:
             """
             finds union of two sets
-            returns True if the union was done, else if the parent was the same
-            it will return False
+            returns True if the union was done
+            else if the parent was the same it will return False
             """
             pU = self.find(u)
             pV = self.find(v)
