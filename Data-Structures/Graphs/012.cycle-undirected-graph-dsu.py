@@ -13,7 +13,7 @@ class Solution:
 
         def union(self, u: int, v: int) -> bool:
             """
-            finds union of two sets
+            finds Rank based union of two sets
             returns True if the union was done
             else if the parent was the same it will return False
             """
