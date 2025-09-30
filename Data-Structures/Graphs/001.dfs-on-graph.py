@@ -16,5 +16,6 @@ class Solution:
         for i in range(n):
             if not visited[i]:
                 solve(i)
+
         return ans
 

@@ -29,4 +29,5 @@ class Solution:
         for i in range(V):
             if not visited[i] and dfs(i):
                 return True
+
         return False

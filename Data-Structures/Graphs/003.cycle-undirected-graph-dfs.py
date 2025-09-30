@@ -25,5 +25,6 @@ class Solution:
         for i in range(V):
             if not visited[i] and dfs(i, -1):
                 return True
+
         return False
 

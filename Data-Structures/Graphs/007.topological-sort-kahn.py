@@ -25,6 +25,7 @@ class Solution:
                 indegree[i] -= 1
                 if indegree[i] == 0:
                     q.append(i)
+
         return res
 
 

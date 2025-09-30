@@ -24,9 +24,11 @@ class Solution:
 
                     visited[node] = True
                     q.append((node, cur))
+
             return False
 
         for i in range(V):
             if not visited[i] and bfs(i):
                 return True
+
         return False

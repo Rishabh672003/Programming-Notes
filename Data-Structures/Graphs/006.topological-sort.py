@@ -24,4 +24,5 @@ class Solution:
         for i in range(V):
             if not visited[i]:
                 solve(i)
+
         return st[::-1]
