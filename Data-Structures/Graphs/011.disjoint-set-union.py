@@ -1,55 +1,56 @@
-# DSU without path compression and rank union
-class DSUSimple:
-    def __init__(self, n: int):
-        self.pts = [i for i in range(n)]
-
-    def find(self, u: int) -> int:
-        if u == self.pts[u]:
-            return u
-
-        return self.find(self.pts[u])
-
-    def union(self, u: int, v: int) -> bool:
-        pU = self.find(u)
-        pV = self.find(v)
-
-        if pU == pV:
-            return False
-
-        self.pts[pU] = pV
-        return True
-
 class DSU:
     def __init__(self, n: int):
-        self.pts = [i for i in range(n)]
-        self.ranks = [0] * n
+        self.parent = [i for i in range(n)]
+        self.rank = [0] * n
+        self.size = [1] * n
         self.components = n
 
     def find(self, u: int) -> int:
-        if u == self.pts[u]:
-            return u
-        self.pts[u] = self.find(self.pts[u])
-        return self.pts[u]
+        """Find with path compression"""
+        if u != self.parent[u]:
+            self.parent[u] = self.find(self.parent[u])
+        return self.parent[u]
 
     def union(self, u: int, v: int) -> bool:
-        """
-        finds union of two sets
-        returns True if the union was done, else if the parent was the same
-        it will return False
-        """
+        """Union by No heuristic"""
         pU = self.find(u)
         pV = self.find(v)
 
         if pU == pV:
             return False
 
-        if self.ranks[pU] < self.ranks[pV]:
-            self.pts[pU] = pV
-        elif self.ranks[pV] < self.ranks[pU]:
-            self.pts[pV] = pU
+        self.parent[pU] = pV
+        return True
+
+    def union_by_rank(self, u: int, v: int) -> bool:
+        """Union by rank heuristic"""
+        pU, pV = self.find(u), self.find(v)
+        if pU == pV:
+            return False
+
+        if self.rank[pU] < self.rank[pV]:
+            self.parent[pU] = pV
+        elif self.rank[pV] < self.rank[pU]:
+            self.parent[pV] = pU
         else:
-            self.pts[pU] = pV
-            self.ranks[pV] += 1
+            self.parent[pV] = pU
+            self.rank[pU] += 1
+
+        self.components -= 1
+        return True
+
+    def union_by_size(self, u: int, v: int) -> bool:
+        """Union by size heuristic"""
+        pU, pV = self.find(u), self.find(v)
+        if pU == pV:
+            return False
+
+        if self.size[pU] < self.size[pV]:
+            self.parent[pU] = pV
+            self.size[pV] += self.size[pU]
+        else:
+            self.parent[pV] = pU
+            self.size[pU] += self.size[pV]
 
         self.components -= 1
         return True
