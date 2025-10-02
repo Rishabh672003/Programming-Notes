@@ -1,4 +1,9 @@
 class Solution:
+    # 3 Steps algorithm:
+    #   1. Find the topological sorted order of nodes
+    #   2. Reverse the edges in the directed graph
+    #   3. Perform DFS in the topological order,
+    #      and the number of times dfs is called is the number of SCC
     def kosaraju(self, adj: list[list[int]]) -> int:
         V = len(adj)
         visited_top_sort = [False for _ in range(V)]

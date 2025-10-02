@@ -25,6 +25,8 @@ class Solution:
                 self.parents[pU] = pV
                 self.ranks[pV] += 1
 
+    # Start from the least weighted edges, and union them till all the edges are
+    # in the same set
     def spanningTree(self, V: int, edges: list[list[int]]) -> int:
         dsu = self.DSU(V)
 
