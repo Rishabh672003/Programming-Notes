@@ -15,7 +15,6 @@ class Solution:
 
         for index, elem in enumerate(indegree):
             if elem == 0:
-                res.append(index)
                 q.append(index)
 
         while q:
